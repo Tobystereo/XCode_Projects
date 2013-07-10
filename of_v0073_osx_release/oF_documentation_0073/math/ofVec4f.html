@@ -1,0 +1,1391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofVec4f</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#average">average(...)</a> </li>
+                         
+                              
+                             <li> <a href="#distance">distance(...)</a> </li>
+                         
+                              
+                             <li> <a href="#distanceSquared">distanceSquared(...)</a> </li>
+                         
+                              
+                             <li> <a href="#dot">dot(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getInterpolated">getInterpolated(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getLimited">getLimited(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getMiddle">getMiddle(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getNormalized">getNormalized()</a> </li>
+                         
+                              
+                             <li> <a href="#getPtr">getPtr()</a> </li>
+                         
+                              
+                             <li> <a href="#getScaled">getScaled(...)</a> </li>
+                         
+                              
+                             <li> <a href="#interpolate">interpolate(...)</a> </li>
+                         
+                              
+                             <li> <a href="#interpolated">interpolated(...)</a> </li>
+                         
+                              
+                             <li> <a href="#length">length()</a> </li>
+                         
+                              
+                             <li> <a href="#lengthSquared">lengthSquared()</a> </li>
+                         
+                              
+                             <li> <a href="#limit">limit(...)</a> </li>
+                         
+                              
+                             <li> <a href="#limited">limited(...)</a> </li>
+                         
+                              
+                             <li> <a href="#match">match(...)</a> </li>
+                         
+                              
+                             <li> <a href="#middle">middle(...)</a> </li>
+                         
+                              
+                             <li> <a href="#middled">middled(...)</a> </li>
+                         
+                              
+                             <li> <a href="#normalize">normalize()</a> </li>
+                         
+                              
+                             <li> <a href="#normalized">normalized()</a> </li>
+                         
+                              
+                             <li> <a href="#one">one()</a> </li>
+                         
+                              
+                             <li> <a href="#operator!=">operator!=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator*">operator*(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator*=">operator*=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator+">operator+(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator+=">operator+=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator-">operator-(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#operator-=">operator-=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator/">operator/(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator/=">operator/=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator==">operator==(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator[]">operator[](...)</a> </li>
+                         
+                              
+                             <li> <a href="#rescale">rescale(...)</a> </li>
+                         
+                              
+                             <li> <a href="#rescaled">rescaled(...)</a> </li>
+                         
+                              
+                             <li> <a href="#scale">scale(...)</a> </li>
+                         
+                              
+                             <li> <a href="#set">set(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#squareDistance">squareDistance(...)</a> </li>
+                         
+                              
+                             <li> <a href="#squareLength">squareLength()</a> </li>
+                         
+                              
+                             <li> <a href="#zero">zero()</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+                <p class="top_list_header"><a href="#variables">class variables</a></p>
+                <ul class="functionslist">
+                             <li> <a href="#DIM">const int DIM</a> </li>
+                             <li> <a href="#w">float w</a> </li>
+                             <li> <a href="#x">float x</a> </li>
+                             <li> <a href="#y">float y</a> </li>
+                             <li> <a href="#z">float z</a> </li>
+                 </ul>
+            
+             
+            
+             <!-- list of functions -->              
+            <p class="top_list_header"><a href="#functions">functions</a></p>
+                <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#operator*">operator*(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator+">operator+(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator-">operator-(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator/">operator/(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator<<">operator<<(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator>>">operator>>(...)</a> </li>
+                         
+                 </ul>
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofVec4f methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="average">average(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::average(const ofVec4f *points, int num)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="distance">distance(...)</a></h1>
+	<h2>
+  <p>float ofVec4f::distance(const ofVec4f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="distanceSquared">distanceSquared(...)</a></h1>
+	<h2>
+  <p>float ofVec4f::distanceSquared(const ofVec4f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="dot">dot(...)</a></h1>
+	<h2>
+  <p>float ofVec4f::dot(const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getInterpolated">getInterpolated(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::getInterpolated(const ofVec4f &amp;pnt, float p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getLimited">getLimited(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::getLimited(float max)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMiddle">getMiddle(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::getMiddle(const ofVec4f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getNormalized">getNormalized()</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::getNormalized()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getPtr">getPtr()</a></h1>
+	<h2>
+  <p>const float * ofVec4f::getPtr()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getScaled">getScaled(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::getScaled(const float length)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="interpolate">interpolate(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::interpolate(const ofVec4f &amp;pnt, float p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="interpolated">interpolated(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::interpolated(const ofVec4f &amp;pnt, float p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="length">length()</a></h1>
+	<h2>
+  <p>float ofVec4f::length()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="lengthSquared">lengthSquared()</a></h1>
+	<h2>
+  <p>float ofVec4f::lengthSquared()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="limit">limit(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::limit(float max)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="limited">limited(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::limited(float max)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="match">match(...)</a></h1>
+	<h2>
+  <p>bool ofVec4f::match(const ofVec4f &amp;vec, float tolerance=0.0001)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="middle">middle(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::middle(const ofVec4f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="middled">middled(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::middled(const ofVec4f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="normalize">normalize()</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::normalize()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="normalized">normalized()</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::normalized()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="one">one()</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::one()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator!=">operator!=(...)</a></h1>
+	<h2>
+  <p>bool ofVec4f::operator!=(const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*">operator*(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator*(const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*">operator*(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator*(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*=">operator*=(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator*=(const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*=">operator*=(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator*=(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator+(const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator+(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+=">operator+=(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator+=(const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+=">operator+=(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator+=(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator-(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator-(const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-()</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator-()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-=">operator-=(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator-=(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-=">operator-=(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator-=(const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/">operator/(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator/(const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/">operator/(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator/(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/=">operator/=(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator/=(const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/=">operator/=(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::operator/=(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator==">operator==(...)</a></h1>
+	<h2>
+  <p>bool ofVec4f::operator==(const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator[]">operator[](...)</a></h1>
+	<h2>
+  <p>float ofVec4f::operator<a href="int n"></a></p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="rescale">rescale(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::rescale(const float length)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="rescaled">rescaled(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::rescaled(const float length)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scale">scale(...)</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::scale(const float length)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofVec4f::set(float _x, float _y, float _z, float _w)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofVec4f::set(const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofVec4f::set(float _scalar)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="squareDistance">squareDistance(...)</a></h1>
+	<h2>
+  <p>float ofVec4f::squareDistance(const ofVec4f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="squareLength">squareLength()</a></h1>
+	<h2>
+  <p>float ofVec4f::squareLength()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="zero">zero()</a></h1>
+	<h2>
+  <p>ofVec4f ofVec4f::zero()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+                  <h2><a name="variables"></a>ofVec4f variables</h2>
+                            
+<div class="documentation_detail">
+	<h1>const int <a name="DIM">DIM</a></h1>
+	<h2>
+  <p>const int ofVec4f::DIM</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="w">w</a></h1>
+	<h2>
+  <p>float ofVec4f::w</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="x">x</a></h1>
+	<h2>
+  <p>float ofVec4f::x</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="y">y</a></h1>
+	<h2>
+  <p>float ofVec4f::y</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="z">z</a></h1>
+	<h2>
+  <p>float ofVec4f::z</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- functions detail -->
+                  <h2><a name="functions"></a>ofVec4f functions</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*">operator*(...)</a></h1>
+	<h2>
+  <p>ofVec4f operator*(float f, const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofVec4f operator+(float f, const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-(...)</a></h1>
+	<h2>
+  <p>ofVec4f operator-(float f, const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/">operator/(...)</a></h1>
+	<h2>
+  <p>ofVec4f operator/(float f, const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator<<">operator<<(...)</a></h1>
+	<h2>
+  <p>ostream &amp; operator&lt;&lt;(ostream &amp;os, const ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator>>">operator>>(...)</a></h1>
+	<h2>
+  <p>istream &amp; operator&gt;&gt;(istream &amp;is, ofVec4f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:34 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

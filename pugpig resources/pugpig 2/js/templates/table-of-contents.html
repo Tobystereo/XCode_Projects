@@ -1,0 +1,10 @@
+<% _.each(pages, function( page ) { %>
+  <li data-categories="<% _.each( page.categories, function( category ) { %>['<%= category.scheme %>','<%= category.term %>']<% if( _.indexOf( page.categories, category ) !== ( page.categories.length - 1 ) ) { %>|<% } %><% }); %>">
+    <a href="<%= page.url %>">
+      <% if ( page.articleIcon !== '' ) { %>
+        <div class="article-icon" style="background-image: url(<%= page.articleIcon %>);"></div>
+      <% } %>
+      <%= page.title %></a>
+    <p><%= page.summary %></p>
+  </li>
+<% }); %>

@@ -1,0 +1,1043 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofFile</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p>ofFile wraps functionality for opening, reading, writing, and modifying files on your computer.</p>
+<pre><code class="cpp">
+ofFile file;
+
+file.open(ofToDataPath(&quot;temp.xml&quot;), ofFile::ReadWrite, false);
+ofBuffer buff = file.readToBuffer();
+</code></pre>
+
+<p>You can do the same with the bufferFromFile method:</p>
+<pre><code class="cpp">ofBuffer ofBufferFromFile(const string &amp; path, bool binary=false);
+</code></pre>
+
+<p>To write a buffer to a file, use ofBufferToFile()</p>
+<pre><code class="cpp">ofBuffer dataBuffer;
+// fill the buffer with something important
+bool fileWritten = ofBufferToFile(&quot;data.dat&quot;, dataBuffer); 
+
+</code></pre>
+
+<p>You can also compare files using the ==, !=, &lt;, &gt;, &lt;=, &gt;= operators. This is done so that the files can be stored in std::containers and sorted.</p>
+<pre><code class="cpp">ofFile file(ofToDataPath(&quot;foo.xml&quot;));
+ofFile file2(ofToDataPath(&quot;foo2.xml&quot;));    
+cout &lt;&lt; &quot;is foo less than foo2? &quot; &lt;&lt; ((file &lt; file2) ? &quot;true&quot; : &quot;false&quot;) &lt;&lt; endl;
+</code></pre>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#canExecute">canExecute()</a> </li>
+                         
+                              
+                             <li> <a href="#canRead">canRead()</a> </li>
+                         
+                              
+                             <li> <a href="#canWrite">canWrite()</a> </li>
+                         
+                              
+                             <li> <a href="#changeMode">changeMode(...)</a> </li>
+                         
+                              
+                             <li> <a href="#close">close()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#copyFromTo">copyFromTo(...)</a> </li>
+                         
+                              
+                             <li> <a href="#copyTo">copyTo(...)</a> </li>
+                         
+                              
+                             <li> <a href="#create">create()</a> </li>
+                         
+                              
+                             <li> <a href="#doesFileExist">doesFileExist(...)</a> </li>
+                         
+                              
+                             <li> <a href="#exists">exists()</a> </li>
+                         
+                              
+                             <li> <a href="#getAbsolutePath">getAbsolutePath()</a> </li>
+                         
+                              
+                             <li> <a href="#getBaseName">getBaseName()</a> </li>
+                         
+                              
+                             <li> <a href="#getEnclosingDirectory">getEnclosingDirectory()</a> </li>
+                         
+                              
+                             <li> <a href="#getExtension">getExtension()</a> </li>
+                         
+                              
+                             <li> <a href="#getFileBuffer">getFileBuffer()</a> </li>
+                         
+                              
+                             <li> <a href="#getFileName">getFileName()</a> </li>
+                         
+                              
+                             <li> <a href="#getPocoFile">getPocoFile()</a> </li>
+                         
+                              
+                             <li> <a href="#getSize">getSize()</a> </li>
+                         
+                              
+                             <li> <a href="#isDevice">isDevice()</a> </li>
+                         
+                              
+                             <li> <a href="#isDirectory">isDirectory()</a> </li>
+                         
+                              
+                             <li> <a href="#isFile">isFile()</a> </li>
+                         
+                              
+                             <li> <a href="#isHidden">isHidden()</a> </li>
+                         
+                              
+                             <li> <a href="#isLink">isLink()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#moveFromTo">moveFromTo(...)</a> </li>
+                         
+                              
+                             <li> <a href="#moveTo">moveTo(...)</a> </li>
+                         
+                              
+                             <li> <a href="#open">open(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator!=">operator!=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator<">operator<(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator<=">operator<=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator=">operator=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator==">operator==(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator>">operator>(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator>=">operator>=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#path">path()</a> </li>
+                         
+                              
+                             <li> <a href="#readToBuffer">readToBuffer()</a> </li>
+                         
+                              
+                             <li> <a href="#remove">remove(...)</a> </li>
+                         
+                              
+                             <li> <a href="#removeFile">removeFile(...)</a> </li>
+                         
+                              
+                             <li> <a href="#renameTo">renameTo(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setExecutable">setExecutable(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setReadOnly">setReadOnly(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setWriteable">setWriteable(...)</a> </li>
+                         
+                              
+                             <li> <a href="#writeFromBuffer">writeFromBuffer(...)</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofFile methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="canExecute">canExecute()</a></h1>
+	<h2>
+  <p>bool ofFile::canExecute()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Whether the file is an executable file.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="canRead">canRead()</a></h1>
+	<h2>
+  <p>bool ofFile::canRead()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Whether the file can be read or not.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="canWrite">canWrite()</a></h1>
+	<h2>
+  <p>bool ofFile::canWrite()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Whether the file can be written to or not.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="changeMode">changeMode(...)</a></h1>
+	<h2>
+  <p>bool ofFile::changeMode(Mode mode, bool binary=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Changes the mode of the file from the current mode to the one passed in.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="close">close()</a></h1>
+	<h2>
+  <p>void ofFile::close()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Closes the ofFile instance.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="copyFromTo">copyFromTo(...)</a></h1>
+	<h2>
+  <p>bool ofFile::copyFromTo(string pathSrc, string pathDst, bool bRelativeToData=true, bool overwrite=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="copyTo">copyTo(...)</a></h1>
+	<h2>
+  <p>bool ofFile::copyTo(string path, bool bRelativeToData=true, bool overwrite=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Copy the file from its current location into the path parameter. This is similar to the cp command.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="create">create()</a></h1>
+	<h2>
+  <p>bool ofFile::create()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>If the ofFile contains a file path that doesn't exist yet, calling create() generates the file.</p>
+<pre><code class="cpp">ofFile newFile(ofToDataPath(&quot;temp.txt&quot;), ofFile::Write); //file doesn't exist yet
+newFile.create(); // now file doesn't exist 
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="doesFileExist">doesFileExist(...)</a></h1>
+	<h2>
+  <p>bool ofFile::doesFileExist(string fPath, bool bRelativeToData=true)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="exists">exists()</a></h1>
+	<h2>
+  <p>bool ofFile::exists()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Tests whether a file path exists or not.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getAbsolutePath">getAbsolutePath()</a></h1>
+	<h2>
+  <p>string ofFile::getAbsolutePath()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the absolute path to the file, on OSX this will be something like /Users/name/openFrameworks/apps/app/data/file.xml on Windows it will something like C:\Documents\openframeworks\apps\app\data\file.xml</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getBaseName">getBaseName()</a></h1>
+	<h2>
+  <p>string ofFile::getBaseName()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getEnclosingDirectory">getEnclosingDirectory()</a></h1>
+	<h2>
+  <p>string ofFile::getEnclosingDirectory()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the relative path to the directory containing the file, for instance:</p>
+<pre><code class="cpp">
+ofFile file(ofToDataPath(&quot;foo.xml&quot;));
+cout &lt;&lt; file.getEnclosingDirectory(); // prints &quot;../../../data/xml&quot;
+
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getExtension">getExtension()</a></h1>
+	<h2>
+  <p>string ofFile::getExtension()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the extension of the file.</p>
+<pre><code class="cpp">    ofFile file(ofToDataPath(&quot;foo.xml&quot;));
+    cout &lt;&lt; file.getExtension();
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFileBuffer">getFileBuffer()</a></h1>
+	<h2>
+  <p>filebuf * ofFile::getFileBuffer()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFileName">getFileName()</a></h1>
+	<h2>
+  <p>string ofFile::getFileName()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the actual file name.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getPocoFile">getPocoFile()</a></h1>
+	<h2>
+  <p>Poco::File &amp; ofFile::getPocoFile()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the poco File instance that the ofFile wraps.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getSize">getSize()</a></h1>
+	<h2>
+  <p>uint64_t ofFile::getSize()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Gets the size of the file at the file path.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isDevice">isDevice()</a></h1>
+	<h2>
+  <p>bool ofFile::isDevice()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns whether the file path points to a mounted device.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isDirectory">isDirectory()</a></h1>
+	<h2>
+  <p>bool ofFile::isDirectory()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns whether the file path points to a directory or not.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isFile">isFile()</a></h1>
+	<h2>
+  <p>bool ofFile::isFile()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Whether the file path points to a file (it could also be a directory)</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isHidden">isHidden()</a></h1>
+	<h2>
+  <p>bool ofFile::isHidden()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns whether the file path points to a hidden file or not.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isLink">isLink()</a></h1>
+	<h2>
+  <p>bool ofFile::isLink()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns whether file is an alias or not.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="moveFromTo">moveFromTo(...)</a></h1>
+	<h2>
+  <p>bool ofFile::moveFromTo(string pathSrc, string pathDst, bool bRelativeToData=true, bool overwrite=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="moveTo">moveTo(...)</a></h1>
+	<h2>
+  <p>bool ofFile::moveTo(string path, bool bRelativeToData=true, bool overwrite=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Moves the file to the location specified by path. This is similar to the mv command.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="open">open(...)</a></h1>
+	<h2>
+  <p>bool ofFile::open(string path, Mode mode=ReadOnly, bool binary=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Opens the file with the file mode, either Reference, ReadOnly, WriteOnly, ReadWrite, Append</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator!=">operator!=(...)</a></h1>
+	<h2>
+  <p>bool ofFile::operator!=(const ofFile &amp;file)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Tests whether a file path is not equal to the file path of the ofFile on the right hand side. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator<">operator<(...)</a></h1>
+	<h2>
+  <p>bool ofFile::operator&lt;(const ofFile &amp;file)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Tests whether a file path is greater than the file path of the ofFile on the right hand side. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator<=">operator<=(...)</a></h1>
+	<h2>
+  <p>bool ofFile::operator&lt;=(const ofFile &amp;file)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Tests whether a file path is lesser or equal than the file path of the ofFile on the right hand side.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator=">operator=(...)</a></h1>
+	<h2>
+  <p>ofFile ofFile::operator=(const ofFile &amp;mom)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Equals operator which allows you to do this:</p>
+<pre><code class="cpp">ofFile f1 = f2;
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator==">operator==(...)</a></h1>
+	<h2>
+  <p>bool ofFile::operator==(const ofFile &amp;file)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Tests whether a file path is equal to the file path of the  ofFile on the right hand side. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator>">operator>(...)</a></h1>
+	<h2>
+  <p>bool ofFile::operator&gt;(const ofFile &amp;file)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Tests whether a file path is greater than the file path of the ofFile on the right hand side.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator>=">operator>=(...)</a></h1>
+	<h2>
+  <p>bool ofFile::operator&gt;=(const ofFile &amp;file)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Tests whether a file path is greater than or equal to the file path of the ofFile on the right hand side.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="path">path()</a></h1>
+	<h2>
+  <p>string ofFile::path()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the string of the ofFile file path.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="readToBuffer">readToBuffer()</a></h1>
+	<h2>
+  <p>ofBuffer ofFile::readToBuffer()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Read the file into an ofBuffer object and return it.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="remove">remove(...)</a></h1>
+	<h2>
+  <p>bool ofFile::remove(bool recursive=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>deletes a file or folder, be careful as this is not undo-able. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="removeFile">removeFile(...)</a></h1>
+	<h2>
+  <p>bool ofFile::removeFile(string path, bool bRelativeToData=true)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="renameTo">renameTo(...)</a></h1>
+	<h2>
+  <p>bool ofFile::renameTo(string path, bool bRelativeToData=true, bool overwrite=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Renames the file with the new file name. If you specify a different path then this will move the file as well.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setExecutable">setExecutable(...)</a></h1>
+	<h2>
+  <p>void ofFile::setExecutable(bool executable)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Toggles the file as executable or not executable.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setReadOnly">setReadOnly(...)</a></h1>
+	<h2>
+  <p>void ofFile::setReadOnly(bool readable)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Toggles the file as readable or not readable.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setWriteable">setWriteable(...)</a></h1>
+	<h2>
+  <p>void ofFile::setWriteable(bool writeable)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Toggles the file as writeable or not writeable.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="writeFromBuffer">writeFromBuffer(...)</a></h1>
+	<h2>
+  <p>bool ofFile::writeFromBuffer(ofBuffer &amp;buffer)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Write an ofBuffer instance to the file path.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:32 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofxCvColorImage</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p>The ofxCvColorImage represents the data of each pixel as unsigned char values, like the ofxCvGrayscaleImage, but has 3 channels, RGB, to represent color images.</p>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#clear">clear()</a> </li>
+                         
+                              
+                             <li> <a href="#contrastStretch">contrastStretch()</a> </li>
+                         
+                              
+                             <li> <a href="#convertHsvToRgb">convertHsvToRgb()</a> </li>
+                         
+                              
+                             <li> <a href="#convertRgbToHsv">convertRgbToHsv()</a> </li>
+                         
+                              
+                             <li> <a href="#convertToGrayscalePlanarImage">convertToGrayscalePlanarImage(...)</a> </li>
+                         
+                              
+                             <li> <a href="#convertToGrayscalePlanarImages">convertToGrayscalePlanarImages(...)</a> </li>
+                         
+                              
+                             <li> <a href="#convertToRange">convertToRange(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator+=">operator+=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator-=">operator-=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator=">operator=(...)</a> </li>
+                         
+                         
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#resize">resize(...)</a> </li>
+                         
+                              
+                             <li> <a href="#scaleIntoMe">scaleIntoMe(...)</a> </li>
+                         
+                              
+                             <li> <a href="#set">set(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#setFromGrayscalePlanarImages">setFromGrayscalePlanarImages(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setFromPixels">setFromPixels(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setRoiFromPixels">setRoiFromPixels(...)</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofxCvColorImage methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="clear">clear()</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::clear()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Clears the pixel data of the image. The image must be allocated again with a call to allocate() before it can be used.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="contrastStretch">contrastStretch()</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::contrastStretch()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This increases the contrast of the image remapping the brightest points in the image to white and the darkest points in the image to black.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="convertHsvToRgb">convertHsvToRgb()</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::convertHsvToRgb()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts the image from values in the Hue Saturation and Value color space (sometimes called Hue Saturation Brightness) to values in the Red Green and Blue color space.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="convertRgbToHsv">convertRgbToHsv()</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::convertRgbToHsv()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts the image from values in the Red Green and Blue color space to values in the Hue Saturation and Value color space (sometimes called Hue Saturation Brightness)</p>
+<p><img alt="HSV" src="../../types/hsb-cone.jpg" title="HSB" /></p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="convertToGrayscalePlanarImage">convertToGrayscalePlanarImage(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::convertToGrayscalePlanarImage(ofxCvGrayscaleImage &amp;grayImage, int whichPlane)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Copies the pixels of the ofxCvColorImage into an ofxCvGrayscale image. You can optionally specify whether you want to use the R G or B channel of the ofxCvColorImage to set the values of the ofxCvGrayscale.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="convertToGrayscalePlanarImages">convertToGrayscalePlanarImages(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::convertToGrayscalePlanarImages(ofxCvGrayscaleImage &amp;red, ofxCvGrayscaleImage &amp;green, ofxCvGrayscaleImage &amp;blue)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Copies the different channels of the ofxCvColorImage into 3 different grayscale images using the R G and B channels of the ofxCvColorImage.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="convertToRange">convertToRange(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::convertToRange(float min, float max)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Maps the pixels of an image to the min and max range passed in.</p>
+<pre><code class="cpp">
+colors.setFromPixels(grabber.getPixelsRef());
+
+first = colors; // will leave unaltered
+second = colors; // change it
+second.convertToRange(100, 140); // super low contrast
+
+</code></pre>
+
+<p><img alt="Image convert to range" src="convertToRange.png" title="Converting the range of an image" /></p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+=">operator+=(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::operator+=(float value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds the pixel data of the right hand side image from the current image:</p>
+<pre><code class="cpp">first += second; // both are ofxCvFloatImage instances
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-=">operator-=(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::operator-=(float value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Subtracts the pixel data of the right hand side image from the current image:</p>
+<pre><code class="cpp">first -= second; // both are ofxCvFloatImage instances
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator=">operator=(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::operator=(unsigned char *_pixels)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets the ofxCvColorImage from the pixels pointer. Be sure that the pixels are the same size and dimensions as the ofxCvColorImage.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator=">operator=(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::operator=(const ofxCvGrayscaleImage &amp;mom)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Copies ofxCvGrayscaleImage to another ofxCvShortImage using the = symbol.</p>
+<p>~~~~{.cpp}
+imageOne = imageTwo; // make sure that the dimensions and ROI match</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator=">operator=(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::operator=(const ofxCvColorImage &amp;mom)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Copies the data from an ofxCvColorImage into the instance using the = symbol.</p>
+<pre><code class="cpp">colorImage1 = colorImage2; // make sure that the dimensions and ROI match
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator=">operator=(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::operator=(const ofxCvFloatImage &amp;mom)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Copies the data from an ofxCvFloatImage into a ofxCvShortImage using the = symbol.</p>
+<pre><code class="cpp">colorImage = floatColorImage; // make sure that the dimensions and ROI match
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator=">operator=(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::operator=(const ofxCvShortImage &amp;mom)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Copies the data from a ofxCvShortImage into the ofxCvColorImage using the = symbol.</p>
+<pre><code class="cpp">colorImage = shortColorImage; // make sure that the dimensions and ROI match
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator=">operator=(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::operator=(const IplImage *mom)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Copies the data from an IplImage into the ofxCvColorImage using the = symbol.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="resize">resize(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::resize(int w, int h)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Resizes the image to the w, h passed in.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scaleIntoMe">scaleIntoMe(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::scaleIntoMe(ofxCvImage &amp;mom, int interpolationMethod=CV_INTER_NN)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Scales the image passed in to be the size of the current image, </p>
+<pre><code class="cpp">
+ofxCvImage first;
+first.allocate(640, 480);
+ofxCvImage second;
+second.allocate(320, 240);
+
+second.scaleIntoMe(first); // first is now 320,240
+
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::set(float value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set all the pixels in the image to the float value passed in. This is useful for blanking or filling an image quickly. The values are 0.0 to 1.0.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::set(int valueR, int valueG, int valueB)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set all the pixels in the image to the float value passed in as a color using 0 to 255 scale for each channel. This is useful for blanking or filling an image quickly.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setFromGrayscalePlanarImages">setFromGrayscalePlanarImages(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::setFromGrayscalePlanarImages(ofxCvGrayscaleImage &amp;red, ofxCvGrayscaleImage &amp;green, ofxCvGrayscaleImage &amp;blue)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This method allows you use multiple ofxCvGrayscaleImage images to create a full color image. Each ofxCvGrayscaleImage represents the data of one channel, r, g, b.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setFromPixels">setFromPixels(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::setFromPixels(const unsigned char *_pixels, int w, int h)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set all the pixels in a ofxCvShortImage from a pointer to an array of unsigned char values, using the w and h parameters to determine the dimensions of the image.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setRoiFromPixels">setRoiFromPixels(...)</a></h1>
+	<h2>
+  <p>void ofxCvColorImage::setRoiFromPixels(const unsigned char *_pixels, int w, int h)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set the Region Of Interest using a pointer to an unsigned char array and a w,h to define the area of the ROI</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:39 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

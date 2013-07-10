@@ -1,0 +1,581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofEasyCam</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p>ofCamera objects useful for viewing 3D scenes. ofEasyCam gives you a very simple to use interactive camera to view your scene.</p>
+<p>Controls:</p>
+<ul>
+<li>Left click drag = orbit the target</li>
+<li>Right click drag = dolly in and out</li>
+<li>Double click = reset camera positon</li>
+</ul>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#begin">begin(...)</a> </li>
+                         
+                              
+                             <li> <a href="#disableMouseInput">disableMouseInput()</a> </li>
+                         
+                              
+                             <li> <a href="#disableMouseMiddleButton">disableMouseMiddleButton()</a> </li>
+                         
+                              
+                             <li> <a href="#enableMouseInput">enableMouseInput()</a> </li>
+                         
+                              
+                             <li> <a href="#enableMouseMiddleButton">enableMouseMiddleButton()</a> </li>
+                         
+                              
+                             <li> <a href="#getDistance">getDistance()</a> </li>
+                         
+                              
+                             <li> <a href="#getDrag">getDrag()</a> </li>
+                         
+                              
+                             <li> <a href="#getMouseInputEnabled">getMouseInputEnabled()</a> </li>
+                         
+                              
+                             <li> <a href="#getMouseMiddleButtonEnabled">getMouseMiddleButtonEnabled()</a> </li>
+                         
+                              
+                             <li> <a href="#getTarget">getTarget()</a> </li>
+                         
+                              
+                             <li> <a href="#getTranslationKey">getTranslationKey()</a> </li>
+                         
+                              
+                             <li> <a href="#mouseDragged">mouseDragged(...)</a> </li>
+                         
+                              
+                             <li> <a href="#mouseMoved">mouseMoved(...)</a> </li>
+                         
+                              
+                             <li> <a href="#mousePressed">mousePressed(...)</a> </li>
+                         
+                              
+                             <li> <a href="#mouseReleased">mouseReleased(...)</a> </li>
+                         
+                              
+                             <li> <a href="#reset">reset()</a> </li>
+                         
+                              
+                             <li> <a href="#setDistance">setDistance(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#setDrag">setDrag(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setTarget">setTarget(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#setTranslationKey">setTranslationKey(...)</a> </li>
+                         
+                         
+                         
+                         
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofEasyCam methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="begin">begin(...)</a></h1>
+	<h2>
+  <p>void ofEasyCam::begin(ofRectangle viewport=ofGetCurrentViewport())</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Begin using the camera, e.g.:</p>
+<p>```c++
+myCamera.begin();</p>
+<p>ofDrawGrid();
+//draw rest of scene</p>
+<p>myCamera.end();
+```</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="disableMouseInput">disableMouseInput()</a></h1>
+	<h2>
+  <p>void ofEasyCam::disableMouseInput()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="disableMouseMiddleButton">disableMouseMiddleButton()</a></h1>
+	<h2>
+  <p>void ofEasyCam::disableMouseMiddleButton()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="enableMouseInput">enableMouseInput()</a></h1>
+	<h2>
+  <p>void ofEasyCam::enableMouseInput()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="enableMouseMiddleButton">enableMouseMiddleButton()</a></h1>
+	<h2>
+  <p>void ofEasyCam::enableMouseMiddleButton()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getDistance">getDistance()</a></h1>
+	<h2>
+  <p>float ofEasyCam::getDistance()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getDrag">getDrag()</a></h1>
+	<h2>
+  <p>float ofEasyCam::getDrag()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMouseInputEnabled">getMouseInputEnabled()</a></h1>
+	<h2>
+  <p>bool ofEasyCam::getMouseInputEnabled()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMouseMiddleButtonEnabled">getMouseMiddleButtonEnabled()</a></h1>
+	<h2>
+  <p>bool ofEasyCam::getMouseMiddleButtonEnabled()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getTarget">getTarget()</a></h1>
+	<h2>
+  <p>ofNode ofEasyCam::getTarget()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getTranslationKey">getTranslationKey()</a></h1>
+	<h2>
+  <p>char ofEasyCam::getTranslationKey()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="mouseDragged">mouseDragged(...)</a></h1>
+	<h2>
+  <p>void ofEasyCam::mouseDragged(ofMouseEventArgs &amp;mouse)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="mouseMoved">mouseMoved(...)</a></h1>
+	<h2>
+  <p>void ofEasyCam::mouseMoved(ofMouseEventArgs &amp;mouse)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="mousePressed">mousePressed(...)</a></h1>
+	<h2>
+  <p>void ofEasyCam::mousePressed(ofMouseEventArgs &amp;mouse)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="mouseReleased">mouseReleased(...)</a></h1>
+	<h2>
+  <p>void ofEasyCam::mouseReleased(ofMouseEventArgs &amp;mouse)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="reset">reset()</a></h1>
+	<h2>
+  <p>void ofEasyCam::reset()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setDistance">setDistance(...)</a></h1>
+	<h2>
+  <p>void ofEasyCam::setDistance(float distance)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setDrag">setDrag(...)</a></h1>
+	<h2>
+  <p>void ofEasyCam::setDrag(float drag)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setTarget">setTarget(...)</a></h1>
+	<h2>
+  <p>void ofEasyCam::setTarget(const ofVec3f &amp;target)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setTarget">setTarget(...)</a></h1>
+	<h2>
+  <p>void ofEasyCam::setTarget(ofNode &amp;target)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setTranslationKey">setTranslationKey(...)</a></h1>
+	<h2>
+  <p>void ofEasyCam::setTranslationKey(char key)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:32 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+
+<script language="javascript"><!--
+bmi_SafeAddOnload(bmi_load,"bmi_orig_img",0);//-->
+</script>

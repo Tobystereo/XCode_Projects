@@ -1,0 +1,11 @@
+<% _.each(editions, function( edition) { %>
+  <li>
+    <a href="?opds=<%= edition.opdsUrl %>&amp;atom=<%= edition.atom %>" alt="<%= edition.title %>">
+      <img<%= edition.css %> src="<%= edition.image %>" />
+    </a>
+    <p><% if(edition.free) { %> <span class="label label-success">Free</span><% } %><% if(edition.paid) { %> <span class="label label-info">Paid</span><% } %><% if(edition.draft) { %> <span class="label label-inverse">Draft</span><% } %></p>
+    <h2><%= edition.title %></h2>
+    <p>Published on <time datetime="<%= edition.pubDate %>" pubdate><%= edition.pubDate.split("-").reverse().join("-") %></time>. Last updated on <%= edition.updateDate %> at <%= edition.updateTime %></p>
+    <p><%= edition.summary %></p>
+  </li>
+<% }); %>

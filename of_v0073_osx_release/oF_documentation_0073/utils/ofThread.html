@@ -1,0 +1,601 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofThread</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p>ofThread is a thread base class with a built in mutex. A <a href="http://en.wikipedia.org/wiki/Thread_(computing)">thread</a> is essentially a mini processing object you can run in parallel to your main application loop and is useful for running time intensive operations without slowing down your app.</p>
+<h4 id="implementing-a-thread">Implementing a Thread</h4>
+<p>For instance, you have to grab from a camera and waiting for an image slows down your app. You can offload this wait to a thread which tells the main app when an image is ready. To do this, you create a class that inherits from the ofThread class and implement the <code>threadedFunction()</code> function.</p>
+<p>Declaration in a .h file:</p>
+<pre><code class="cpp">
+class MyThread : public ofThread {
+
+    ...
+
+    // the thread function
+    void MyThread::threadedFunction() {
+
+        // start
+
+        while(isThreadRunning()) {
+
+            cam.update();
+            if(cam.isFrameNew()) {
+
+                // load the image
+                image.setFromPixels(cam.getPixelsRef());
+            }
+        }
+
+        // done
+    }
+
+    ofVideoGrabber cam; // the cam
+    ofImage image;
+};
+
+</code></pre>
+
+<p>In the .cpp file:</p>
+<pre><code class="cpp">
+void testApp::setup() {
+
+    // create object
+    MyThread thread;
+
+    // start the thread
+    thread.startThread(true, false);    // blocking, non verbose
+}
+
+void testApp::update() {
+
+    // do something with the thread is running
+}
+
+void testApp::exit() {
+
+    // stop the thread
+    thread.stopThread();
+}
+
+</code></pre>
+
+<h4 id="shared-resources">Shared Resources</h4>
+<p>With this great power, however, comes great responsibility. If both the thread and your main app loop try to access the image at the same time, bad things happen inside your computer and the app will crash. The image is a considered a "shared resource" and you need to make sure to lock access to it so that only 1 thread can access it a time. You can do this using a <a href="http://en.wikipedia.org/wiki/Mutex">"mutal exclusion" object</a> by called lock() when you want to access the resource, then unlock() when you are done.</p>
+<p>Declaration in a .h file:</p>
+<pre><code class="cpp">
+class MyThread : public ofThread {
+
+    ...
+
+    // the thread function
+    void MyThread::threadedFunction() {
+
+        // start
+
+        while(isThreadRunning()) {
+
+            cam.update();
+            if(cam.isFrameNew()) {
+
+                // lock access to the resource
+                lock();
+
+                // load the image
+                image.setFromPixels(cam.getPixelsRef());    
+                // done with the resource
+                unlock();
+            }   
+        }
+
+        // done
+    }
+
+    ofVideoGrabber cam; // the cam
+    ofImage image;      // the shared resource
+};
+
+</code></pre>
+
+<p>In the .cpp file:</p>
+<pre><code class="cpp">
+void testApp::setup() {
+
+    // create object
+    MyThread thread;
+
+    // start the thread
+    thread.startThread(true, false);    // blocking, non verbose
+}
+
+void testApp::update() {
+
+    // lock access to the resource
+    thread.lock();
+
+    // copy image
+    myImage = thread.image;
+
+    // done with the resource
+    thread.unlock();
+}
+
+void testApp::exit() {
+
+    // stop the thread
+    thread.stopThread();
+}
+
+</code></pre>
+
+<h4 id="exiting-nicely">Exiting Nicely</h4>
+<p>As a thread is running in parallel with your application main loop, it's important to remember to tell it to stop before exiting the app. If you don't, you'll get weird errors or hangs because you aren't being nice to your threads. Depending on how you started your thread (blocking or non-blocking mode), you will either stop it for wait for it to finish. See the <code>stopThread()</code> &amp; <code>waitForThread()</code> functions.</p>
+<h4 id="debugging">Debugging</h4>
+<p>Thread errors are <em>notoriously</em> difficult to debug sometimes. You will probably see a "Bad Access" runtime error or something similar if multiple threads are trying to access a shared resource simultaneously. Other times, nothing will happen as the thread may be stuck in an infinite loop and you can't stop it. Wee! We assume if you've read this far, you probably accept the difficulties in order to reap the thread speed rewards. </p>
+<p>A useful tool in debugging thread timing and access is the ofThread verbose mode which prints thread events such as starting, stopping, and mutex locking/unlocking. Simply set verbose=true when calling <code>startThread()</code>. Another trick is to use an <code>ofSleepMillis()</code> inside the thread to slow it down so you can see the timing better while debugging it.</p>
+<h4 id="hoo-rah">HOO RAH</h4>
+<p>Ok soldier, lock and load … good luck!</p>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#getCurrentThread">getCurrentThread()</a> </li>
+                         
+                              
+                             <li> <a href="#getPocoThread">getPocoThread()</a> </li>
+                         
+                              
+                             <li> <a href="#getThreadId">getThreadId()</a> </li>
+                         
+                              
+                             <li> <a href="#getThreadName">getThreadName()</a> </li>
+                         
+                              
+                             <li> <a href="#isCurrentThread">isCurrentThread()</a> </li>
+                         
+                              
+                             <li> <a href="#isMainThread">isMainThread()</a> </li>
+                         
+                              
+                             <li> <a href="#isThreadRunning">isThreadRunning()</a> </li>
+                         
+                              
+                             <li> <a href="#lock">lock()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#sleep">sleep(...)</a> </li>
+                         
+                              
+                             <li> <a href="#startThread">startThread(...)</a> </li>
+                         
+                              
+                             <li> <a href="#stopThread">stopThread(...)</a> </li>
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#unlock">unlock()</a> </li>
+                         
+                              
+                             <li> <a href="#waitForThread">waitForThread(...)</a> </li>
+                         
+                              
+                             <li> <a href="#yield">yield()</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofThread methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getCurrentThread">getCurrentThread()</a></h1>
+	<h2>
+  <p>ofThread ofThread::getCurrentThread()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getPocoThread">getPocoThread()</a></h1>
+	<h2>
+  <p>Poco::Thread &amp; ofThread::getPocoThread()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getThreadId">getThreadId()</a></h1>
+	<h2>
+  <p>int ofThread::getThreadId()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getThreadName">getThreadName()</a></h1>
+	<h2>
+  <p>string ofThread::getThreadName()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isCurrentThread">isCurrentThread()</a></h1>
+	<h2>
+  <p>bool ofThread::isCurrentThread()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isMainThread">isMainThread()</a></h1>
+	<h2>
+  <p>bool ofThread::isMainThread()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isThreadRunning">isThreadRunning()</a></h1>
+	<h2>
+  <p>bool ofThread::isThreadRunning()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the thread is currently running. This is especially useful inside the thread's <code>threadedFunction()</code> when you want it to loop continuously until it's told to exit:</p>
+<pre><code class="cpp">
+class MyThread : public ofThread {
+
+    ...
+
+    // the thread function
+    void MyThread::threadedFunction() {
+
+        // start
+
+        while(isThreadRunning()) {
+
+            // do stuff
+        }
+
+        // done
+    }
+
+};
+
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="lock">lock()</a></h1>
+	<h2>
+  <p>bool ofThread::lock()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Try to lock the mutex.</p>
+<p>If the thread was started in blocking mode in <code>startThread()</code>, any thread (including your app main loop) will wait until the mutex is unlocked.</p>
+<p>If the thread is non-blocking, this call will immediately return a true or false if the mutex is available. It is up to you to make sure the resource is not being used when accessing it. See the <a href="http://en.wikipedia.org/wiki/Non-blocking_algorithm">Wikipedia article on Non-blocking</a> for reasons as to why using a non-blocking thread might be more advantageous.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="sleep">sleep(...)</a></h1>
+	<h2>
+  <p>void ofThread::sleep(int sleepMS)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="startThread">startThread(...)</a></h1>
+	<h2>
+  <p>void ofThread::startThread(bool blocking=true, bool verbose=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Starts the thread which then calls the <code>threadedFunction()</code>.</p>
+<p>Set <em>blocking</em> to true if you want the <a href="http://en.wikipedia.org/wiki/Mutex">mutex</a> to block on <code>lock()</code>. See <code>lock()</code> for more detailed info on blocking.</p>
+<p>Set <em>verbose</em> to true if you want detailed logging on thread and mutex events.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="stopThread">stopThread(...)</a></h1>
+	<h2>
+  <p>void ofThread::stopThread(bool close=true)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Stop the thread.</p>
+<p>Set <em>close</em> to true if you want the thread to exit immediately.</p>
+<p>Set <em>close</em> to false if you want to signal the thread to exit, then wait for it to finish with <code>waitForThread()</code>.</p>
+<p><strong>Note</strong>: Calling this function does not guarantee the thread will stop as it may be stuck waiting for a mutex to be unlocked. <strong>Always</strong> make sure to call <code>unlock()</code> if you've previously called <code>lock()</code>.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="stopThread">stopThread()</a></h1>
+	<h2>
+  <p>void ofThread::stopThread()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="unlock">unlock()</a></h1>
+	<h2>
+  <p>void ofThread::unlock()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Unlock the mutex.</p>
+<p>This only unlocks the mutex if the calling thread had previously locked it, otherwise the functions does nothing and does not block.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="waitForThread">waitForThread(...)</a></h1>
+	<h2>
+  <p>void ofThread::waitForThread(bool stop=true)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Waits for the thread to exit.</p>
+<p>This function waits for the thread to exit before it returns to make sure the thread is cleaned up, otherwise you will get errors on exit.</p>
+<p>Set <em>stop</em> to true if you want to signal the thread to exit before waiting, this is the equivalent to calling stopThread(false).</p>
+<p>Set <em>stop</em> to false if you have already signaled the thread to exit by calling <code>stopThread(false)</code> and only need to wait for it to finish.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="yield">yield()</a></h1>
+	<h2>
+  <p>void ofThread::yield()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:32 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

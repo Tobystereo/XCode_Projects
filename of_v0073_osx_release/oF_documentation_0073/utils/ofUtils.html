@@ -1,0 +1,1553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofUtils</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+            
+             
+             
+             <!-- list of variables -->              
+            
+             
+            
+             <!-- list of functions -->              
+            <p class="top_list_header"><a href="#functions">functions</a></p>
+                <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#ofBinaryToChar">ofBinaryToChar(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofBinaryToFloat">ofBinaryToFloat(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofBinaryToInt">ofBinaryToInt(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofBinaryToString">ofBinaryToString(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofContains">ofContains(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofFind">ofFind(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetDay">ofGetDay()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetElapsedTimeMicros">ofGetElapsedTimeMicros()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetElapsedTimeMillis">ofGetElapsedTimeMillis()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetElapsedTimef">ofGetElapsedTimef()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetFrameNum">ofGetFrameNum()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetHours">ofGetHours()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetMinutes">ofGetMinutes()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetMonth">ofGetMonth()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetSeconds">ofGetSeconds()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofGetSystemTimeMicros">ofGetSystemTimeMicros()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetTargetPlatform">ofGetTargetPlatform()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetTimestampString">ofGetTimestampString()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofGetUnixTime">ofGetUnixTime()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetVersionInfo">ofGetVersionInfo()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetWeekday">ofGetWeekday()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetYear">ofGetYear()</a> </li>
+                         
+                              
+                             <li> <a href="#ofHexToChar">ofHexToChar(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofHexToFloat">ofHexToFloat(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofHexToInt">ofHexToInt(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofHexToString">ofHexToString(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofIsStringInString">ofIsStringInString(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofJoinString">ofJoinString(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofLaunchBrowser">ofLaunchBrowser(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofNextPow2">ofNextPow2(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofRandomize">ofRandomize(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofRemove">ofRemove(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofResetElapsedTimeCounter">ofResetElapsedTimeCounter()</a> </li>
+                         
+                              
+                             <li> <a href="#ofSaveFrame">ofSaveFrame()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofSaveScreen">ofSaveScreen(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSaveViewport">ofSaveViewport(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetDataPathRoot">ofSetDataPathRoot(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSort">ofSort(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofSplitString">ofSplitString(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofStringReplace">ofStringReplace(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSystem">ofSystem(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofToBinary">ofToBinary(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofToBool">ofToBool(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofToChar">ofToChar(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofToFloat">ofToFloat(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofToHex">ofToHex(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofToInt">ofToInt(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofToLower">ofToLower(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofToString">ofToString(...)</a> </li>
+                         
+                         
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofToUpper">ofToUpper(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofVAArgsToString">ofVAArgsToString(...)</a> </li>
+                         
+                         
+                 </ul>
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+              
+              <!-- vars detail -->
+              
+              <!-- functions detail -->
+                  <h2><a name="functions"></a>ofUtils functions</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBinaryToChar">ofBinaryToChar(...)</a></h1>
+	<h2>
+  <p>char ofBinaryToChar(const string &amp;value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Interprets a string consisting only of 1s and 0s as a <code>char</code>, and returns the corresponding <code>char</code> value.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBinaryToFloat">ofBinaryToFloat(...)</a></h1>
+	<h2>
+  <p>float ofBinaryToFloat(const string &amp;value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Interprets a string consisting only of 1s and 0s as a <code>float</code> (little-endian, 32-bit IEEE 754), and returns the corresponding <code>float</code> value.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBinaryToInt">ofBinaryToInt(...)</a></h1>
+	<h2>
+  <p>int ofBinaryToInt(const string &amp;value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Interprets a string consisting only of 1s and 0s as an <code>int</code> (little-endian, 32-bit), and returns the corresponding <code>int</code> value.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBinaryToString">ofBinaryToString(...)</a></h1>
+	<h2>
+  <p>string ofBinaryToString(const string &amp;value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Interprets a string consisting only of 1s and 0s as 8-bit ASCII characters, and returns the corresponding string.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofContains">ofContains(...)</a></h1>
+	<h2>
+  <p>bool ofContains(const vector&lt; T &gt; &amp;values, const T &amp;target)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofFind">ofFind(...)</a></h1>
+	<h2>
+  <p>unsigned int ofFind(const vector&lt; T &gt; &amp;values, const T &amp;target)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetDay">ofGetDay()</a></h1>
+	<h2>
+  <p>int ofGetDay()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetElapsedTimeMicros">ofGetElapsedTimeMicros()</a></h1>
+	<h2>
+  <p>unsigned long long ofGetElapsedTimeMicros()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetElapsedTimeMillis">ofGetElapsedTimeMillis()</a></h1>
+	<h2>
+  <p>unsigned long long ofGetElapsedTimeMillis()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetElapsedTimef">ofGetElapsedTimef()</a></h1>
+	<h2>
+  <p>float ofGetElapsedTimef()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetFrameNum">ofGetFrameNum()</a></h1>
+	<h2>
+  <p>int ofGetFrameNum()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetHours">ofGetHours()</a></h1>
+	<h2>
+  <p>int ofGetHours()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetMinutes">ofGetMinutes()</a></h1>
+	<h2>
+  <p>int ofGetMinutes()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetMonth">ofGetMonth()</a></h1>
+	<h2>
+  <p>int ofGetMonth()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetSeconds">ofGetSeconds()</a></h1>
+	<h2>
+  <p>int ofGetSeconds()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetSystemTimeMicros">ofGetSystemTimeMicros()</a></h1>
+	<h2>
+  <p>unsigned long long ofGetSystemTimeMicros()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetTargetPlatform">ofGetTargetPlatform()</a></h1>
+	<h2>
+  <p>ofTargetPlatform ofGetTargetPlatform()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetTimestampString">ofGetTimestampString()</a></h1>
+	<h2>
+  <p>string ofGetTimestampString()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetTimestampString">ofGetTimestampString(...)</a></h1>
+	<h2>
+  <p>string ofGetTimestampString(string timestampFormat)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetUnixTime">ofGetUnixTime()</a></h1>
+	<h2>
+  <p>unsigned int ofGetUnixTime()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetVersionInfo">ofGetVersionInfo()</a></h1>
+	<h2>
+  <p>string ofGetVersionInfo()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetWeekday">ofGetWeekday()</a></h1>
+	<h2>
+  <p>int ofGetWeekday()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetYear">ofGetYear()</a></h1>
+	<h2>
+  <p>int ofGetYear()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofHexToChar">ofHexToChar(...)</a></h1>
+	<h2>
+  <p>char ofHexToChar(const string &amp;charHexString)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts a hexadecimal representation of an <code>char</code> (e.g., "61") to an actual <code>char</code> (e.g., a).</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofHexToFloat">ofHexToFloat(...)</a></h1>
+	<h2>
+  <p>float ofHexToFloat(const string &amp;floatHexString)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts a hexadecimal representation of an <code>float</code> (little-endian, 32-bit IEEE 754, e.g., "4060000000000000") to an actual <code>float</code> (e.g., 128.f).</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofHexToInt">ofHexToInt(...)</a></h1>
+	<h2>
+  <p>int ofHexToInt(const string &amp;intHexString)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts a hexadecimal representation of an <code>int</code> (little-endian, 32-bit, e.g., "0xbadf00d" or "badf00d") to an actual <code>int</code>.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofHexToString">ofHexToString(...)</a></h1>
+	<h2>
+  <p>string ofHexToString(const string &amp;stringHexString)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts a hexadecimal representation of an <code>string</code> (e.g., "61626364656667") to an actual <code>string</code> ("abcdefg");</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofIsStringInString">ofIsStringInString(...)</a></h1>
+	<h2>
+  <p>bool ofIsStringInString(string haystack, string needle)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Checks if the string <code>needle</code> exists in the string <code>haystack</code>.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofJoinString">ofJoinString(...)</a></h1>
+	<h2>
+  <p>string ofJoinString(vector&lt; string &gt; stringElements, const string &amp;delimiter)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Turns a <code>stringElements</code> into a single string, with an instance of <code>delimiter</code> between all the elements.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofLaunchBrowser">ofLaunchBrowser(...)</a></h1>
+	<h2>
+  <p>void ofLaunchBrowser(string url)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Opens your computer's default browser and loads the specified url. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofNextPow2">ofNextPow2(...)</a></h1>
+	<h2>
+  <p>int ofNextPow2(int input)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRandomize">ofRandomize(...)</a></h1>
+	<h2>
+  <p>void ofRandomize(vector&lt; T &gt; &amp;values)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRemove">ofRemove(...)</a></h1>
+	<h2>
+  <p>void ofRemove(vector&lt; T &gt; &amp;values, BoolFunction shouldErase)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofResetElapsedTimeCounter">ofResetElapsedTimeCounter()</a></h1>
+	<h2>
+  <p>void ofResetElapsedTimeCounter()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSaveFrame">ofSaveFrame()</a></h1>
+	<h2>
+  <p>void ofSaveFrame()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Saves the current frame as a PNG image.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSaveFrame">ofSaveFrame(...)</a></h1>
+	<h2>
+  <p>void ofSaveFrame(bool bUseViewport=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSaveScreen">ofSaveScreen(...)</a></h1>
+	<h2>
+  <p>void ofSaveScreen(string filename)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Saves the current screen image into a given file name (string filename).
+Example:</p>
+<pre><code class="cpp">
+string filename;
+fileName = &quot;screen1.png&quot;;
+ofSaveScreen(fileName);
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSaveViewport">ofSaveViewport(...)</a></h1>
+	<h2>
+  <p>void ofSaveViewport(string filename)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetDataPathRoot">ofSetDataPathRoot(...)</a></h1>
+	<h2>
+  <p>void ofSetDataPathRoot(string root)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSort">ofSort(...)</a></h1>
+	<h2>
+  <p>void ofSort(vector&lt; T &gt; &amp;values)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSort">ofSort(...)</a></h1>
+	<h2>
+  <p>void ofSort(vector&lt; T &gt; &amp;values, BoolFunction compare)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSplitString">ofSplitString(...)</a></h1>
+	<h2>
+  <p>vector<string> ofSplitString(const string&amp; str, const string&amp; delimiter = " ")</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This function is used to delete some parts of a given string (str). We set in delimiter the parts we want to delete. For example if we call ofSplitSpring in my setup function:</p>
+<pre><code class="cpp">
+result=ofSplitString(&quot;of rocks&quot;, &quot;of&quot;);
+</code></pre>
+
+<p>we obtain:
+result[0]=r
+result[1]=cks
+this is the result of deleting o and f letters in the string.</p>
+<p>We can find a very useful application if we use delimiter = " ":</p>
+<pre><code class="cpp">
+result=ofSplitString(&quot;of rocks&quot;, &quot; &quot;);
+</code></pre>
+
+<p>we obtain:
+result[0]=of
+result[1]=rocks
+Like this we can "cut" a big string and turn it into a vector of words.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSplitString">ofSplitString(...)</a></h1>
+	<h2>
+  <p>vector&lt; string &gt; ofSplitString(const string &amp;source, const string &amp;delimiter, bool ignoreEmpty=false, bool trim=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Splits <code>source</code> using <code>delimiter</code> and returns the separate tokens. In modern versions of openFrameworks, <code>delimiter</code> can be a multi-character string. In older versions of openFrameworks, <code>delimiter</code> was interpreted as multiple single-character delimiters.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofStringReplace">ofStringReplace(...)</a></h1>
+	<h2>
+  <p>void ofStringReplace(string &amp;input, string searchStr, string replaceStr)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Searches <code>input</code> for instances of <code>searchStr</code> and replaces them with <code>replaceStr</code>.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSystem">ofSystem(...)</a></h1>
+	<h2>
+  <p>string ofSystem(string command)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToBinary">ofToBinary(...)</a></h1>
+	<h2>
+  <p>string ofToBinary(const T &amp;value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts any datatype <code>value</code> to a string of only 1s and 0s corresponding to the way <code>value</code> is stored in memory.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToBinary">ofToBinary(...)</a></h1>
+	<h2>
+  <p>string ofToBinary(const string &amp;value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts a string <code>value</code> to a string of only 1s and 0s corresponding to the way <code>value</code> is stored in memory.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToBinary">ofToBinary(...)</a></h1>
+	<h2>
+  <p>string ofToBinary(const char *value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts any C-style string <code>value</code> to a string of only 1s and 0s corresponding to the way <code>value</code> is stored in memory.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToBool">ofToBool(...)</a></h1>
+	<h2>
+  <p>bool ofToBool(const string &amp;boolString)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts a string representation <code>boolString</code> (e.g., "TRUE") to an actual <code>bool</code> using a case-insensitive comparison against the words "true" and "false". </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToChar">ofToChar(...)</a></h1>
+	<h2>
+  <p>char ofToChar(const string &amp;charString)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts a string representation of a single <code>char</code> (e.g., " c ") to an actual <code>char</code>.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToDataPath">ofToDataPath(...)</a></h1>
+	<h2>
+  <p>string ofToDataPath(string path, bool absolute=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToFloat">ofToFloat(...)</a></h1>
+	<h2>
+  <p>void ofToFloat(const string&amp; floatString)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts the string "floatString" into a float value.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToFloat">ofToFloat(...)</a></h1>
+	<h2>
+  <p>float ofToFloat(const string &amp;floatString)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts a string representation <code>floatString</code> (e.g., "3.14") to an actual <code>float</code>.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToHex">ofToHex(...)</a></h1>
+	<h2>
+  <p>string ofToHex(const T &amp;value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts any value to its equivalent hexadecimal representation corresponding to the way it is stored in memory.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToHex">ofToHex(...)</a></h1>
+	<h2>
+  <p>string ofToHex(const string &amp;value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts a string (e.g., "abc") to its equivalent hexadecimal representation (e.g., "616263").</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToHex">ofToHex(...)</a></h1>
+	<h2>
+  <p>string ofToHex(const char *value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts a c-style string (e.g., "abc") to its equivalent hexadecimal representation (e.g., "616263").</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToInt">ofToInt(...)</a></h1>
+	<h2>
+  <p>int ofToInt(const string&amp; intString)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts the string "intString" into an integer value.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToInt">ofToInt(...)</a></h1>
+	<h2>
+  <p>int ofToInt(const string &amp;intString)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts a string representation of an <code>int</code> (e.g., "2012") to an actual <code>int</code>.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToLower">ofToLower(...)</a></h1>
+	<h2>
+  <p>string ofToLower(const string &amp;src)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts all characters in the string <code>src</code> to lowercase.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToString">ofToString(...)</a></h1>
+	<h2>
+  <p>string ofToString(int value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>To make adding numbers to a string easy we have the ofToString object which takes a number and turns it into a string representation of that number. For floating point numbers 'precision' is the number of decimal places you want to use. There is a default value for 'precision' of 7 decimal places, so if you don't wish to specify it you can just pass the first argument.</p>
+<p>This example makes a custom string to show the framerate in the window title. </p>
+<pre><code class="cpp">
+string str = &quot;framerate is &quot;;                       
+str += ofToString(ofGetFrameRate(), 2)+&quot;fps&quot;; 
+ofSetWindowTitle(str);
+//set the window title to &quot;framerate is 45.30fps&quot;
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToString">ofToString(...)</a></h1>
+	<h2>
+  <p>string ofToString(const T &amp;value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToString">ofToString(...)</a></h1>
+	<h2>
+  <p>string ofToString(const T &amp;value, int precision)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToString">ofToString(...)</a></h1>
+	<h2>
+  <p>string ofToString(const vector&lt; T &gt; &amp;values)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts a vector of values to a single <code>string</code> representation. </p>
+<pre><code class="cpp">vector&lt;int&gt; vec;
+vec.push_back(1);
+vec.push_back(2);
+vec.push_back(3);
+cout &lt;&lt; ofToString(vec) &lt;&lt; endl; // prints &quot;{1, 2, 3}&quot;
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToString">ofToString(...)</a></h1>
+	<h2>
+  <p>string ofToString(const T &amp;value, int width, char fill)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToString">ofToString(...)</a></h1>
+	<h2>
+  <p>string ofToString(const T &amp;value, int precision, int width, char fill)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofToUpper">ofToUpper(...)</a></h1>
+	<h2>
+  <p>string ofToUpper(const string &amp;src)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Converts all characters in the string <code>src</code> to uppercase.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofVAArgsToString">ofVAArgsToString(...)</a></h1>
+	<h2>
+  <p>string ofVAArgsToString(const char *format,...)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofVAArgsToString">ofVAArgsToString(...)</a></h1>
+	<h2>
+  <p>string ofVAArgsToString(const char *format, va_list args)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:44 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofxCvHaarFinder</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p>ofxCvHaarFinder allows you to check an image for a match to a Haar classifier. The Haar Classifier is a data file generated from a training process where an application is "taught" how to recognize something in different contexts. This can be things like recognizing whether a certain sound is a word being spoken by a user, whether a gesture is a certain shape, or, in the image shown below, whether a pattern of pixels constitute a face.</p>
+<p><img alt="face detection" src="face_detection.jpg" title="Face detection on a photograph" /></p>
+<p>A very basic set-up of an application using ofxCvHaarFinder would look like so:</p>
+<pre><code class="cpp">app::setup() {
+   haarFinder.setup(&quot;haarcascade.xml&quot;); // must be in /data/
+}
+
+app::update() {
+   haarFinder.findHaarObjects(imageToExamine);
+}
+
+app::draw() {
+  for(int i = 0; i &lt; haarFinder.blobs.size(); i++) {
+     ofRect( haarFinder.blobs[i].boundingRect );
+  }
+}
+
+</code></pre>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#draw">draw(...)</a> </li>
+                         
+                              
+                             <li> <a href="#findHaarObjects">findHaarObjects(...)</a> </li>
+                         
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#getHeight">getHeight()</a> </li>
+                         
+                              
+                             <li> <a href="#getWidth">getWidth()</a> </li>
+                         
+                              
+                             <li> <a href="#setNeighbors">setNeighbors(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setScaleHaar">setScaleHaar(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setup">setup(...)</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+                <p class="top_list_header"><a href="#variables">class variables</a></p>
+                <ul class="functionslist">
+                             <li> <a href="#blobs">ofxCvBlob blobs</a> </li>
+                 </ul>
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofxCvHaarFinder methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="draw">draw(...)</a></h1>
+	<h2>
+  <p>void ofxCvHaarFinder::draw(float x, float y)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws any detected objects to the screen with a rectangle, like so:</p>
+<p><img alt="Draw faces" src="draw_facedetection.jpg" title="Detecting faces." /></p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="findHaarObjects">findHaarObjects(...)</a></h1>
+	<h2>
+  <p>int ofxCvHaarFinder::findHaarObjects(ofImage &amp;input, int minWidth=0, int minHeight=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Takes an input ofImage object and allows you to set the minimum width and height of areas that should be returned.</p>
+<pre><code class="cpp">camera.grabFrame();
+if(camera.isFrameNew())
+{
+    img.setFromPixels(grab.getPixelsRef());
+    finder.findHaarObjects(img);
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="findHaarObjects">findHaarObjects(...)</a></h1>
+	<h2>
+  <p>int ofxCvHaarFinder::findHaarObjects(const ofxCvGrayscaleImage &amp;input, int minWidth=0, int minHeight=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Takes an input ofxCvGrayscaleImage object and allows you to set the minimum width and height of areas that should be returned.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="findHaarObjects">findHaarObjects(...)</a></h1>
+	<h2>
+  <p>int ofxCvHaarFinder::findHaarObjects(const ofxCvGrayscaleImage &amp;input, ofRectangle &amp;roi, int minWidth=0, int minHeight=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Takes an input ofxCvGrayscaleImage object and allows you to set the minimum width and height of areas that should be returned and a region of interest as an ofRectangle that you would like to limit haar finding to.</p>
+<pre><code class="cpp">colorImg.setFromPixels(vidGrabber.getPixelsRef());
+grayImage = colorImg; // convert our color image to a grayscale image
+
+faceFinder.findHaarObjects(grayImage);
+
+for(int i = 0; i &lt; faceFinder.blobs.size(); i++) {
+    ofRectangle roi = faceFinder.blobs[i].boundingRect;
+    eyeFinder.findHaarObjects(grayImage, roi);
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="findHaarObjects">findHaarObjects(...)</a></h1>
+	<h2>
+  <p>int ofxCvHaarFinder::findHaarObjects(const ofxCvGrayscaleImage &amp;, int x, int y, int w, int h, int minWidth=0, int minHeight=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Takes an input ofxCvGrayscaleImage object and allows you to set the minimum width and height of areas that should be returned and a region of interest as an ofRectangle that you would like to limit haar finding to.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="findHaarObjects">findHaarObjects(...)</a></h1>
+	<h2>
+  <p>int ofxCvHaarFinder::findHaarObjects(ofPixels &amp;input, int minWidth=0, int minHeight=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Takes an input ofPixels object and allows you to set the minimum width and height of areas that should be returned.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getHeight">getHeight()</a></h1>
+	<h2>
+  <p>float ofxCvHaarFinder::getHeight()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the height of the image area that is being examined.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getWidth">getWidth()</a></h1>
+	<h2>
+  <p>float ofxCvHaarFinder::getWidth()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the width of the image area that is being examined.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setNeighbors">setNeighbors(...)</a></h1>
+	<h2>
+  <p>void ofxCvHaarFinder::setNeighbors(unsigned neighbors)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Minimum number (minus 1) of neighbor rectangles that makes up an object. All the groups of a smaller number of rectangles than min_neighbors-1 are rejected. If min_neighbors is 0, the function does not any grouping at all and returns all the detected candidate rectangles, that might be useful if you want to do a customized grouping.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setScaleHaar">setScaleHaar(...)</a></h1>
+	<h2>
+  <p>void ofxCvHaarFinder::setScaleHaar(float scaleHaar)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setup">setup(...)</a></h1>
+	<h2>
+  <p>void ofxCvHaarFinder::setup(string haarFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This loads a Haar cascade file into the finder. This needs to be done before the Haar finder can be used with images.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+                  <h2><a name="variables"></a>ofxCvHaarFinder variables</h2>
+                            
+<div class="documentation_detail">
+	<h1>ofxCvBlob <a name="blobs">blobs</a></h1>
+	<h2>
+  <p>ofxCvBlob ofxCvHaarFinder::blobs</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Provides access to the all the blobs detected in the last run of findHaarObjects() via a vector<ofxCvBlob>.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:39 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,1113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofxAssimpModelLoader</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p>ofAssimpModelLoader addon permits loading to memory and processing 3D models in a convenient and unified format. This addon is mostly a wrapper of the Open Asset Import Library, assimp, (<a href="http://assimp.sourceforge.net/">http://assimp.sourceforge.net/</a>) in it s version 2.0. At least, these model formats are supported:</p>
+<ul>
+<li>3DS</li>
+<li>ASE</li>
+<li>DXF</li>
+<li>HMP</li>
+<li>MD2</li>
+<li>MD3</li>
+<li>MD5</li>
+<li>MDC</li>
+<li>MDL</li>
+<li>NFF</li>
+<li>PLY</li>
+<li>STL</li>
+<li>X</li>
+<li>LWO</li>
+<li>OBJ</li>
+<li>SMD</li>
+<li>Collada</li>
+<li>LWO</li>
+<li>Ogre XML</li>
+<li>partly LWS </li>
+</ul>
+<p>In order to load a file to memory, you just need to declare a new variable of type ofAssimpModelLoader and use the function loadModel():</p>
+<pre><code class="cpp">ofxAssimpModelLoader model;
+model.loadModel(&quot;file_name.3DS&quot;);
+</code></pre>
+
+<p>You could draw it using:</p>
+<pre><code class="cpp">void testApp::draw(){
+   ofBackground(50, 50, 50, 0);
+   ofSetColor(255, 255, 255, 255);
+
+   model.drawFaces();
+}
+</code></pre>
+
+<p>But probably you would not see the entire model. In the next snippet it appears centered:</p>
+<pre><code class="cpp">void testApp::draw(){
+   ofBackground(50, 50, 50, 0);
+   ofSetColor(255, 255, 255, 255);
+
+   model.setPosition(ofGetWidth()/2, (float)ofGetHeight() * 0.75 , 0);
+   model.drawFaces();
+}
+</code></pre>
+
+<p>There are other two ways to represent the model, by its points or by the wiring between the points. In the next snippet the three ways are represented:</p>
+<pre><code class="cpp">void testApp::draw(){
+   ofBackground(50, 50, 50, 0);
+   ofSetColor(255, 255, 255, 255);
+
+   model.setPosition(ofGetWidth()*2/6, (float)ofGetHeight() * 0.75 , 0);
+   model.draw(OF_MESH_FILL); //same as model.drawFaces();
+   model.setPosition(ofGetWidth()*3/6, (float)ofGetHeight() * 0.75 , 0);
+   model.draw(OF_MESH_POINTS); // same as model.drawVertices();
+   model.setPosition(ofGetWidth()*4/6, (float)ofGetHeight() * 0.75 , 0);
+   model.draw(OF_MESH_WIREFRAME); // same as model.drawWireframe();
+}
+</code></pre>
+
+<p>We can use model.setScale() to change the size and setRotation() to rotate the model. The next snippet, for instance, draws the model half it’s size and if it was looking at you, now is showing it’s back:</p>
+<pre><code class="cpp">model.setRotation(0,90,0,1,0);
+model.setScale(0.5, 0.5, 0.5);
+model.setPosition(ofGetWidth()*2/6, (float)ofGetHeight() * 0.75 , 0);
+model.drawFaces();
+</code></pre>
+
+<p>You can accumulate setRotation() functions for rotating different degrees in different axis if you increment the value of the first variable:</p>
+<pre><code class="cpp">model.setRotation(0, actualXRotation, 1, 0, 0);
+model.setRotation(1, actualYRotation, 0, 1, 0);
+model.setRotation(2, actualZRotation, 0, 0, 1);
+</code></pre>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#calculateDimensions">calculateDimensions()</a> </li>
+                         
+                              
+                             <li> <a href="#clear">clear()</a> </li>
+                         
+                              
+                             <li> <a href="#createEmptyModel">createEmptyModel()</a> </li>
+                         
+                              
+                             <li> <a href="#createLightsFromAiModel">createLightsFromAiModel()</a> </li>
+                         
+                              
+                             <li> <a href="#disableColors">disableColors()</a> </li>
+                         
+                              
+                             <li> <a href="#disableMaterials">disableMaterials()</a> </li>
+                         
+                              
+                             <li> <a href="#disableNormals">disableNormals()</a> </li>
+                         
+                              
+                             <li> <a href="#disableTextures">disableTextures()</a> </li>
+                         
+                              
+                             <li> <a href="#draw">draw(...)</a> </li>
+                         
+                              
+                             <li> <a href="#drawFaces">drawFaces()</a> </li>
+                         
+                              
+                             <li> <a href="#drawVertices">drawVertices()</a> </li>
+                         
+                              
+                             <li> <a href="#drawWireframe">drawWireframe()</a> </li>
+                         
+                              
+                             <li> <a href="#enableColors">enableColors()</a> </li>
+                         
+                              
+                             <li> <a href="#enableMaterials">enableMaterials()</a> </li>
+                         
+                              
+                             <li> <a href="#enableNormals">enableNormals()</a> </li>
+                         
+                              
+                             <li> <a href="#enableTextures">enableTextures()</a> </li>
+                         
+                              
+                             <li> <a href="#getAnimationCount">getAnimationCount()</a> </li>
+                         
+                              
+                             <li> <a href="#getAssimpScene">getAssimpScene()</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#getCurrentAnimatedMesh">getCurrentAnimatedMesh(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#getDuration">getDuration(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getMaterialForMesh">getMaterialForMesh(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#getMesh">getMesh(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#getMeshNames">getMeshNames()</a> </li>
+                         
+                              
+                             <li> <a href="#getNormalizedScale">getNormalizedScale()</a> </li>
+                         
+                              
+                             <li> <a href="#getNumMeshes">getNumMeshes()</a> </li>
+                         
+                              
+                             <li> <a href="#getPosition">getPosition()</a> </li>
+                         
+                              
+                             <li> <a href="#getScale">getScale()</a> </li>
+                         
+                              
+                             <li> <a href="#getSceneCenter">getSceneCenter()</a> </li>
+                         
+                              
+                             <li> <a href="#getTextureForMesh">getTextureForMesh(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#loadModel">loadModel(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#optimizeScene">optimizeScene()</a> </li>
+                         
+                              
+                             <li> <a href="#setAnimation">setAnimation(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setNormalizationFactor">setNormalizationFactor(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setNormalizedTime">setNormalizedTime(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setPosition">setPosition(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setRotation">setRotation(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setScale">setScale(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setScaleNomalization">setScaleNomalization(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setTime">setTime(...)</a> </li>
+                         
+                         
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofxAssimpModelLoader methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="calculateDimensions">calculateDimensions()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::calculateDimensions()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="clear">clear()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::clear()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="createEmptyModel">createEmptyModel()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::createEmptyModel()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="createLightsFromAiModel">createLightsFromAiModel()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::createLightsFromAiModel()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="disableColors">disableColors()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::disableColors()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="disableMaterials">disableMaterials()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::disableMaterials()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="disableNormals">disableNormals()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::disableNormals()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="disableTextures">disableTextures()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::disableTextures()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="draw">draw(...)</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::draw(ofPolyRenderMode renderType)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="drawFaces">drawFaces()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::drawFaces()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="drawVertices">drawVertices()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::drawVertices()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="drawWireframe">drawWireframe()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::drawWireframe()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="enableColors">enableColors()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::enableColors()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="enableMaterials">enableMaterials()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::enableMaterials()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="enableNormals">enableNormals()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::enableNormals()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="enableTextures">enableTextures()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::enableTextures()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getAnimationCount">getAnimationCount()</a></h1>
+	<h2>
+  <p>unsigned int ofxAssimpModelLoader::getAnimationCount()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getAssimpScene">getAssimpScene()</a></h1>
+	<h2>
+  <p>const aiScene * ofxAssimpModelLoader::getAssimpScene()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getCurrentAnimatedMesh">getCurrentAnimatedMesh(...)</a></h1>
+	<h2>
+  <p>ofMesh ofxAssimpModelLoader::getCurrentAnimatedMesh(string name)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getCurrentAnimatedMesh">getCurrentAnimatedMesh(...)</a></h1>
+	<h2>
+  <p>ofMesh ofxAssimpModelLoader::getCurrentAnimatedMesh(int num)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getDuration">getDuration(...)</a></h1>
+	<h2>
+  <p>float ofxAssimpModelLoader::getDuration(int animation)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMaterialForMesh">getMaterialForMesh(...)</a></h1>
+	<h2>
+  <p>ofMaterial ofxAssimpModelLoader::getMaterialForMesh(string name)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMaterialForMesh">getMaterialForMesh(...)</a></h1>
+	<h2>
+  <p>ofMaterial ofxAssimpModelLoader::getMaterialForMesh(int num)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMesh">getMesh(...)</a></h1>
+	<h2>
+  <p>ofMesh ofxAssimpModelLoader::getMesh(string name)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMesh">getMesh(...)</a></h1>
+	<h2>
+  <p>ofMesh ofxAssimpModelLoader::getMesh(int num)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMeshNames">getMeshNames()</a></h1>
+	<h2>
+  <p>vector&lt; string &gt; ofxAssimpModelLoader::getMeshNames()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getNormalizedScale">getNormalizedScale()</a></h1>
+	<h2>
+  <p>float ofxAssimpModelLoader::getNormalizedScale()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getNumMeshes">getNumMeshes()</a></h1>
+	<h2>
+  <p>int ofxAssimpModelLoader::getNumMeshes()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getPosition">getPosition()</a></h1>
+	<h2>
+  <p>ofPoint ofxAssimpModelLoader::getPosition()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getScale">getScale()</a></h1>
+	<h2>
+  <p>ofPoint ofxAssimpModelLoader::getScale()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getSceneCenter">getSceneCenter()</a></h1>
+	<h2>
+  <p>ofPoint ofxAssimpModelLoader::getSceneCenter()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getTextureForMesh">getTextureForMesh(...)</a></h1>
+	<h2>
+  <p>ofTexture ofxAssimpModelLoader::getTextureForMesh(string name)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getTextureForMesh">getTextureForMesh(...)</a></h1>
+	<h2>
+  <p>ofTexture ofxAssimpModelLoader::getTextureForMesh(int num)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="loadModel">loadModel(...)</a></h1>
+	<h2>
+  <p>bool ofxAssimpModelLoader::loadModel(string modelName, bool optimize=true)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="loadModel">loadModel(...)</a></h1>
+	<h2>
+  <p>bool ofxAssimpModelLoader::loadModel(ofBuffer &amp;buffer, bool optimize=true, const char *extension="")</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="optimizeScene">optimizeScene()</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::optimizeScene()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setAnimation">setAnimation(...)</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::setAnimation(int anim)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setNormalizationFactor">setNormalizationFactor(...)</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::setNormalizationFactor(float factor)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setNormalizedTime">setNormalizedTime(...)</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::setNormalizedTime(float time)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setPosition">setPosition(...)</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::setPosition(float x, float y, float z)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setRotation">setRotation(...)</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::setRotation(int which, float angle, float rot_x, float rot_y, float r_z)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setScale">setScale(...)</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::setScale(float x, float y, float z)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setScaleNomalization">setScaleNomalization(...)</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::setScaleNomalization(bool normalize)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setTime">setTime(...)</a></h1>
+	<h2>
+  <p>void ofxAssimpModelLoader::setTime(float time)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:35 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

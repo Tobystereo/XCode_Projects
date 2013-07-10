@@ -1,0 +1,1971 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofVec3f</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p><code>ofVec3f</code> is a class for storing a three dimensional vector. </p>
+<p>Moving through space requires knowledge of where things are and where they are going. Vector Maths is the class of mathematics that gives us control over these things in space, allowing for elegant and intuitive descriptions of complex structures and movement. Vectors are at the heart of animations, particle systems, and 2D and 3D graphics.</p>
+<p>Vectors in mathematics in general are entities with magnitude (also called length) and direction. A vector whose magnitude is 1 (ie a vector that is <em>normalized</em>) is called a <em>unit vector</em>. Unit vectors are very handy for storing directions as they can be easily scaled up (or down) to represent motion in a particular direction with a particular length.</p>
+<p><em>You will also see the term <code>vector</code> used to describe an array of objects in C++ (such as text strings). Don't let this confuse you, they are quite different: one of them is a mathematical term for a fixed-length list of numbers that you can do mathematical operations on, the other is a C++-specific term that means 'dynamically sizeable array'.</em></p>
+<p><code>ofVec3f</code> has three member variables, <code>x</code>, <code>y</code>, and <code>z</code>, which allow to conveniently store 3D properties of an object such as its position, velocity, or acceleration. </p>
+<pre><code class="cpp">ofVec3f v1; // v1.x is 0, v1.y is 0, v1.z is 0
+v1.set(10, 50, 80); // now v1.x is 10, v1.y is 50, v1.z is 80
+</code></pre>
+
+<p>Using <code>ofVec3f</code> greatly simplifies arithmetic operations in three dimensions. For example if you have two vectors <code>v1</code> and <code>v2</code>, both of which represent a 3D change in position, you can find the total change of position of both of them just by doing an addition <code>v1 + v2</code>:</p>
+<pre><code class="cpp">ofVec3f v1(5, 2, 1); 
+// so now v1 represents walking 5 steps forward then 2 steps 
+// sideways then 1 step upwards
+ofVec3f v2;
+v2.set(1, 1, 1); 
+// so now v2 represents walking 1 step forward then 1 step 
+// sideways then 1 step upwards
+
+// what happens if you do v1 followed by v2?
+// to find out just add v1 and v2 together:
+ofVec3f result = v1 + v2; 
+// result is (6, 3, 1), or 6 steps forward then 3 steps sideways
+// then 2 steps upwards
+</code></pre>
+
+<p>You can scale an <code>ofVec3f</code> by multiplying it with a float:</p>
+<pre><code class="cpp">// walk 5 steps forward then 2 steps sideways then 1 step upwards
+ofVec3f v1(5, 2, 1); 
+// what happens if we do v1 three times?
+ofVec3f result = v1 * 3; // result is (15, 6, 3), or 
+// 15 steps forward, 6 steps sideways and 3 steps upwards
+
+</code></pre>
+
+<p>This also works for subtraction and division.</p>
+<p>As you can see this really makes dealing with vectors as easy as dealing with single <code>float</code>s or <code>int</code>s, and can reduce the number of lines of code you have to write by half, at the same time making your code much easier to read and understand! </p>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#align">align(...)</a> </li>
+                         
+                              
+                             <li> <a href="#alignRad">alignRad(...)</a> </li>
+                         
+                              
+                             <li> <a href="#angle">angle(...)</a> </li>
+                         
+                              
+                             <li> <a href="#angleRad">angleRad(...)</a> </li>
+                         
+                              
+                             <li> <a href="#average">average(...)</a> </li>
+                         
+                              
+                             <li> <a href="#cross">cross(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#distance">distance(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#dot">dot(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getCrossed">getCrossed(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getInterpolated">getInterpolated(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getLimited">getLimited(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getMapped">getMapped(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getMiddle">getMiddle(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getNormalized">getNormalized()</a> </li>
+                         
+                              
+                             <li> <a href="#getPerpendicular">getPerpendicular(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#getRotated">getRotated(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#getRotatedRad">getRotatedRad(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#getScaled">getScaled(...)</a> </li>
+                         
+                              
+                             <li> <a href="#interpolate">interpolate(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#isAligned">isAligned(...)</a> </li>
+                         
+                              
+                             <li> <a href="#isAlignedRad">isAlignedRad(...)</a> </li>
+                         
+                              
+                             <li> <a href="#length">length()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#limit">limit(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#map">map(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#match">match(...)</a> </li>
+                         
+                              
+                             <li> <a href="#middle">middle(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#normalize">normalize()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#one">one()</a> </li>
+                         
+                              
+                             <li> <a href="#operator!=">operator!=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator*">operator*(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator*=">operator*=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator+">operator+(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator+=">operator+=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator-">operator-(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#operator-=">operator-=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator/">operator/(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator/=">operator/=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator==">operator==(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#perpendicular">perpendicular(...)</a> </li>
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#rotate">rotate(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#rotateRad">rotateRad(...)</a> </li>
+                         
+                         
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#scale">scale(...)</a> </li>
+                         
+                              
+                             <li> <a href="#set">set(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#squareDistance">squareDistance(...)</a> </li>
+                         
+                              
+                             <li> <a href="#squareLength">squareLength()</a> </li>
+                         
+                              
+                             <li> <a href="#zero">zero()</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+                <p class="top_list_header"><a href="#variables">class variables</a></p>
+                <ul class="functionslist">
+                             <li> <a href="#DIM">const int DIM</a> </li>
+                             <li> <a href="#x">float x</a> </li>
+                             <li> <a href="#y">float y</a> </li>
+                             <li> <a href="#z">float z</a> </li>
+                 </ul>
+            
+             
+            
+             <!-- list of functions -->              
+            <p class="top_list_header"><a href="#functions">functions</a></p>
+                <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#operator*">operator*(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator+">operator+(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator-">operator-(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator/">operator/(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator<<">operator<<(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator>>">operator>>(...)</a> </li>
+                         
+                 </ul>
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofVec3f methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="align">align(...)</a></h1>
+	<h2>
+  <p>bool ofVec3f::align(const ofVec3f &amp;vec, float tolerance=0.0001)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns <code>true</code> if this vector is pointing in the same direction as <code>vec</code>, with an angle error threshold <code>tolerance</code> in degrees (default 0.0001 degrees).</p>
+<pre><code class="cpp">ofVec3f v1 = ofVec3f(40, 20, 70);
+ofVec3f v2 = ofVec3f(4, 2, 7);
+// v1.align(v2, 0.0) is true
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="alignRad">alignRad(...)</a></h1>
+	<h2>
+  <p>bool ofVec3f::alignRad(const ofVec3f &amp;vec, float tolerance=0.0001)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns <code>true</code> if this vector is pointing in the same direction as <code>vec</code>, with an angle error threshold <code>tolerance</code> in radians (default 0.0001).</p>
+<pre><code class="cpp">ofVec3f v1 = ofVec3f(40, 20, 70);
+ofVec3f v2 = ofVec3f(4, 2, 7);
+// v1.align(v2, 0.0) is true
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="angle">angle(...)</a></h1>
+	<h2>
+  <p>float ofVec3f::angle(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Calculate and return the coplanar angle in degrees between this vector and <code>vec</code>.</p>
+<pre><code class="cpp">ofVec3f v1(1,0,0);
+ofVec3f v2(0,1,0);
+float angle = v1.angle(v2); // angle is 90
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="angleRad">angleRad(...)</a></h1>
+	<h2>
+  <p>float ofVec3f::angleRad(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Calculate and return the coplanar angle in radians between this vector and <code>vec</code>.</p>
+<pre><code class="cpp">ofVec3f v1(1,0,0);
+ofVec3f v2(0,1,0);
+float angle = v1.angle(v2); // angle is 90
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="average">average(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::average(const ofVec3f *points, int num)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets this vector to be the average (<em>centre of gravity</em> or <em>centroid</em>) of a given array of <code>ofVec3f</code>s. <code>points</code> is the array of <code>ofVec3f</code>s and <code>num</code> specifies the number of <code>ofVec3f</code>s in the array.</p>
+<pre><code class="cpp">int numPoints = 10;
+ofVec3f points[numPoints];
+for ( int i=0; i&lt;numPoints; i++ ) {
+    points[i].set( ofRandom(0,100), ofRandom(0,100), ofRandom(0,100) );
+}
+ofVec3f centroid;
+centroid.average( points, numPoints ); 
+// centroid now is the centre of gravity/average of all the random points
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="cross">cross(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::cross(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set this vector to the cross product (vector product) of itself and <code>vec</code>. This is a binary operation on two vectors in three-dimensional space, which results in a vector that is perpendicular to both of the vectors being multiplied, and normal to the plane containing them. The name <em>cross product</em> is derived from the cross symbol X that is often used to designate this operation; the alternative name <em>vector product</em> emphasizes the vector (rather than scalar) nature of the result.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="distance">distance(...)</a></h1>
+	<h2>
+  <p>float ofVec3f::distance(const ofVec3f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Treats both this vector and <code>pnt</code> as points in 3D space, and calculates and returns the distance between them.</p>
+<pre><code class="cpp">ofVec3f p1(3, 4, 2);
+ofVec3f p2(6, 8, 5);
+float distance = p1.distance( p2 ); // distance is 5.8310
+</code></pre>
+
+<p><code>distance</code> involves a square root calculation, which is one of the slowest things you can do in programming. If you don't need an exact number but rather just a rough idea of distance (for example when finding the shortest distance of a bunch of points to a reference point, where it doesn't matter exactly what the distances are, you just want the shortest), you can use <a href="#squareDistance"><code>squareDistance</code></a> instead.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="dot">dot(...)</a></h1>
+	<h2>
+  <p>float ofVec3f::dot(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Calculate and return the dot product of this vector with <code>vec</code>.</p>
+<p><em>Dot product</em> (less commonly known as <em>Euclidean inner product</em>) expresses the angular relationship between two vectors. In other words it is a measure of how <em>parallel</em> two vectors are. If they are completely perpendicular the dot product is 0; if they are completely parallel their dot product is either 1 if they are pointing in the same direction, or -1 if they are pointing in opposite directions.</p>
+<p><img alt="DOT" src="../math/dotproduct.png" />
+Image courtesy of Wikipedia</p>
+<pre><code class="cpp">ofVec3f a1(1, 0, 0);
+ofVec3f b1(0, 0, 1); // 90 degree angle to a1
+dot = a1.dot(b1); // dot is 0, ie cos(90)
+
+ofVec3f a2(1, 0, 0); 
+ofVec3f b2(1, 1, 0); // 45 degree angle to a2
+b2.normalize(); // vectors should to be unit vectors (normalized)
+float dot = a2.dot(b2); // dot is 0.707, ie cos(45)
+
+ofVec3f a3(0, 1, 0);
+ofVec3f b3(0, -1, 0); // 180 degree angle to a3
+dot = a3.dot(b3); // dot is -1, ie cos(180)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getCrossed">getCrossed(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::getCrossed(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the cross product (vector product) of this vector and <code>vec</code>. This is a binary operation on two vectors in three-dimensional space, which results in a vector that is perpendicular to both of the vectors being multiplied, and normal to the plane containing them. The name <em>cross product</em> is derived from the cross symbol X that is often used to designate this operation; the alternative name <em>vector product</em> emphasizes the vector (rather than scalar) nature of the result.</p>
+<p><img alt="CROSS" src="../math/crossproduct.png" />
+Image courtesy of Wikipedia</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getInterpolated">getInterpolated(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::getInterpolated(const ofVec3f &amp;pnt, float p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Perform a linear interpolation of this vector's position towards <code>pnt</code> and return the interpolated vector without altering the original. <code>p</code> controls the amount to move towards <code>pnt</code>. <code>p</code> is normally between 0 and 1 and where 0 means stay the original position and 1 means move all the way to <code>pnt</code>, but you can also have <code>p</code> greater than 1 overshoot <code>pnt</code>, or less than 0 to move backwards away from <code>pnt</code>.</p>
+<pre><code class="cpp">ofVec3f v1(0, 5, 0);
+ofVec3f v2(10, 10, 20);
+ofVec3f v3 = v1.getInterpolated(p2, 0.5); // v3 is (5, 7.5, 10)
+ofVec3f v4 = v1.getInterpolated(p2, 0.8); // v4 is (8, 9, 16)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getLimited">getLimited(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::getLimited(float max)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a copy of this vector with its length (magnitude) restricted to a maximum of <code>max</code> units by scaling down if necessary.</p>
+<pre><code class="cpp">ofVec3f v1(5, 0, 1); // length is about 5.1
+ofVec3f v2(2, 0, 1); // length is about 2.2
+ofVec3f v1Limited = v1.getLimited(3); 
+// v1Limited is (2.9417, 0, 0.58835) which has length of 3 in the same direction as v1
+ofVec3f v2Limited = v2.getLimited(3);
+// v2Limited is (2, 0, 1) (same as v2)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMapped">getMapped(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::getMapped(const ofVec3f &amp;origin, const ofVec3f &amp;vx, const ofVec3f &amp;vy, const ofVec3f &amp;vz)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec3f</code> calculated by copying this vector and then mapping from its default coordinate system -- origin (0,0,0), X direction (1,0,0), Y direction (0,1,0), Z direction (0,0,1) -- to a new coordinate system defined with origin at <code>origin</code>, X direction <code>vx</code>, and Y direction <code>vy</code>, and Z direction <code>vz</code>.</p>
+<p><em>In most cases you want <code>vx</code>, <code>vy</code>, and <code>vz</code> to be perpendicular and of unit length; if they are not perpendicular you will have shearing as part of the mapping, and if they are not of unit length you will have scaling as part of the mapping.</em></p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMiddle">getMiddle(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::getMiddle(const ofVec3f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Calculate and return the midpoint between this vector and <code>pnt</code>.</p>
+<pre><code class="cpp">ofVec3f v1(5, 0, 0);
+ofVec3f v2(10, 10, 20);
+ofVec3f mid = v1.getMiddle(v2); // mid gets (7.5, 5, 10)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getNormalized">getNormalized()</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::getNormalized()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a normalized copy of this vector. </p>
+<p><em>Normalization</em> means to scale the vector so that its length (magnitude) is exactly 1, at which stage all that is left is the direction. A normalized vector is usually called a <em>unit vector</em>, and can be used to represent a pure direction (heading).</p>
+<pre><code class="cpp">ofVec3f v1(5, 0, 0);
+ofVec3f v1Normalized = v1.getNormalized(); // (1, 0, 0)
+ofVec3f v2(5, 0, 5);
+ofVec3f v2Normalized = v2.getNormalized(); // (√2, 0, √2)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getPerpendicular">getPerpendicular(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::getPerpendicular(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Construct a plane using this vector and <code>vec</code> (by finding the plane that both lectors lie on), and return the vector that is perpendicular to that plane (the normal to that plane).</p>
+<pre><code class="cpp">ofSetLogLevel(OF_LOG_NOTICE);
+ofVec3f v1(1,0,0);
+ofVec3f v2(0,1,0);
+ofVec3f p = v1.getPerpendicular(v2);
+ofLog(OF_LOG_NOTICE, &quot;%1.1f, %1.1f, %1.1f\n&quot;, p.x, p.y, p.z);
+// prints &quot;0.0, 0.0, 1.0&quot;
+</code></pre>
+
+<p>This method is usually used to calculate a normal vector to a surface, which can then be used to calculate lighting, collisions, and other 3D effects.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getRotated">getRotated(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::getRotated(float angle, const ofVec3f &amp;axis)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec3f</code> that is the result of rotating this vector by <code>angle</code> degrees around the given axis.</p>
+<pre><code class="cpp">ofVec3f v1(1, 0, 0);
+// rotate v1 around the z axis
+ofVec3f v2 = v1.getRotated(45, ofVec3f(0, 0, 1)); // v2 is (√2, √2, 0)
+// rotate v1 around the y axis
+ofVec3f v3 = v1.getRotated(45, ofVec3f(0, 1, 0)); // v3 is (√2, 0, √2)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getRotated">getRotated(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::getRotated(float ax, float ay, float az)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Make a copy of this vector and perform an Euler rotation of the copy around three axes: <code>ax</code> degrees about the x axis, <code>ay</code> about the y axis and <code>az</code> about the z axis. Return the copy.</p>
+<pre><code class="cpp">ofVec3f v1( 1, 0, 0 );
+ofVec3f v2 = v1.getRotated( 0, 0, 90 ); // v is now (0, 1, 0)
+ofVec3f v3 = v1.getRotated( 45, 0, 0 ); // v is now (0, √2, √2)
+</code></pre>
+
+<p>Watch out for gimbal lock when specifying multiple rotations in the same call.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getRotatedRad">getRotatedRad(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::getRotatedRad(float angle, const ofVec3f &amp;axis)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec3f</code> that is the result of rotating this vector by <code>angle</code> radians around the given axis.</p>
+<pre><code class="cpp">ofVec3f v1(1, 0, 0);
+// rotate v1 around the z axis
+ofVec3f v2 = v1.getRotated(PI/4, ofVec3f(0, 0, 1)); // v2 is (√2, √2, 0)
+// rotate v1 around the y axis
+ofVec3f v3 = v1.getRotated(PI/4, ofVec3f(0, 1, 0)); // v3 is (√2, 0, √2)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getRotatedRad">getRotatedRad(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::getRotatedRad(float ax, float ay, float az)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Make a copy of this vector and perform an Euler rotation of the copy around three axes: <code>ax</code> radians about the x axis, <code>ay</code> about the y axis and <code>az</code> about the z axis. Return the copy.</p>
+<pre><code class="cpp">ofVec3f v1( 1, 0, 0 );
+ofVec3f v2 = v1.getRotatedRad( 0, 0, HALF_PI ); // v is now (0, 1, 0)
+ofVec3f v3 = v1.getRotatedRad( PI/4, 0, 0 ); // v is now (0, √2, √2)
+</code></pre>
+
+<p>Watch out for gimbal lock when specifying multiple rotations in the same call.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getRotatedRad">getRotatedRad(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::getRotatedRad(float angle, const ofVec3f &amp;pivot, const ofVec3f &amp;axis)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec3f</code> that is the result of rotating this vector by <code>angle</code> radians around the axis specified by <code>axis</code>, using <code>pivot</code> as the origin of rotation.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getScaled">getScaled(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::getScaled(const float length)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec3f</code> that is the result of scaling this vector up or down so that it has the requested length.</p>
+<pre><code class="cpp">ofVec3f v1(3, 4); // length is 5
+ofVec3f v2 = v1.getScaled(15); // v2 is (9, 12), which has length of 15
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="interpolate">interpolate(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::interpolate(const ofVec3f &amp;pnt, float p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Perform a linear interpolation of this vector's position towards <code>pnt</code>. <code>p</code> controls the amount to move towards <code>pnt</code>. <code>p</code> is normally between 0 and 1 and where 0 means stay the original position and 1 means move all the way to <code>pnt</code>, but you can also have <code>p</code> greater than 1 overshoot <code>pnt</code>, or less than 0 to move backwards away from <code>pnt</code>.</p>
+<pre><code class="cpp">ofVec3f v1( 0, 5, 0 );
+ofVec3f v2( 10, 10, 20 );
+// go go gadget zeno
+v1.interpolate( v2, 0.5 ); // v1 is now (5, 7.5, 10)
+v1.interpolate( v2, 0.5 ); // v1 is now (7.5, 8.75, 15)
+v1.interpolate( v2, 0.5 ); // v1 is now (8.75, 9.375, 17.5)
+v1.interpolate( v2, 0.5 ); // v1 is now (9.375, 9.6875, 18.75)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isAligned">isAligned(...)</a></h1>
+	<h2>
+  <p>bool ofVec3f::isAligned(const ofVec3f &amp;vec, float tolerance=0.0001)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isAlignedRad">isAlignedRad(...)</a></h1>
+	<h2>
+  <p>bool ofVec3f::isAlignedRad(const ofVec3f &amp;vec, float tolerance=0.0001)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="length">length()</a></h1>
+	<h2>
+  <p>float ofVec3f::length()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return the length (magnitude) of this vector.</p>
+<pre><code class="cpp">ofVec3f v(3, 4, 1);
+float len = v.length(); // len is 5.0990
+</code></pre>
+
+<p><code>length</code> involves a square root calculation, which is one of the slowest things you can do in programming. If you don't need an exact number but rather just a rough idea of a length (for example when finding the shortest distance of a bunch of points to a reference point, where it doesn't matter exactly what the lengths are, you just want the shortest), you can use <a href="#squareLength"><code>squareLength</code></a> instead.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="limit">limit(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::limit(float max)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Restrict the length (magnitude) of this vector to a maximum of <code>max</code> units by scaling down if necessary.</p>
+<pre><code class="cpp">ofVec3f v1(5, 0, 1); // length is about 5.1
+ofVec3f v2(2, 0, 1); // length is about 2.2
+v1.limit(3); 
+// v1 is now (2.9417, 0, 0.58835) which has length of 3 in the same direction as at initialization
+v2.limit(3);
+// v2 is unchanged
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="map">map(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::map(const ofVec3f &amp;origin, const ofVec3f &amp;vx, const ofVec3f &amp;vy, const ofVec3f &amp;vz)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Map this vector from its default coordinate system -- origin (0,0,0), X direction (1,0,0), Y direction (0,1,0), Z direction (0,0,1) -- to a new coordinate system defined with origin at <code>origin</code>, X direction <code>vx</code>, and Y direction <code>vy</code>, and Z direction <code>vz</code>.</p>
+<p><em>In most cases you want <code>vx</code>, <code>vy</code>, and <code>vz</code> to be perpendicular and of unit length; if they are not perpendicular you will have shearing as part of the mapping, and if they are not of unit length you will have scaling as part of the mapping.</em></p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="match">match(...)</a></h1>
+	<h2>
+  <p>bool ofVec3f::match(const ofVec3f &amp;vec, float tolerance=0.0001)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Let you check if two vectors are similar given a tolerance threshold <code>tolerance</code> (default = 0.0001). </p>
+<pre><code class="cpp">ofVec3f v1 = ofVec3f(40, 20, 70);
+ofVec3f v2 = ofVec3f(40.01, 19.999, 70.05);
+// v1.match(v2, 0.1) is true
+// v1.match(v2, 0.01) is false (because (70.5-70) &gt; 0.01)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="middle">middle(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::middle(const ofVec3f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set this vector to the midpoint between itself and <code>pnt</code>.</p>
+<pre><code class="cpp">ofVec3f v1( 0, 5, 0 );
+ofVec3f v2( 10, 10, 20);
+// go go gadget zeno
+v1.middle( v2 ); // v1 is now (5, 7.5, 10)
+v1.middle( v2 ); // v1 is now (7.5, 8.75, 15)
+v1.middle( v2 ); // v1 is now (8.75, 9.375, 17.5)
+v1.middle( v2 ); // v1 is now (9.375, 9.6875, 18.75)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="normalize">normalize()</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::normalize()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Normalize the vector.</p>
+<p><em>Normalizing</em> means to scale the vector so that its length (magnitude) is exactly 1, at which stage all that is left is the direction. A normalized vector is usually called a <em>unit vector</em>, and can be used to represent a pure direction (heading).</p>
+<pre><code class="cpp">ofVec3f v1(5, 0, 0);
+v1.normalize(); // v2 is now (1, 0, 0)
+ofVec3f v2(5, 0, 5);
+v2.normalize(); // v2 is now (√2, 0, √2)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="one">one()</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::one()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator!=">operator!=(...)</a></h1>
+	<h2>
+  <p>bool ofVec3f::operator!=(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns <code>true</code> if any component is different to its corresponding component in <code>vec</code>, ie if <code>x != vec.x</code> or <code>y != vec.y</code> or <code>z != vec.z</code>; otherwise returns <code>false</code>.</p>
+<pre><code class="cpp">ofVec3f v1(40, 20, 10); 
+ofVec3f v2(50, 20, 40); 
+ofVec3f v3(40, 20, 10); 
+// ( v1 != v2 ) is true
+// ( v1 != v3 ) is false
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*">operator*(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator*(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns a new vector (<code>x</code><em><code>vec.x</code>,<code>y</code></em><code>vec.y</code>,<code>z</code>*<code>vec.z</code>).</p>
+<pre><code class="cpp">ofVec3f v1 = ofVec3f(40, 20, 10); 
+ofVec3f v2 = ofVec3f(2, 4, 10);
+ofVec3f v3 = v1 * v2; // (80, 80, 100)
+</code></pre>
+
+<p>Useful for scaling a 3D point by a non-uniform scale.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*">operator*(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator*(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec3f</code> that is this vector scaled by multiplying <code>x</code>, <code>y</code>, <code>z</code> members by <code>f</code>.</p>
+<pre><code class="cpp">ofVec3f v1(2, 5, 1);
+ofVec3f v2 = v1 * 4; // (8, 20, 4)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*=">operator*=(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator*=(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Multiplies <code>x</code> by <code>vec.x</code>, and multiplies <code>y</code> by <code>vec.y</code>, and multiplies <code>z</code> by <code>vec.z</code>.</p>
+<pre><code class="cpp">ofVec3f v1 = ofVec3f(40, 20, 10); 
+ofVec3f v2 = ofVec3f(2, 4, 10);
+v1 *= v2; // v1 is now (80, 80, 100)
+</code></pre>
+
+<p>Useful for scaling a 3D point by a non-uniform scale.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*=">operator*=(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator*=(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Scale this vector by multiplying <code>x</code>, <code>y</code> and <code>z</code> members by <code>f</code>.</p>
+<pre><code class="cpp">ofVec3f v1(2, 5, 1);
+v1 *= 4; // (8, 20, 4)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator+(const ofVec3f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Super easy vector addition. Returns a new vector (<code>x</code>+<code>vec.x</code>,<code>y</code>+<code>vec.y</code>,<code>z</code>+<code>vec.z</code>).</p>
+<pre><code class="cpp">ofVec3f v1 = ofVec3f(40, 20, 10); 
+ofVec3f v2 = ofVec3f(25, 50, 10);
+ofVec3f v3 = v1 + v2; // v3 is (65, 70, 20)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator+(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns a new vector with a float value <code>f</code> added to <code>x</code>, <code>y</code> and <code>z</code> members.</p>
+<pre><code class="cpp">ofVec3f v1(2, 5, 1);
+ofVec3f v2 = v1 + 10; // (12, 15, 11)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+=">operator+=(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator+=(const ofVec3f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Super easy addition assignment. Adds <code>vec.x</code> to <code>x</code>, adds <code>vec.y</code> to <code>y</code> and adds <code>vec.z</code> to <code>z</code>.</p>
+<pre><code class="cpp">ofVec3f v1 = ofVec3f(40, 20, 10); 
+ofVec3f v2 = ofVec3f(25, 50, 10);
+v1 += v2; // v1 is (65, 70, 20)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+=">operator+=(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator+=(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds a float value <code>f</code> to <code>x</code>, <code>y</code> and <code>z</code> members.</p>
+<pre><code class="cpp">ofVec3f v1(2, 5, 1);
+v1 += 10; // (12, 15, 11)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator-(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Super easy vector subtraction. Returns a new vector (<code>x</code>-<code>vec.x</code>,<code>y</code>-<code>vec.y</code>,<code>z</code>-<code>vec.z</code>).</p>
+<pre><code class="cpp">ofVec3f v1 = ofVec3f(40, 20, 10); 
+ofVec3f v2 = ofVec3f(25, 50, 10);
+ofVec3f v3 = v1 - v2; // v3 is (15, -30, 0)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator-(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns a new vector with a float value <code>f</code> subtracted from <code>x</code>, <code>y</code> and <code>z</code> members.</p>
+<pre><code class="cpp">ofVec3f v1(2, 5, 1);
+ofVec3f v2 = v1 - 10; // (-8, -5, -9)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-()</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator-()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns a new <code>ofVec3f</code> that is the inverted version (mirrored in X, Y and Z) of this vector.</p>
+<pre><code class="cpp">ofVec3f v1(2, 5, 1);
+ofVec3f v2 = -v1; // (-2, -5, -1)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-=">operator-=(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator-=(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Super easy subtraction assignment. Subtracts <code>vec.x</code> from <code>x</code>, subtracts <code>vec.y</code> from <code>y</code> and subtracts <code>vec.z</code> from <code>z</code>.</p>
+<pre><code class="cpp">ofVec3f v1 = ofVec3f(40, 20, 10); 
+ofVec3f v2 = ofVec3f(25, 50, 10);
+v1 -= v2; // v1 is (15, -30, 0)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-=">operator-=(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator-=(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Subtract a float value <code>f</code> from <code>x</code>, <code>y</code>, and <code>z</code> members.</p>
+<pre><code class="cpp">ofVec3f v1(2, 5, 1);
+v1 -= 10; // (-8, -5, -9)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/">operator/(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator/(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns a new vector (<code>x</code>/<code>vec.x</code>,<code>y</code>/<code>vec.y</code>,<code>z</code>/<code>vec.z</code>).</p>
+<pre><code class="cpp">ofVec3f v1 = ofVec3f(40, 20, 10); 
+ofVec3f v2 = ofVec3f(2, 4, 10);
+ofVec3f v3 = v1 / v2; // (20, 5, 1)
+</code></pre>
+
+<p>Useful for scaling a 3D point by a non-uniform scale.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/">operator/(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator/(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec3f</code> that is this vector scaled by dividing <code>x</code>, <code>y</code> and <code>z</code> members by <code>f</code>.</p>
+<pre><code class="cpp">ofVec3f v1(2, 5, 1);
+ofVec3f v2 = v1 / 4; // (0.5, 1.25, 0.25)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/=">operator/=(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator/=(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Divides <code>x</code> by <code>vec.x</code>, divides <code>y</code> by <code>vec.y</code>, and divides <code>z</code> by <code>vec.z</code>.</p>
+<pre><code class="cpp">ofVec3f v1 = ofVec3f(40, 20, 10); 
+ofVec3f v2 = ofVec3f(2, 4, 10);
+v1 *= v2; // v1 is now (20, 5, 1)
+</code></pre>
+
+<p>Useful for scaling a 3D point by a non-uniform scale.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/=">operator/=(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::operator/=(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Scale this vector by dividing <code>x</code>, <code>y</code> and <code>z</code> members by <code>f</code>.</p>
+<pre><code class="cpp">ofVec3f v1(2, 5, 1);
+v1 /= 4; // (0.5, 1.25, 0.25)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator==">operator==(...)</a></h1>
+	<h2>
+  <p>bool ofVec3f::operator==(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns <code>true</code> if each component is the same as the corresponding component in <code>vec</code>, ie if <code>x == vec.x</code> and <code>y == vec.y</code> and <code>z == vec.z</code>; otherwise returns <code>false</code>. But you should probably be using <a href="#match"><code>match</code></a> instead.</p>
+<pre><code class="cpp">ofVec3f v1(40, 20, 10); 
+ofVec3f v2(50, 30, 10); 
+ofVec3f v3(40, 20, 10); 
+// ( v1 == v2 ) is false
+// ( v1 == v3 ) is true
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="perpendicular">perpendicular(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::perpendicular(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Construct a plane using this vector and <code>vec</code> (by finding the plane that both lie on), and set our <code>x</code>, <code>y</code> and <code>z</code> to be the vector that is perpendicular to the constructed plane (the normal to the plane).</p>
+<pre><code class="cpp">ofSetLogLevel(OF_LOG_NOTICE);
+ofVec3f v1(1,0,0);
+ofVec3f v2(0,1,0); 
+v1.perpendicular(v2); 
+ofLog(OF_LOG_NOTICE, &quot;%1.1f, %1.1f, %1.1f\n&quot;, v1.x, v1.y, v1.z);
+// prints &quot;0.0, 0.0, 1.0'
+</code></pre>
+
+<p>This method is usually used to calculate a normal vector to a surface, which can then be used to calculate lighting, collisions, and other 3D effects.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="rotate">rotate(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::rotate(float angle, const ofVec3f &amp;axis)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec3f</code> that is the result of rotating this vector by <code>angle</code> degrees around the given axis.</p>
+<pre><code class="cpp">ofVec3f v1(1, 0, 0);
+// rotate v1 around the z axis
+v1.rotate(45, ofVec3f(0, 0, 1)); // v2 is (√2, √2, 0)
+
+v1.set(1, 0, 0);
+// then rotate around the y axis
+v1.rotate(45, ofVec3f(0, 1, 0)); // v3 is (√2, 0, √2)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="rotate">rotate(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::rotate(float ax, float ay, float az)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Perform an Euler rotation of this vector around three axes: <code>ax</code> degrees about the x axis, <code>ay</code> about the y axis and <code>az</code> about the z axis. </p>
+<pre><code class="cpp">ofVec3f v( 1, 0, 0 );
+v.rotate( 0, 0, 90 ); // v is now (0, 1, 0)
+v.rotate( 45, 0, 0 ); // v is now (0, √2, √2)
+</code></pre>
+
+<p>Watch out for gimbal lock when specifying multiple rotations in the same call.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="rotate">rotate(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::rotate(float angle, const ofVec3f &amp;pivot, const ofVec3f &amp;axis)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Rotate this vector by <code>angle</code> degrees around the axis specified by <code>axis</code>, using <code>pivot</code> as the origin of rotation.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="rotateRad">rotateRad(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::rotateRad(float angle, const ofVec3f &amp;axis)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec3f</code> that is the result of rotating this vector by <code>angle</code> degrees around the given axis.</p>
+<pre><code class="cpp">ofVec3f v1(1, 0, 0);
+// rotate v1 around the z axis
+v1.rotate(45, ofVec3f(0, 0, 1)); // v2 is (√2, √2, 0)
+
+v1.set(1, 0, 0);
+// then rotate around the y axis
+v1.rotate(45, ofVec3f(0, 1, 0)); // v3 is (√2, 0, √2)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="rotateRad">rotateRad(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::rotateRad(float ax, float ay, float az)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Perform an Euler rotation of this vector around three axes: <code>ax</code> radians about the x axis, <code>ay</code> about the y axis and <code>az</code> about the z axis. </p>
+<pre><code class="cpp">ofVec3f v( 1, 0, 0 );
+v.rotateRad( 0, 0, HALF_PI ); // v is now (0, 1, 0)
+v.rotateRad( PI/4, 0, 0 ); // v is now (0, √2, √2)
+</code></pre>
+
+<p>Watch out for gimbal lock when specifying multiple rotations in the same call.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="rotateRad">rotateRad(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::rotateRad(float angle, const ofVec3f &amp;pivot, const ofVec3f &amp;axis)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Rotate this vector by <code>angle</code> radians around the axis specified by <code>axis</code>, using <code>pivot</code> as the origin of rotation.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scale">scale(...)</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::scale(const float length)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Scales this vector up or down so that it has the requested length.</p>
+<pre><code class="cpp">ofVec3f v1(3, 4); // length is 5
+v1.scale(15); // v1 is now (9, 12), which has length of 15
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofVec3f::set(float _x, float _y, float _z=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set <code>x</code>, <code>y</code> and <code>z</code> components of this vector with just one function call. <code>z</code> is optional, it defaults to 0.</p>
+<pre><code class="cpp">ofVec3f v1;
+v1.set(40, 20, 70);
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofVec3f::set(const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Setting the values by using other 3 dimension vector (<code>ofVec3f</code>).</p>
+<pre><code class="cpp">ofVec3f v1;
+ofVec3f v2;
+v1.set(40, 20, 70);
+v2.set(v1);
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofVec3f::set(float _scalar)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="squareDistance">squareDistance(...)</a></h1>
+	<h2>
+  <p>float ofVec3f::squareDistance(const ofVec3f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Treats both this vector and <code>pnt</code> as points in 3D space, and calculates and returns the squared distance between them.</p>
+<pre><code class="cpp">ofVec3f p1(3, 4, 2);
+ofVec3f p2(6, 8, 5);
+float distance = p1.distance( p2 ); // distance is 5.8310
+</code></pre>
+
+<p>Use as a much faster alternative to <a href="#distance"><code>distance</code></a> if you don't need to know an exact number but rather just a rough idea of distance (for example when finding the shortest distance of a bunch of points to a reference point, where it doesn't matter exactly what the distances are, you just want the shortest). It avoids the square root calculation that is ordinarily required to calculate a length.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="squareLength">squareLength()</a></h1>
+	<h2>
+  <p>float ofVec3f::squareLength()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return the squared length (squared magnitude) of this vector.</p>
+<pre><code class="cpp">ofVec3f v(3, 4, 1);
+float len = v.length(); // len is 5.0990
+</code></pre>
+
+<p>Use as a much faster alternative to <a href="#length"><code>length</code></a> if you don't need to know an accurate length but rather just a rough idea of a length (for example when finding the shortest distance of a bunch of points to a reference point, where it doesn't matter exactly what the lengths are, you just want the shortest). It avoids the square root calculation that is ordinarily required to calculate a length.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="zero">zero()</a></h1>
+	<h2>
+  <p>ofVec3f ofVec3f::zero()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+                  <h2><a name="variables"></a>ofVec3f variables</h2>
+                            
+<div class="documentation_detail">
+	<h1>const int <a name="DIM">DIM</a></h1>
+	<h2>
+  <p>const int ofVec3f::DIM</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="x">x</a></h1>
+	<h2>
+  <p>float ofVec3f::x</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Stores the X component of this vector.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="y">y</a></h1>
+	<h2>
+  <p>float ofVec3f::y</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Stores the Y component of this vector.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="z">z</a></h1>
+	<h2>
+  <p>float ofVec3f::z</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Stores the Z component of this vector.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- functions detail -->
+                  <h2><a name="functions"></a>ofVec3f functions</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*">operator*(...)</a></h1>
+	<h2>
+  <p>ofVec3f operator*(float f, const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofVec3f operator+(float f, const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-(...)</a></h1>
+	<h2>
+  <p>ofVec3f operator-(float f, const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/">operator/(...)</a></h1>
+	<h2>
+  <p>ofVec3f operator/(float f, const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator<<">operator<<(...)</a></h1>
+	<h2>
+  <p>ostream &amp; operator&lt;&lt;(ostream &amp;os, const ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator>>">operator>>(...)</a></h1>
+	<h2>
+  <p>istream &amp; operator&gt;&gt;(istream &amp;is, ofVec3f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:33 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

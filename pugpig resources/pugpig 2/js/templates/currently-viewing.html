@@ -1,0 +1,15 @@
+<h1><%= title %></h1>
+<% if ( summary !== '' ) { %>
+  <p>
+    <%= summary %>
+  </p>
+<% } %>
+<ul>
+  <% _.each( categories, function( category ) { %>
+    <% if( category.term !== '' ) { %>
+      <li>
+        <strong><%= category.scheme %>: </strong><%= category.term %>
+      </li>
+    <% } %>
+  <% }); %>
+</ul>

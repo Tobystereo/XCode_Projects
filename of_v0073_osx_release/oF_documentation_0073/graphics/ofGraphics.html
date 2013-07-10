@@ -1,0 +1,3192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofGraphics</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+            
+             
+             
+             <!-- list of variables -->              
+            
+             
+            
+             <!-- list of functions -->              
+            <p class="top_list_header"><a href="#functions">functions</a></p>
+                <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#ofBackground">ofBackground(...)</a> </li>
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofBackgroundGradient">ofBackgroundGradient()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofBackgroundHex">ofBackgroundHex(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofBeginSaveScreenAsPDF">ofBeginSaveScreenAsPDF(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofBeginShape">ofBeginShape()</a> </li>
+                         
+                              
+                             <li> <a href="#ofBezier">ofBezier(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofBezierVertex">ofBezierVertex(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofBgColorPtr">ofBgColorPtr()</a> </li>
+                         
+                              
+                             <li> <a href="#ofBox">ofBox(...)</a> </li>
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofCircle">ofCircle(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofClear">ofClear(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofClearAlpha">ofClearAlpha()</a> </li>
+                         
+                              
+                             <li> <a href="#ofCone">ofCone(...)</a> </li>
+                         
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofCurve">ofCurve(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofCurveVertex">ofCurveVertex(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofCurveVertices">ofCurveVertices(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofDisableAlphaBlending">ofDisableAlphaBlending()</a> </li>
+                         
+                              
+                             <li> <a href="#ofDisableBlendMode">ofDisableBlendMode()</a> </li>
+                         
+                              
+                             <li> <a href="#ofDisablePointSprites">ofDisablePointSprites()</a> </li>
+                         
+                              
+                             <li> <a href="#ofDisableSmoothing">ofDisableSmoothing()</a> </li>
+                         
+                              
+                             <li> <a href="#ofDrawBitmapString">ofDrawBitmapString(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofDrawBitmapStringHighlight">ofDrawBitmapStringHighlight(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofEllipse">ofEllipse(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofEnableAlphaBlending">ofEnableAlphaBlending()</a> </li>
+                         
+                              
+                             <li> <a href="#ofEnableBlendMode">ofEnableBlendMode(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofEnablePointSprites">ofEnablePointSprites()</a> </li>
+                         
+                              
+                             <li> <a href="#ofEnableSmoothing">ofEnableSmoothing()</a> </li>
+                         
+                              
+                             <li> <a href="#ofEndSaveScreenAsPDF">ofEndSaveScreenAsPDF()</a> </li>
+                         
+                              
+                             <li> <a href="#ofEndShape">ofEndShape(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofFill">ofFill()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetCoordHandedness">ofGetCoordHandedness()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetCurrentRenderer">ofGetCurrentRenderer()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetCurrentViewport">ofGetCurrentViewport()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetFill">ofGetFill()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetGLRenderer">ofGetGLRenderer()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetRectMode">ofGetRectMode()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetStyle">ofGetStyle()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetViewportHeight">ofGetViewportHeight()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetViewportWidth">ofGetViewportWidth()</a> </li>
+                         
+                              
+                             <li> <a href="#ofLine">ofLine(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofLoadIdentityMatrix">ofLoadIdentityMatrix(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofLoadMatrix">ofLoadMatrix(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofMultMatrix">ofMultMatrix(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofNextContour">ofNextContour(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofNoFill">ofNoFill()</a> </li>
+                         
+                              
+                             <li> <a href="#ofOrientationToDegrees">ofOrientationToDegrees(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofPopMatrix">ofPopMatrix()</a> </li>
+                         
+                              
+                             <li> <a href="#ofPopStyle">ofPopStyle()</a> </li>
+                         
+                              
+                             <li> <a href="#ofPopView">ofPopView()</a> </li>
+                         
+                              
+                             <li> <a href="#ofPushMatrix">ofPushMatrix()</a> </li>
+                         
+                              
+                             <li> <a href="#ofPushStyle">ofPushStyle()</a> </li>
+                         
+                              
+                             <li> <a href="#ofPushView">ofPushView()</a> </li>
+                         
+                              
+                             <li> <a href="#ofRect">ofRect(...)</a> </li>
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofRectRounded">ofRectRounded(...)</a> </li>
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofRotate">ofRotate(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofRotateX">ofRotateX(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofRotateY">ofRotateY(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofRotateZ">ofRotateZ(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofScale">ofScale(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetBackgroundAuto">ofSetBackgroundAuto(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetBackgroundColor">ofSetBackgroundColor(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofSetBackgroundColorHex">ofSetBackgroundColorHex(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetCircleResolution">ofSetCircleResolution(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetColor">ofSetColor(...)</a> </li>
+                         
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofSetCoordHandedness">ofSetCoordHandedness(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetCurrentRenderer">ofSetCurrentRenderer(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetCurveResolution">ofSetCurveResolution(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetDrawBitmapMode">ofSetDrawBitmapMode(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetHexColor">ofSetHexColor(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetLineWidth">ofSetLineWidth(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetPolyMode">ofSetPolyMode(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofSetRectMode">ofSetRectMode(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofSetSphereResolution">ofSetSphereResolution(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetStyle">ofSetStyle(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofSetupScreen">ofSetupScreen()</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetupScreenOrtho">ofSetupScreenOrtho(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetupScreenPerspective">ofSetupScreenPerspective(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSphere">ofSphere(...)</a> </li>
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofTranslate">ofTranslate(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofTriangle">ofTriangle(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofVertex">ofVertex(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#ofVertices">ofVertices(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofViewport">ofViewport(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#ofbClearBg">ofbClearBg()</a> </li>
+                         
+                 </ul>
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+              
+              <!-- vars detail -->
+              
+              <!-- functions detail -->
+                  <h2><a name="functions"></a>ofGraphics functions</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBackground">ofBackground(...)</a></h1>
+	<h2>
+  <p>void ofBackground(int r, int g, int b)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets the background color. It takes as input r,g,b (0-255). The background is cleared automatically, just before the draw() command, so if the background color is not changing, you could call this inside of setup() (once, at the start of the application). If the background color is changing, you can call this inside of update().</p>
+<pre><code class="cpp">void testApp::setup(){
+    ofBackground(255,0,0);  // Sets the background color to red
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBackground">ofBackground(...)</a></h1>
+	<h2>
+  <p>void ofBackground(int r, int g, int b, int a=255)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBackground">ofBackground(...)</a></h1>
+	<h2>
+  <p>void ofBackground(int brightness, int alpha=255)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBackground">ofBackground(...)</a></h1>
+	<h2>
+  <p>void ofBackground(const ofColor &amp;c)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBackgroundGradient">ofBackgroundGradient()</a></h1>
+	<h2>
+  <p>void ofBackgroundGradient()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>undocumented!!
+notfound:ofBackgroundGradient</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBackgroundGradient">ofBackgroundGradient(...)</a></h1>
+	<h2>
+  <p>void ofBackgroundGradient(const ofColor &amp;start, const ofColor &amp;end, ofGradientMode mode=OF_GRADIENT_CIRCULAR)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBackgroundHex">ofBackgroundHex(...)</a></h1>
+	<h2>
+  <p>void ofBackgroundHex(int hexColor, int alpha=255)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBeginSaveScreenAsPDF">ofBeginSaveScreenAsPDF(...)</a></h1>
+	<h2>
+  <p>void ofBeginSaveScreenAsPDF(string filename, bool bMultipage=false, bool b3D=false, ofRectangle viewport=ofRectangle(0, 0, 0, 0))</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBeginShape">ofBeginShape()</a></h1>
+	<h2>
+  <p>void ofBeginShape()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Call this to start drawing a new shape. Needs to be followed by a list of vertex points and lastly a call to ofEndShape().</p>
+<pre><code class="cpp">//draws a star
+ofSetPolyMode(OF_POLY_WINDING_NONZERO);
+ofBeginShape();
+  ofVertex(400,135);
+  ofVertex(215,135);
+  ofVertex(365,25);
+  ofVertex(305,200);
+  ofVertex(250,25);
+ofEndShape();
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBezier">ofBezier(...)</a></h1>
+	<h2>
+  <p>void ofBezier(float x0, float y0, float x1, float y1, float x2, float y2, float x3, float y3)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a bezier curve from point (x0, y0) to point (x3, y3). The curve is shaped by the two control points (x1,y1) and (x2,y2) in a way where they are the respective tangents for the line at either ends.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBezier">ofBezier(...)</a></h1>
+	<h2>
+  <p>void ofBezier(float x0, float y0, float z0, float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBezierVertex">ofBezierVertex(...)</a></h1>
+	<h2>
+  <p>void ofBezierVertex(float x1, float y1, float x2, float y2, float x3, float y3)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Describes a bezier curve through three points of a shape. To be called between ofBeginShape() and ofEndShape(). </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBezierVertex">ofBezierVertex(...)</a></h1>
+	<h2>
+  <p>void ofBezierVertex(const ofPoint &amp;p1, const ofPoint &amp;p2, const ofPoint &amp;p3)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBezierVertex">ofBezierVertex(...)</a></h1>
+	<h2>
+  <p>void ofBezierVertex(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBgColorPtr">ofBgColorPtr()</a></h1>
+	<h2>
+  <p>float * ofBgColorPtr()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Gets the current background color that is set by ofBackground() or default.
+eg:</p>
+<pre><code class="cpp">float * bgColor = ofBgColorPtr();
+//lets get the individual values!
+float r = bgColor[0];   //red
+float g = bgColor[1];   //green
+float b = bgColor[2];   //blue
+float a = bgColor[3];   //alpha
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBox">ofBox(...)</a></h1>
+	<h2>
+  <p>void ofBox(float x, float y, float z, float size)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a 3-dimensional box with equal sides (size) at the position of X and Y and Z.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofBox(50,50,-10,40);
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBox">ofBox(...)</a></h1>
+	<h2>
+  <p>void ofBox(float x, float y, float size)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a 3-dimensional box with equal sides (size) at the position of X and Y, at the current depth.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofBox(50,50,40);
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBox">ofBox(...)</a></h1>
+	<h2>
+  <p>void ofBox(const ofPoint &amp;position, float size)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a 3-dimensional box with equal sides (size) at the position of point.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofPoint p;
+    p.x = 50;
+    p.y = 50;
+    ofBox(p,40);
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofBox">ofBox(...)</a></h1>
+	<h2>
+  <p>void ofBox(float size)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a 3-dimensional box with equal sides at the current coordinate point.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofTranslate(50,50);
+    ofBox(40);
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofCircle">ofCircle(...)</a></h1>
+	<h2>
+  <p>void ofCircle(float x, float y, float radius)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a circle, centered at x,y, with a given radius.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofCircle(150,150,100);          
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofCircle">ofCircle(...)</a></h1>
+	<h2>
+  <p>void ofCircle(float x, float y, float z, float radius)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofCircle">ofCircle(...)</a></h1>
+	<h2>
+  <p>void ofCircle(const ofPoint &amp;p, float radius)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofClear">ofClear(...)</a></h1>
+	<h2>
+  <p>void ofClear(float r, float g, float b, float a=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofClear">ofClear(...)</a></h1>
+	<h2>
+  <p>void ofClear(float brightness, float a=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofClear">ofClear(...)</a></h1>
+	<h2>
+  <p>void ofClear(const ofColor &amp;c)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofClearAlpha">ofClearAlpha()</a></h1>
+	<h2>
+  <p>void ofClearAlpha()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofCone">ofCone(...)</a></h1>
+	<h2>
+  <p>void ofCone(float size)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>undocumented!</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofCone">ofCone(...)</a></h1>
+	<h2>
+  <p>void ofCone(float x, float y, float z, float radius, float height)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofCone">ofCone(...)</a></h1>
+	<h2>
+  <p>void ofCone(float x, float y, float radius, float height)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofCone">ofCone(...)</a></h1>
+	<h2>
+  <p>void ofCone(const ofPoint &amp;position, float radius, float height)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofCone">ofCone(...)</a></h1>
+	<h2>
+  <p>void ofCone(float radius, float height)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofCurve">ofCurve(...)</a></h1>
+	<h2>
+  <p>void ofCurve(float x0, float y0, float x1, float y1, float x2, float y2, float x3, float y3)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a curve from point (x1, y1) to point (x2, y2). The curve is shaped by the two control points (x0,y0) and (x3,y3).</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofCurve">ofCurve(...)</a></h1>
+	<h2>
+  <p>void ofCurve(float x0, float y0, float z0, float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a 3-dimensional curve from point (x1, y1, z1) to point (x2, y2, z2). The curve is shaped by the two control points (x0, y0, z0) and (x3, y3, z3).</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofCurveVertex">ofCurveVertex(...)</a></h1>
+	<h2>
+  <p>void ofCurveVertex(float x, float y)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Specifies a single point of a shape. The difference from ofVertex is that the line describing the edge of the shape between two points will be a curve as opposed to a straight line. The curve is automatically generated using the catmull rom forumla. To be called between ofBeginShape() and ofEndShape().</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofCurveVertex">ofCurveVertex(...)</a></h1>
+	<h2>
+  <p>void ofCurveVertex(ofPoint &amp;p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofCurveVertices">ofCurveVertices(...)</a></h1>
+	<h2>
+  <p>void ofCurveVertices(const vector&lt; ofPoint &gt; &amp;curvePoints)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofDisableAlphaBlending">ofDisableAlphaBlending()</a></h1>
+	<h2>
+  <p>void ofDisableAlphaBlending()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Turns off alpha blending. </p>
+<pre><code class="cpp">void testApp::draw(){
+    ofEnableAlphaBlending();    // turn on alpha blending
+    ofSetColor(255,0,0,127);    // red, 50% transparent
+    ofRect(20,20,100,100);      // draws the rect with alpha
+    ofDisableAlphaBlending();   // turn off alpha
+    ofRect(120,20,100,100); // draws the rect without alpha
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofDisableBlendMode">ofDisableBlendMode()</a></h1>
+	<h2>
+  <p>void ofDisableBlendMode()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofDisablePointSprites">ofDisablePointSprites()</a></h1>
+	<h2>
+  <p>void ofDisablePointSprites()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofDisableSmoothing">ofDisableSmoothing()</a></h1>
+	<h2>
+  <p>void ofDisableSmoothing()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Turns off smoothing. Currently, this only works for lines. You can draw a filled object, and then draw the outline with smoothing enabled to get smoothing effects on filled shapes.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofDrawBitmapString">ofDrawBitmapString(...)</a></h1>
+	<h2>
+  <p>void ofDrawBitmapString(string textString, float x, float y)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a bitmapped string, on screen, at point (x,y). For example, you can write some text on screen like this:</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofDrawBitmapString(&quot;hi!!&quot;, 100,100);
+}
+</code></pre>
+
+<p>Your strings can even be multiline:</p>
+<pre><code class="cpp">ofDrawBitmapString(&quot;a test
+of multiline
+text&quot;, 100,100);
+</code></pre>
+
+<p>you can also using dynamically generated strings. For example, to print the frame rate:</p>
+<pre><code class="cpp">string fpsStr = &quot;frame rate: &quot;+ofToString(ofGetFrameRate(), 2);
+ofDrawBitmapString(fpsStr, 100,100);
+</code></pre>
+
+<p>Please note, ofDrawBitmapString wraps a glut function that uses glDrawPixels. On some graphics cards, you may discover that glDrawPixels is slow (or even, very slow). If so, you might want to invsetigate using ofTrueTypeFont with a small typeface, non-anti-aliased, as a suitable alternative.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofDrawBitmapString">ofDrawBitmapString(...)</a></h1>
+	<h2>
+  <p>void ofDrawBitmapString(string textString, const ofPoint &amp;p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofDrawBitmapString">ofDrawBitmapString(...)</a></h1>
+	<h2>
+  <p>void ofDrawBitmapString(string textString, float x, float y, float z)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofDrawBitmapStringHighlight">ofDrawBitmapStringHighlight(...)</a></h1>
+	<h2>
+  <p>void ofDrawBitmapStringHighlight(string text, const ofPoint &amp;position, const ofColor &amp;background=ofColor::black, const ofColor &amp;foreground=ofColor::white)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofDrawBitmapStringHighlight">ofDrawBitmapStringHighlight(...)</a></h1>
+	<h2>
+  <p>void ofDrawBitmapStringHighlight(string text, int x, int y, const ofColor &amp;background=ofColor::black, const ofColor &amp;foreground=ofColor::white)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofEllipse">ofEllipse(...)</a></h1>
+	<h2>
+  <p>void ofEllipse(float x, float y, float width, float height)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws an ellipse from point (x,y) with a given width (w) and height (h).</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofEllipse(10,10,50,30);
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofEllipse">ofEllipse(...)</a></h1>
+	<h2>
+  <p>void ofEllipse(float x, float y, float z, float width, float height)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofEllipse">ofEllipse(...)</a></h1>
+	<h2>
+  <p>void ofEllipse(const ofPoint &amp;p, float width, float height)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofEnableAlphaBlending">ofEnableAlphaBlending()</a></h1>
+	<h2>
+  <p>void ofEnableAlphaBlending()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Turns on alpha blending, which is off by default for performance purposes. It simply wraps opengl commands that enable blending, and turn on a common blend mode.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofEnableAlphaBlending();    // turn on alpha blending
+    ofSetColor(255,0,0,127);    // red, 50% transparent
+    ofRect(20,20,100,100);      // draws the rect with alpha
+    ofDisableAlphaBlending();   // turn off alpha
+    ofRect(120,20,100,100); // draws the rect without alpha
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofEnableBlendMode">ofEnableBlendMode(...)</a></h1>
+	<h2>
+  <p>void ofEnableBlendMode(ofBlendMode blendMode)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofEnablePointSprites">ofEnablePointSprites()</a></h1>
+	<h2>
+  <p>void ofEnablePointSprites()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofEnableSmoothing">ofEnableSmoothing()</a></h1>
+	<h2>
+  <p>void ofEnableSmoothing()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Turns on smoothing. Currently, this only works for lines. You can draw a filled object, and then draw the outline with smoothing enabled to get smoothing effects on filled shapes.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofEndSaveScreenAsPDF">ofEndSaveScreenAsPDF()</a></h1>
+	<h2>
+  <p>void ofEndSaveScreenAsPDF()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofEndShape">ofEndShape(...)</a></h1>
+	<h2>
+  <p>void ofEndShape(bool bClose=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This tells the program that your shape is finished and that it should now draw it to the screen. If you set the optional 'bClose' argument to true it will automatically close your shape for you.'bClose' is set to false by default. This function must be called otherwise you will not see your shape.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofFill">ofFill()</a></h1>
+	<h2>
+  <p>void ofFill()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draw shapes filled with the current draw color. </p>
+<pre><code class="cpp">void testApp::draw(){
+    ofSetColor(0,0,255);
+    ofFill();
+    ofRect(10,10,100,100);  //draws the rectangle filled in blue
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetCoordHandedness">ofGetCoordHandedness()</a></h1>
+	<h2>
+  <p>ofHandednessType ofGetCoordHandedness()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetCurrentRenderer">ofGetCurrentRenderer()</a></h1>
+	<h2>
+  <p>ofPtr ofGetCurrentRenderer()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetCurrentViewport">ofGetCurrentViewport()</a></h1>
+	<h2>
+  <p>ofRectangle ofGetCurrentViewport()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetFill">ofGetFill()</a></h1>
+	<h2>
+  <p>ofFillFlag ofGetFill()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetGLRenderer">ofGetGLRenderer()</a></h1>
+	<h2>
+  <p>ofPtr ofGetGLRenderer()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetRectMode">ofGetRectMode()</a></h1>
+	<h2>
+  <p>ofRectMode ofGetRectMode()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Tells you if rect drawing mode is set to drawn from the center or drawn from the top left corner, as set with the ofSetRectMode() function.</p>
+<pre><code class="cpp">void testApp::draw(){
+    if(ofGetRectMode() == OF_RECTMODE_CORNER){
+        ofRect(10,10,80,80);    
+    }
+    else {
+        ofRect(50,50,80,80);
+    }
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetStyle">ofGetStyle()</a></h1>
+	<h2>
+  <p>ofStyle ofGetStyle()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetViewportHeight">ofGetViewportHeight()</a></h1>
+	<h2>
+  <p>int ofGetViewportHeight()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetViewportWidth">ofGetViewportWidth()</a></h1>
+	<h2>
+  <p>int ofGetViewportWidth()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofLine">ofLine(...)</a></h1>
+	<h2>
+  <p>void ofLine(float x1, float y1, float x2, float y2)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a line between two points: (x1,y1),(x2,y2). </p>
+<pre><code class="cpp">void testApp::draw(){
+    ofLine(10,10,100,100);
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofLine">ofLine(...)</a></h1>
+	<h2>
+  <p>void ofLine(float x1, float y1, float z1, float x2, float y2, float z2)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofLine">ofLine(...)</a></h1>
+	<h2>
+  <p>void ofLine(const ofPoint &amp;p1, const ofPoint &amp;p2)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofLoadIdentityMatrix">ofLoadIdentityMatrix(...)</a></h1>
+	<h2>
+  <p>void ofLoadIdentityMatrix(void)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofLoadMatrix">ofLoadMatrix(...)</a></h1>
+	<h2>
+  <p>void ofLoadMatrix(const ofMatrix4x4 &amp;m)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofLoadMatrix">ofLoadMatrix(...)</a></h1>
+	<h2>
+  <p>void ofLoadMatrix(const float *m)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofMultMatrix">ofMultMatrix(...)</a></h1>
+	<h2>
+  <p>void ofMultMatrix(const ofMatrix4x4 &amp;m)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofMultMatrix">ofMultMatrix(...)</a></h1>
+	<h2>
+  <p>void ofMultMatrix(const float *m)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofNextContour">ofNextContour(...)</a></h1>
+	<h2>
+  <p>void ofNextContour(bool bClose=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Allows you to draw multiple contours within one shape. Call this between ofBeginShape() and ofEndShape() to create a new contour for your shape. If you set the optional argument 'bClose' to true then the previous contour will be automatically closed. 'bClose' is set to false by default.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofNoFill">ofNoFill()</a></h1>
+	<h2>
+  <p>void ofNoFill()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draw shapes as outlines with the current draw color. </p>
+<pre><code class="cpp">void testApp::draw(){
+    ofSetColor(0,0,255);
+    ofNoFill();
+    ofRect(10,10,100,100);  //draws only the outline in blue
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofOrientationToDegrees">ofOrientationToDegrees(...)</a></h1>
+	<h2>
+  <p>int ofOrientationToDegrees(ofOrientation orientation)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofPopMatrix">ofPopMatrix()</a></h1>
+	<h2>
+  <p>void ofPopMatrix()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>ofPopMatrix() restores the prior coordinate system. </p>
+<pre><code class="cpp">void testApp::draw(){
+    ofCircle(10, 10, 5);    // draw a circle
+    ofPushMatrix();         // push the current coordinate position
+    ofRotateX(90);          // change the coordinate system
+    ofRect(10,10,40,40);    // draw a rect
+    ofPopMatrix();          // recall the pushed coordinate position
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofPopStyle">ofPopStyle()</a></h1>
+	<h2>
+  <p>void ofPopStyle()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>ofPopStyle() restores the prior style settings. It needs to be called after ofPushStyle. </p>
+<pre><code class="cpp">void testApp::draw(){
+    ofCircle(10,10,5);
+    ofPushStyle();  // push the current style for use later
+    ofFill();
+    ofsetColor(255,0,0);
+    ofEllipse(30,10,40,40);
+    ofPopStyle();   // recall the pushed style
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofPopView">ofPopView()</a></h1>
+	<h2>
+  <p>void ofPopView()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofPushMatrix">ofPushMatrix()</a></h1>
+	<h2>
+  <p>void ofPushMatrix()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>ofPushMatrix saves the current coordinate system allowing users to develop specific movements in some graphic objects. ofPopMatrix needs to be called after.
+In the following example we only rotate the square.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofCircle(10, 10, 5);    // draw a circle
+    ofPushMatrix();         // push the current coordinate position
+    ofRotateX(90);          // change the coordinate system
+    ofRect(10,10,40,40);    // draw a rect
+    ofPopMatrix()           // recall the pushed coordinate position
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofPushStyle">ofPushStyle()</a></h1>
+	<h2>
+  <p>void ofPushStyle()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>ofPushStyle saves the current style settings for the ofGraphics after its call. Usage of ofPushStyle and ofPopStyle allow users to have more control of certain graphics elements. All the style that applies to certain elements is controled using ofStyle class. See ofStyle type.
+In the following example the properties of being red and filled only applies to the ellipse:</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofCircle(10,10,5);
+    ofPushStyle();  // push the current style for use later
+    ofFill();
+    ofSetColor(255,0,0);
+    ofEllipse(30,10,40,40);
+    ofPopStyle();   // recall the pushed style
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofPushView">ofPushView()</a></h1>
+	<h2>
+  <p>void ofPushView()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRect">ofRect(...)</a></h1>
+	<h2>
+  <p>void ofRect(float x1, float y1, float w, float h)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws an rectangle from point x,y with a given width and height. </p>
+<pre><code class="cpp">void testApp::draw(){
+    ofRect(10,10,100,100);
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRect">ofRect(...)</a></h1>
+	<h2>
+  <p>void ofRect(const ofRectangle &amp;r)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws an rectangle from the given rectangle.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofRectangle rect;
+    rect.x = 10;
+    rect.y = 10;
+    rect.width = 100;
+    rect.height = 100;
+
+    ofRect(rect);
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRect">ofRect(...)</a></h1>
+	<h2>
+  <p>void ofRect(const ofPoint &amp;p, float w, float h)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws an rectangle from point p, with a given width and height.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofPoint p;      // create a point P
+    p.x = 10;       // set the x of the point
+    p.y = 10;       // set the y of the point
+
+    ofRect(p, 80, 80); // Draw the rectangle
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRect">ofRect(...)</a></h1>
+	<h2>
+  <p>void ofRect(float x, float y, float z, float w, float h)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws an rectangle from point X, Y at depth Z with a given width and height.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofRect(10,10,-100, 80, 80); // Draw a rectangle at 100 pixels in depth
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRectRounded">ofRectRounded(...)</a></h1>
+	<h2>
+  <p>void ofRectRounded(const ofRectangle &amp;b, float r)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRectRounded">ofRectRounded(...)</a></h1>
+	<h2>
+  <p>void ofRectRounded(const ofPoint &amp;p, float w, float h, float r)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRectRounded">ofRectRounded(...)</a></h1>
+	<h2>
+  <p>void ofRectRounded(float x, float y, float w, float h, float r)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRectRounded">ofRectRounded(...)</a></h1>
+	<h2>
+  <p>void ofRectRounded(float x, float y, float z, float w, float h, float r)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRotate">ofRotate(...)</a></h1>
+	<h2>
+  <p>void ofRotate(float degrees, float vecX, float vecY, float vecZ)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>ofRotate produces a rotation of angle "degrees" around the vector (vecX,vecY,vecZ).
+"degrees"specifies the angle of rotation, in degrees. vecX, vecY, vecZ specify the x, y, and z coordinates of a vector, respectively.
+All graphics drawn after ofRotate is called are rotated. Use ofPushMatrix and ofPopMatrix to save and restore the unrotated coordinate system.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofRotate(50, 1, 0.5, 0); //rotates the coordinate system 50 degrees along the x-axis and 25 degrees on the y-axis
+    ofRect(20,20,100,100);      
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRotate">ofRotate(...)</a></h1>
+	<h2>
+  <p>void ofRotate(float degrees)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRotateX">ofRotateX(...)</a></h1>
+	<h2>
+  <p>void ofRotateX(float degrees)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>ofRotateX produces a rotation of angle "degrees" around the X-axis of our coordinate system represented by the vector (1,0,0)."degrees"specifies the angle of rotation, in degrees.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofRotateX(45); //rotates the coordinate system 45 degrees around the x-axis
+    ofRect(20,20,100,100);      
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRotateY">ofRotateY(...)</a></h1>
+	<h2>
+  <p>void ofRotateY(float degrees)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>ofRotateY produces a rotation of angle "degrees" around the Y-axis of our coordinate system represented by the vector (0,1,0).
+"degrees"specifies the angle of rotation, in degrees.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofRotateY(45); //rotates the coordinate system 45 degrees around the x-axis
+    ofRect(20,20,100,100);      
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofRotateZ">ofRotateZ(...)</a></h1>
+	<h2>
+  <p>void ofRotateZ(float degrees)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>ofRotateZ produces a rotation of angle "degrees" around the Z-axis of our coordinate system represented by the vector (0,0,1).
+"degrees"specifies the angle of rotation, in degrees.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofRotateZ(45); //rotates the coordinate system 45 degrees around the x-axis
+    ofRect(20,20,100,100);      
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofScale">ofScale(...)</a></h1>
+	<h2>
+  <p>void ofScale(float xAmnt, float yAmnt, float zAmnt=1)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>ofScale produces a nonuniform scaling along the x, y, and z axes. The three parameters xAmnt, yAmnt and zAmnt indicate the desired scale factor along each of the three axes.
+e.g:</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofScale(0.5,1,1);       // scale 0.5 in height
+    ofRect(10,10,40,40);    // draw a square rectangle  
+}
+</code></pre>
+
+<p>Rectangle width will be now 20px heigh!</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetBackgroundAuto">ofSetBackgroundAuto(...)</a></h1>
+	<h2>
+  <p>void ofSetBackgroundAuto(bool bManual)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets the background clearing function to be auto (default) or not. If non-auto, then background clearing will not occur per frame (at the start of draw) but rather, whenever ofBackground is called.</p>
+<pre><code class="cpp">void testApp::setup(){
+    ofSetBackgroundAuto(false); //disable automatic background redraw
+}    
+void testApp::draw(){
+    if(ofGetFrameNum() % 10 == 0){
+        // draws a black background every 10 frames
+        ofBackground(0,0,0);
+    }
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetBackgroundColor">ofSetBackgroundColor(...)</a></h1>
+	<h2>
+  <p>void ofSetBackgroundColor(int r, int g, int b, int a=255)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetBackgroundColor">ofSetBackgroundColor(...)</a></h1>
+	<h2>
+  <p>void ofSetBackgroundColor(int brightness, int alpha=255)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetBackgroundColor">ofSetBackgroundColor(...)</a></h1>
+	<h2>
+  <p>void ofSetBackgroundColor(const ofColor &amp;c)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetBackgroundColorHex">ofSetBackgroundColorHex(...)</a></h1>
+	<h2>
+  <p>void ofSetBackgroundColorHex(int hexColor, int alpha=255)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetCircleResolution">ofSetCircleResolution(...)</a></h1>
+	<h2>
+  <p>void ofSetCircleResolution(int res)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets the resolution for the ofCircle command. By default, the circle is 22 points, but if you need to draw larger circles, you can adjust the resolution using this command. all circles are cached in opengl using a display list for optimization purposes.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofSetCircleResolution(10);      
+    ofCircle(150,150,100);          //draws a rough circle
+    ofSetCircleResolution(100);
+    ofCircle(450,150,100);          //draws a fine circle
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetColor">ofSetColor(...)</a></h1>
+	<h2>
+  <p>void ofSetColor(int r, int g, int b)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets the draw color with r,g,b, 0-255. For example, red (0xff0000) would be: ofSetColor(255,0,0). This affects not only the color of shapes drawn with ofRect(...), ofCircle(...), etc, but also the tint of images and textures.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofSetColor(0,0,255);    //set te color to blue
+    ofRect(10,10,100,100); 
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetColor">ofSetColor(...)</a></h1>
+	<h2>
+  <p>void ofSetColor(int r, int g, int b, int a)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>sets the draw color with r,g,b,a 0-255. For alpha (transparency), you must first enable transparent blending (turned off by default for performance reasons), and draw in the proper z-order (objects in the back drawn first). For example, to draw a transparent red rectangle: </p>
+<pre><code class="cpp">void testApp::draw(){
+    ofEnableAlphaBlending();    // turn on alpha blending
+    ofSetColor(255,0,0,127);    // red, 50% transparent
+    ofRect(20,20,100,100);
+    ofDisableAlphaBlending();   // turn it back off, if you don't need it
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetColor">ofSetColor(...)</a></h1>
+	<h2>
+  <p>void ofSetColor(int gray)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets the draw color with r,g,b, passed in as a hex. Hex is a conventient way to write colors. Some examples:</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofSetColor(0xffffff);  // white  (255,255,255)
+    ofSetColor(0x000000);  // black  (0,0,0);
+    ofSetColor(0x00ff00);  // green  (0,255,0);
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetColor">ofSetColor(...)</a></h1>
+	<h2>
+  <p>void ofSetColor(const ofColor &amp;color)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetColor">ofSetColor(...)</a></h1>
+	<h2>
+  <p>void ofSetColor(const ofColor &amp;color, int _a)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetCoordHandedness">ofSetCoordHandedness(...)</a></h1>
+	<h2>
+  <p>void ofSetCoordHandedness(ofHandednessType handedness)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetCurrentRenderer">ofSetCurrentRenderer(...)</a></h1>
+	<h2>
+  <p>void ofSetCurrentRenderer(ofPtr&lt; ofBaseRenderer &gt; renderer)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetCurveResolution">ofSetCurveResolution(...)</a></h1>
+	<h2>
+  <p>void ofSetCurveResolution(int res)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetDrawBitmapMode">ofSetDrawBitmapMode(...)</a></h1>
+	<h2>
+  <p>void ofSetDrawBitmapMode(ofDrawBitmapMode mode)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>takes OF_BITMAPMODE_SIMPLE, OF_BITMAPMODE_SCREEN, OF_BITMAPMODE_VIEWPORT, OF_BITMAPMODE_MODEL and OF_BITMAPMODE_MODEL_BILLBOARD</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetHexColor">ofSetHexColor(...)</a></h1>
+	<h2>
+  <p>void ofSetHexColor(int hexColor)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetLineWidth">ofSetLineWidth(...)</a></h1>
+	<h2>
+  <p>void ofSetLineWidth(float lineWidth)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>ofSetLineWidth sets the width of the ofLines called after.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofSetLineWidth(1);      // set line width to 1
+    ofLine(10,10,100,100);  // draw thin line
+    ofSetLineWidth(10);     // set line width to 10
+    ofLine(10,100,100,10);  // draw fat line
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetPolyMode">ofSetPolyMode(...)</a></h1>
+	<h2>
+  <p>void ofSetPolyMode(int mode)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets the drawing behavior for ovelapping parts of the same polygon. Possible modes are:
+OF_POLY_WINDING_ODD -
+OF_POLY_WINDING_NONZERO -
+OF_POLY_WINDING_POSITIVE -
+OF_POLY_WINDING_NEGATIVE -
+OF_POLY_WINDING_ABS_GEQ_TWO -</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetPolyMode">ofSetPolyMode(...)</a></h1>
+	<h2>
+  <p>void ofSetPolyMode(ofPolyWindingMode mode)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetRectMode">ofSetRectMode(...)</a></h1>
+	<h2>
+  <p>void ofSetRectMode(int mode)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets the mode for drawing rectangles and other rectangular objects, if they are corner aligned, or drawn so that the x,y position is the center of the rectangle. possible options are OF_RECTMODE_CENTER and OF_RECTMODE_CORNER. This afects not only how ofRect() objects are drawn, but also ofTexture (and threfore ofImage) objects. </p>
+<pre><code class="cpp">void testApp::draw(){
+    ofSetRectMode(OF_RECTMODE_CORNER); //set rectangle mode to the corner
+    ofRect(10,10,80,80);    
+    ofSetRectMode(OF_RECTMODE_CENTER); //set rectangle mode to the center
+    ofRect(50,50,80,80);
+    // both rectangles are drawn at the same place
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetRectMode">ofSetRectMode(...)</a></h1>
+	<h2>
+  <p>void ofSetRectMode(ofRectMode mode)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetSphereResolution">ofSetSphereResolution(...)</a></h1>
+	<h2>
+  <p>void ofSetSphereResolution(int res)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetStyle">ofSetStyle(...)</a></h1>
+	<h2>
+  <p>void ofSetStyle(ofStyle style)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>We use ofSetStyle to set the current style of the ofGraphics. Parameter style contains information of the graphics style such as ofColor, ofFill, polyMode and others. See ofStyle for more details. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetupScreen">ofSetupScreen()</a></h1>
+	<h2>
+  <p>void ofSetupScreen()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetupScreenOrtho">ofSetupScreenOrtho(...)</a></h1>
+	<h2>
+  <p>void ofSetupScreenOrtho(float width=0, float height=0, ofOrientation orientation=OF_ORIENTATION_UNKNOWN, bool vFlip=true, float nearDist=-1, float farDist=-1)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetupScreenPerspective">ofSetupScreenPerspective(...)</a></h1>
+	<h2>
+  <p>void ofSetupScreenPerspective(float width=0, float height=0, ofOrientation orientation=OF_ORIENTATION_UNKNOWN, bool vFlip=true, float fov=60, float nearDist=0, float farDist=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSphere">ofSphere(...)</a></h1>
+	<h2>
+  <p>void ofSphere(float x, float y, float z, float radius)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a 3-dimensional sphere at X, Y and Z with the given radius.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofSphere(50,50,-10,40);
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSphere">ofSphere(...)</a></h1>
+	<h2>
+  <p>void ofSphere(float x, float y, float radius)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a 3-dimensional sphere at X and Y at the current depth with the given radius.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofSphere(50,50,40);
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSphere">ofSphere(...)</a></h1>
+	<h2>
+  <p>void ofSphere(const ofPoint &amp;position, float radius)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a 3-dimensional sphere at position by point with the given radius.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofPoint p;
+    p.x = 50;
+    p.y = 50;
+    ofSphere(p, 40);
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSphere">ofSphere(...)</a></h1>
+	<h2>
+  <p>void ofSphere(float radius)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a 3-dimensional sphere with the given radius.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofTranslate(50,50,0);
+    ofSphere(40);
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofTranslate">ofTranslate(...)</a></h1>
+	<h2>
+  <p>void ofTranslate(float x, float y, float z=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>ofTranslate produces a translation by (x,y,z) vector of our coordinate system. The call of ofTranslate modifies graphics positions.
+Use ofPushMatrix and ofPopMatrix to save and restore the untranslated coordinate system.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofTranslate(100, 100, 0);   // move the coordinate system to position x 100 and y 100 and make that zero.
+    ofRect(0, 0, 10, 10);       // draw a rect at that position
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofTranslate">ofTranslate(...)</a></h1>
+	<h2>
+  <p>void ofTranslate(const ofPoint &amp;p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>ofTranslate produces a translation by (x,y,z) vector of our coordinate system. The call of ofTranslate modifies graphics positions.
+Use ofPushMatrix and ofPopMatrix to save and restore the untranslated coordinate system.</p>
+<pre><code class="cpp">void testApp::draw(){
+    ofPoint point;
+    point.x = 100;
+    point.y = 100;
+
+    ofTranslate(point);     // move the coordinate system to position of point and make that zero.
+    ofRect(0, 0, 10, 10);   // draw a rect at that position
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofTriangle">ofTriangle(...)</a></h1>
+	<h2>
+  <p>void ofTriangle(float x1, float y1, float x2, float y2, float x3, float y3)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Draws a triangle, with the three points: (x1,y1),(x2, y2),(x3, y3). </p>
+<pre><code class="cpp">void testApp::draw(){
+    ofTriangle(50,10,10,40,90,40);
+}    
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofTriangle">ofTriangle(...)</a></h1>
+	<h2>
+  <p>void ofTriangle(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofTriangle">ofTriangle(...)</a></h1>
+	<h2>
+  <p>void ofTriangle(const ofPoint &amp;p1, const ofPoint &amp;p2, const ofPoint &amp;p3)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofVertex">ofVertex(...)</a></h1>
+	<h2>
+  <p>void ofVertex(float x, float y)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Specifies a single point of a shape. To be called between ofBeginShape() and ofEndShape(). </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofVertex">ofVertex(...)</a></h1>
+	<h2>
+  <p>void ofVertex(float x, float y, float z)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofVertex">ofVertex(...)</a></h1>
+	<h2>
+  <p>void ofVertex(ofPoint &amp;p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofVertices">ofVertices(...)</a></h1>
+	<h2>
+  <p>void ofVertices(const vector&lt; ofPoint &gt; &amp;polyPoints)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofViewport">ofViewport(...)</a></h1>
+	<h2>
+  <p>void ofViewport(ofRectangle viewport)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofViewport">ofViewport(...)</a></h1>
+	<h2>
+  <p>void ofViewport(float x=0, float y=0, float width=0, float height=0, bool invertY=true)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofbClearBg">ofbClearBg()</a></h1>
+	<h2>
+  <p>bool ofbClearBg()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:43 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+
+<script language="javascript"><!--
+bmi_SafeAddOnload(bmi_load,"bmi_orig_img",0);//-->
+</script>

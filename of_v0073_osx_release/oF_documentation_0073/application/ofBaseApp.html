@@ -1,0 +1,571 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofBaseApp</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p>The openframeworks engine is contained in the "app" category. The project works, similar to processing, in that you have a base class which extends a class that already exists. In the case of OF, there is a class called "ofBaseApp" which contains various event driven functions. When you create an OF project, you use a main.cpp which is the boot-strap, that kicks off the application and another class, which inherits the properties of ofBaseApp. Essentially, when you write code in the testApp, you are re-writing already defined functions that exist in OF, such as update, draw, etc. </p>
+<p>In versions pre 0.06 this class was called ofSimpleApp</p>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#audioReceived">audioReceived(...)</a> </li>
+                         
+                              
+                             <li> <a href="#audioRequested">audioRequested(...)</a> </li>
+                         
+                              
+                             <li> <a href="#dragEvent">dragEvent(...)</a> </li>
+                         
+                              
+                             <li> <a href="#draw">draw()</a> </li>
+                         
+                              
+                             <li> <a href="#exit">exit()</a> </li>
+                         
+                              
+                             <li> <a href="#gotMessage">gotMessage(...)</a> </li>
+                         
+                              
+                             <li> <a href="#keyPressed">keyPressed(...)</a> </li>
+                         
+                              
+                             <li> <a href="#keyReleased">keyReleased(...)</a> </li>
+                         
+                              
+                             <li> <a href="#mouseDragged">mouseDragged(...)</a> </li>
+                         
+                              
+                             <li> <a href="#mouseMoved">mouseMoved(...)</a> </li>
+                         
+                              
+                             <li> <a href="#mousePressed">mousePressed(...)</a> </li>
+                         
+                              
+                             <li> <a href="#mouseReleased">mouseReleased()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#setup">setup()</a> </li>
+                         
+                              
+                             <li> <a href="#update">update()</a> </li>
+                         
+                              
+                             <li> <a href="#windowEntry">windowEntry(...)</a> </li>
+                         
+                              
+                             <li> <a href="#windowResized">windowResized(...)</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+                <p class="top_list_header"><a href="#variables">class variables</a></p>
+                <ul class="functionslist">
+                             <li> <a href="#mouseX">int mouseX</a> </li>
+                             <li> <a href="#mouseY">int mouseY</a> </li>
+                 </ul>
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofBaseApp methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="audioReceived">audioReceived(...)</a></h1>
+	<h2>
+  <p>void ofBaseApp::audioReceived(float * input, int bufferSize, int nChannels)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>If you have setup audio input, via ofSetupAudio, this function will be called when you have one buffers worth of audio. Since you may have requested mutli-channel audio (for example, stereo input), you get not only an array of floating point info, also the size of the buffer, and the number of channels. The size of input (the float array with audio data) is: bufferSize * nChannels; The data will come interleaved, so if, for example, you request 2 channel (left / right) input, the samples come:</p>
+<pre><code class="cpp">
+l r l r l r l r l r ....
+0 1 2 3 4 5 6 7 8 9 ....
+</code></pre>
+
+<p>so to access an individual sample "n" for channel "j" , you could write something like:</p>
+<pre><code class="cpp">
+input[n*(nChannels) + j];
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="audioRequested">audioRequested(...)</a></h1>
+	<h2>
+  <p>void ofBaseApp::audioRequested(float * output, int bufferSize, int nChannels)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>If you have setup audio output, via ofSetupAudio, this function will be called when the system needs one buffers worth of audio. Since you may have requested mutli-channel audio (for example, stereo output), you get not only an array of floating point info, also the size of the buffer, and the number of channels. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="dragEvent">dragEvent(...)</a></h1>
+	<h2>
+  <p>void ofBaseApp::dragEvent(ofDragInfo dragInfo)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="draw">draw()</a></h1>
+	<h2>
+  <p>void ofBaseApp::draw()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This function gets called regularly just after update. It's where you draw things:</p>
+<pre><code class="cpp">
+void draw(){
+    ofSetColor(255,255,255);
+    ofNoFill();
+    ofRect(20,20,100,100);
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="exit">exit()</a></h1>
+	<h2>
+  <p>void ofBaseApp::exit()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Add this function to your testApp to have it called at the moment before the app is terminated. This is useful for doing cleanup stuff or making sure files are saved before the app terminates. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="gotMessage">gotMessage(...)</a></h1>
+	<h2>
+  <p>void ofBaseApp::gotMessage(ofMessage msg)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="keyPressed">keyPressed(...)</a></h1>
+	<h2>
+  <p>void ofBaseApp::keyPressed(int key)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This function gets called when a key is pressed. The value key can be tested against:</p>
+<pre><code class="cpp">
+void keyPressed(int key){
+
+    if (key == 't'){
+        ; // do something
+    } else if (key == ' '){
+        ; // do something else
+    }
+}
+
+</code></pre>
+
+<p>There are more complicated character codes, for keys such as F1-F12, Down, Enter: OF_KEY_BACKSPACE, OF_KEY_RETURN, OF_KEY_PRINTSCR, OF_KEY_F1 - OF_KEY_F12, OF_KEY_LEFT, OF_KEY_UP, OF_KEY_RIGHT, OF_KEY_DOWN, OF_KEY_PAGE_UP, OF_KEY_PAGE_DOWN, OF_KEY_HOME, OF_KEY_END, OF_KEY_INSERT </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="keyReleased">keyReleased(...)</a></h1>
+	<h2>
+  <p>void ofBaseApp::keyReleased(int key)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This function gets called when a key is released. The value key can be tested against:</p>
+<pre><code class="cpp">
+void keyReleased(int key){
+
+    if (key == 't'){
+        ; // do something
+    } else if (key == ' '){
+        ; // do something else
+    }
+}
+</code></pre>
+
+<p>There are more complicated character codes, for keys such as F1-F12, Down, Enter: OF_KEY_BACKSPACE, OF_KEY_RETURN, OF_KEY_PRINTSCR, OF_KEY_F1 - OF_KEY_F12, OF_KEY_LEFT, OF_KEY_UP, OF_KEY_RIGHT, OF_KEY_DOWN, OF_KEY_PAGE_UP, OF_KEY_PAGE_DOWN, OF_KEY_HOME, OF_KEY_END, OF_KEY_INSERT </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="mouseDragged">mouseDragged(...)</a></h1>
+	<h2>
+  <p>void ofBaseApp::mouseDragged(int x, int y, int button)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This function gets called when the mouse is moving and the button is down. The button variable can be used to test against left or right button drags. You also receive the x and y corrdinates of the mouse.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="mouseMoved">mouseMoved(...)</a></h1>
+	<h2>
+  <p>void ofBaseApp::mouseMoved(int x, int y)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This function gets when ever the mouse moves. You receive the x and y corrdinates of the mouse. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="mousePressed">mousePressed(...)</a></h1>
+	<h2>
+  <p>void ofBaseApp::mousePressed(int x, int y, int button)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This function gets called when the mouse is pushed down. The button (left, right, center) is passed in, along with the x and y corrdinate. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="mouseReleased">mouseReleased()</a></h1>
+	<h2>
+  <p>void ofBaseApp::mouseReleased()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This function gets called when the mouse is released.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="mouseReleased">mouseReleased(...)</a></h1>
+	<h2>
+  <p>void ofBaseApp::mouseReleased(int x, int y, int button)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This function gets called when the mouse is released. The button (left, right, center) is passed in, along with the x and y corrdinate. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setup">setup()</a></h1>
+	<h2>
+  <p>void ofBaseApp::setup()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This function gets called once, just at the start of the app. It would be a good place, for example, to allocate variables or load in any files. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="update">update()</a></h1>
+	<h2>
+  <p>void ofBaseApp::update()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This function gets called repeatedly. It gets just before draw, so it is an ideal place to do any updating of variables. For example, imagine you have a varibale already defined in your testApp.h called "xpos"</p>
+<pre><code class="cpp">
+void setup(){
+    xpos = 0;
+}
+
+void update(){
+    xpos += 1;
+    if (xPos &gt; ofGetWidth()) xPos = 0;
+}
+
+void draw(){
+    ofRect(xPos, 30,10,10);
+}
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="windowEntry">windowEntry(...)</a></h1>
+	<h2>
+  <p>void ofBaseApp::windowEntry(int state)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="windowResized">windowResized(...)</a></h1>
+	<h2>
+  <p>void ofBaseApp::windowResized(int w, int h)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This function gets called when ever we resize the application window. You receive the new width (w) and the new height (h) of the window.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+                  <h2><a name="variables"></a>ofBaseApp variables</h2>
+                            
+<div class="documentation_detail">
+	<h1>int <a name="mouseX">mouseX</a></h1>
+	<h2>
+  <p>int ofBaseApp::mouseX</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Variable mouseX contains information about the current x coordinate of the mouse.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>int <a name="mouseY">mouseY</a></h1>
+	<h2>
+  <p>int ofBaseApp::mouseY</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Variable mouseY contains information about the current y coordinate of the mouse.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:24 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

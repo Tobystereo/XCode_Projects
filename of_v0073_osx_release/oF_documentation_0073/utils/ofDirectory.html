@@ -1,0 +1,1341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofDirectory</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p>ofDirectory is a class for reading and manipulating directories on the file system through openFrameworks.</p>
+<p>Here is a common way to use it:</p>
+<pre><code class="cpp">//some path, may be absolute or relative to bin/data
+string path = &quot;/my/path/file&quot;; 
+ofDirectory dir(path);
+//only show png files
+dir.allowExt(&quot;png&quot;);
+//populate the directory object
+dir.listDir();
+
+//go through and print out all the paths
+for(int i = 0; i &lt; dir.numFiles(); i++){
+    ofLogNotice(dir.getPath(i));
+}
+</code></pre>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#allowExt">allowExt(...)</a> </li>
+                         
+                              
+                             <li> <a href="#canExecute">canExecute()</a> </li>
+                         
+                              
+                             <li> <a href="#canRead">canRead()</a> </li>
+                         
+                              
+                             <li> <a href="#canWrite">canWrite()</a> </li>
+                         
+                              
+                             <li> <a href="#close">close()</a> </li>
+                         
+                              
+                             <li> <a href="#copyTo">copyTo(...)</a> </li>
+                         
+                              
+                             <li> <a href="#create">create(...)</a> </li>
+                         
+                              
+                             <li> <a href="#createDirectory">createDirectory(...)</a> </li>
+                         
+                              
+                             <li> <a href="#doesDirectoryExist">doesDirectoryExist(...)</a> </li>
+                         
+                              
+                             <li> <a href="#exists">exists()</a> </li>
+                         
+                              
+                             <li> <a href="#getAbsolutePath">getAbsolutePath()</a> </li>
+                         
+                              
+                             <li> <a href="#getFile">getFile(...)</a> </li>
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#getFiles">getFiles()</a> </li>
+                         
+                              
+                             <li> <a href="#getName">getName(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getOriginalDirectory">getOriginalDirectory()</a> </li>
+                         
+                              
+                             <li> <a href="#getPath">getPath(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getPocoFile">getPocoFile()</a> </li>
+                         
+                              
+                             <li> <a href="#getShowHidden">getShowHidden()</a> </li>
+                         
+                              
+                             <li> <a href="#isDirectory">isDirectory()</a> </li>
+                         
+                              
+                             <li> <a href="#isDirectoryEmpty">isDirectoryEmpty(...)</a> </li>
+                         
+                              
+                             <li> <a href="#isHidden">isHidden()</a> </li>
+                         
+                              
+                             <li> <a href="#listDir">listDir(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#moveTo">moveTo(...)</a> </li>
+                         
+                              
+                             <li> <a href="#numFiles">numFiles()</a> </li>
+                         
+                              
+                             <li> <a href="#open">open(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator!=">operator!=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator<">operator<(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator<=">operator<=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator==">operator==(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator>">operator>(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator>=">operator>=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator[]">operator[](...)</a> </li>
+                         
+                              
+                             <li> <a href="#path">path()</a> </li>
+                         
+                              
+                             <li> <a href="#remove">remove(...)</a> </li>
+                         
+                              
+                             <li> <a href="#removeDirectory">removeDirectory(...)</a> </li>
+                         
+                              
+                             <li> <a href="#renameTo">renameTo(...)</a> </li>
+                         
+                              
+                             <li> <a href="#reset">reset()</a> </li>
+                         
+                              
+                             <li> <a href="#setExecutable">setExecutable(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setReadOnly">setReadOnly(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setShowHidden">setShowHidden(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setWriteable">setWriteable(...)</a> </li>
+                         
+                              
+                             <li> <a href="#size">size()</a> </li>
+                         
+                              
+                             <li> <a href="#sort">sort()</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofDirectory methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="allowExt">allowExt(...)</a></h1>
+	<h2>
+  <p>void ofDirectory::allowExt(string extension)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds an allowed extension to the list of filters when listing directories. Use this to set any number of filters before calling listDir().</p>
+<p>For example if you wanted to only get images in a directory, you may set several filters:</p>
+<pre><code class="cpp">string path = &quot;/path/to/images&quot;;
+ofDirectory dir(path);
+dir.allowExt(&quot;png&quot;);
+dir.allowExt(&quot;jpg&quot;);
+dir.allowExt(&quot;gif&quot;);
+dir.listDir();
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="canExecute">canExecute()</a></h1>
+	<h2>
+  <p>bool ofDirectory::canExecute()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the current directory is executable. An executable directory can be entered into with command such as cd.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="canRead">canRead()</a></h1>
+	<h2>
+  <p>bool ofDirectory::canRead()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the open directory can be read.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="canWrite">canWrite()</a></h1>
+	<h2>
+  <p>bool ofDirectory::canWrite()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the open directory can be written to.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="close">close()</a></h1>
+	<h2>
+  <p>void ofDirectory::close()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Closes the directory.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="copyTo">copyTo(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::copyTo(string path, bool bRelativeToData=true, bool overwrite=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Copies the directory into path.  If bRelativeToData is set to false then path should be absolute. If overwrite is set to true any existing files with the same name will be overwritten by the copy.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="create">create(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::create(bool recursive=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Creates the directory if it doesn't exist already. A common reason to use create is to ensure that you are able to write files to a known path, like so</p>
+<pre><code class="cpp">string path = &quot;/path/to/file&quot;;
+ofDirectory dir(path);
+if(!dir.exists()){
+    dir.create(true);
+}
+//now you can be sure that path exists
+</code></pre>
+
+<p>The recursive boolean flag will indicate if you'd like to create directories all the directories required to reach the given path.  In our example, if "/path/to" didn't already exist, the call to create() would also create these. If recursive were set to false, the directory would not be created.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="createDirectory">createDirectory(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::createDirectory(string dirPath, bool bRelativeToData=true, bool recursive=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Static method to create a directory at a given path. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="doesDirectoryExist">doesDirectoryExist(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::doesDirectoryExist(string dirPath, bool bRelativeToData=true)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the directory at dirPath exists.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="exists">exists()</a></h1>
+	<h2>
+  <p>bool ofDirectory::exists()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the open directory exists. Great to be used in conjunction with ofDirectory::create()</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getAbsolutePath">getAbsolutePath()</a></h1>
+	<h2>
+  <p>string ofDirectory::getAbsolutePath()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Opens and returns an ofFile object at position.  Mode determines how you may interact with the file, the options being: Reference,ofFile::ReadOnly, ofFile::WriteOnly, ofFile::ReadWrite, ofFile::Append</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFile">getFile(...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFile(unsigned int position, ofFile::Mode mode=ofFile::Reference, bool binary=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getFiles">getFiles()</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::getFiles()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns a vector of ofFile objects populated by a prior call to listDir().  The files are opened in ofFile::Reference mode.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getName">getName(...)</a></h1>
+	<h2>
+  <p>string ofDirectory::getName(unsigned int position)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the file name,(eg "mypicture.png") with extension but not the enclosing path at a given index. Position must be less than the result of numFiles().</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getOriginalDirectory">getOriginalDirectory()</a></h1>
+	<h2>
+  <p>string ofDirectory::getOriginalDirectory()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getPath">getPath(...)</a></h1>
+	<h2>
+  <p>string ofDirectory::getPath(unsigned int position)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the absolute path,(eg "/path/to/files/mypicture.png"). Position must be less than the result of size().</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getPocoFile">getPocoFile()</a></h1>
+	<h2>
+  <p>Poco::File &amp; ofDirectory::getPocoFile()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Accessor to low-level poco file object.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getShowHidden">getShowHidden()</a></h1>
+	<h2>
+  <p>bool ofDirectory::getShowHidden()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns if hidden files are set to be shown or not.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isDirectory">isDirectory()</a></h1>
+	<h2>
+  <p>bool ofDirectory::isDirectory()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the given path is actually a directory.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isDirectoryEmpty">isDirectoryEmpty(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::isDirectoryEmpty(string dirPath, bool bRelativeToData=true)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the directory at dirPath is empty.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isHidden">isHidden()</a></h1>
+	<h2>
+  <p>bool ofDirectory::isHidden()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the directory is hidden in the file system. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="listDir">listDir(...)</a></h1>
+	<h2>
+  <p>int ofDirectory::listDir(string path)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Opens and populates the directory with files.  Returns the number of files found.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="listDir">listDir()</a></h1>
+	<h2>
+  <p>int ofDirectory::listDir()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Populates the directory with files. Call this after opening a directory and setting filters. After this call, size(), getPath(position), and getName(position) can be used to access the contents of the directory.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="moveTo">moveTo(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::moveTo(string path, bool bRelativeToData=true, bool overwrite=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Moves the directory into another directory at path.  If bRelativeToData is set to false then path should be absolute. If overwrite is set to true any existing files with the same name will be overwritten by the move.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="numFiles">numFiles()</a></h1>
+	<h2>
+  <p>int ofDirectory::numFiles()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>deprecated. Use size().</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="open">open(...)</a></h1>
+	<h2>
+  <p>void ofDirectory::open(string path)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Opens a path. At this point you can see if the directory exists by calling exists() but the contents of the path are not accessible until listDir() is called.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator!=">operator!=(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::operator!=(const ofDirectory &amp;dir)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if this directory and another have different paths.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator<">operator<(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::operator&lt;(const ofDirectory &amp;dir)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the right hand side directory is alphabetically after the left hand side directory.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator<=">operator<=(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::operator&lt;=(const ofDirectory &amp;dir)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the right hand side directory is alphabetically after or equal to the left hand side directory.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator==">operator==(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::operator==(const ofDirectory &amp;dir)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if this directory and another have the same path.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator>">operator>(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::operator&gt;(const ofDirectory &amp;dir)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the left hand side directory is alphabetically after the right hand side directory.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator>=">operator>=(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::operator&gt;=(const ofDirectory &amp;dir)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the left hand side directory is alphabetically after or equal to the right hand side directory;</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator[]">operator[](...)</a></h1>
+	<h2>
+  <p>ofFile ofDirectory::operator<a href="unsigned int position"></a></p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Operator for accessing files with array notation syntax. Call is equivalent to ofFile::getFile(position).</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="path">path()</a></h1>
+	<h2>
+  <p>string ofDirectory::path()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the currently opened path.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="remove">remove(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::remove(bool recursive)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Deletes the directory. If recursive is set to false and this directory contains others the remove will fail.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="removeDirectory">removeDirectory(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::removeDirectory(string path, bool deleteIfNotEmpty, bool bRelativeToData=true)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Removes a directory. If deleteIfNotEmpty is set to false and the directory contains files the call will fail.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="renameTo">renameTo(...)</a></h1>
+	<h2>
+  <p>bool ofDirectory::renameTo(string path, bool bRelativeToData=true, bool overwrite=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Renames the directory to the path path.  If bRelativeToData is set to false then path should be absolute. If overwrite is set to true any existing files with the same name will be overwritten by the rename.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="reset">reset()</a></h1>
+	<h2>
+  <p>void ofDirectory::reset()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Resets the current directory. Equivalent to close().</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setExecutable">setExecutable(...)</a></h1>
+	<h2>
+  <p>void ofDirectory::setExecutable(bool executable)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Enables or disables execution on the current open directory. If the directory is executable then it can be entered through commands such as cd.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setReadOnly">setReadOnly(...)</a></h1>
+	<h2>
+  <p>void ofDirectory::setReadOnly(bool readable)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Enables or disables readable on the current open directory.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setShowHidden">setShowHidden(...)</a></h1>
+	<h2>
+  <p>void ofDirectory::setShowHidden(bool showHidden)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets whether or not the call to listDir() will return hidden files.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setWriteable">setWriteable(...)</a></h1>
+	<h2>
+  <p>void ofDirectory::setWriteable(bool writeable)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Enables or disables writeable on the current open directory.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="size">size()</a></h1>
+	<h2>
+  <p>unsigned int ofDirectory::size()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the number of files contained within the directory. Set after listDir() is called.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="sort">sort()</a></h1>
+	<h2>
+  <p>void ofDirectory::sort()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sorts the contents of the directory by filename.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:32 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

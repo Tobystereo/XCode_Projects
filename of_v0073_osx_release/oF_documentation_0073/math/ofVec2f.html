@@ -1,0 +1,1667 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofVec2f</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p><code>ofVec2f</code> is a class for storing a two dimensional vector. </p>
+<p>Moving through space requires knowledge of where things are and where they are going. Vector Maths is the class of mathematics that gives us control over these things in space, allowing for elegant and intuitive descriptions of complex structures and movement. Vectors are at the heart of animations, particle systems, and 2D and 3D graphics.</p>
+<p>Vectors in mathematics in general are entities with magnitude (also called length) and direction. A vector whose magnitude is 1 (ie a vector that is <em>normalized</em>) is called a <em>unit vector</em>. Unit vectors are very handy for storing directions as they can be easily scaled up (or down) to represent motion in a particular direction with a particular length.</p>
+<p><em>You will also see the term <code>vector</code> used to describe an array of objects in C++ (such as text strings). Don't let this confuse you, they are quite different: one of them is a mathematical term for a fixed-length list of numbers that you can do mathematical operations on, the other is a C++-specific term that means 'dynamically sizeable array'.</em></p>
+<p><code>ofVec2f</code> has two member variables, <code>x</code> and <code>y</code>, which allow to conveniently store 2D properties of an object such as its position, velocity, or acceleration. </p>
+<pre><code class="cpp">ofVec2f v1; // v1.x is 0, v1.y is 0
+v1.set( 10, 50 ); // now v1.x is 10, v1.y is 50
+</code></pre>
+
+<p>Using <code>ofVec2f</code> greatly simplifies arithmetic operations in two dimensions. For example if you have two vectors <code>v1</code> and <code>v2</code>, both of which represent a 2D change in position, you can find the total change of position of both of them just by doing an addition <code>v1 + v2</code>:</p>
+<pre><code class="cpp">ofVec2f v1(5, 2); // v1 represents walking 5 steps forward then 2 steps sideways
+ofVec2f v2;
+v2.set(1, 1); // v2 represents walking 1 step forward then 1 step sideways
+// what happens if you do v1 followed by v2? just add v1 and v2 together:
+ofVec2f result = v1 + v2; // result is 6 steps forward then 3 steps sideways
+</code></pre>
+
+<p>You can scale an <code>ofVec2f</code> by multiplying it with a float:</p>
+<pre><code class="cpp">ofVec2f v1(5, 2); // walk 5 steps forward and 2 steps right
+// what happens if we do v1 three times?
+ofVec2f result = v1 * 3; // result is 15 steps forward and 6 steps right
+</code></pre>
+
+<p>This also works for subtraction and division.</p>
+<p>As you can see this really makes dealing with vectors as easy as dealing with single <code>float</code>s or <code>int</code>s, and can reduce the number of lines of code you have to write by half, at the same time making your code much easier to read and understand! </p>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#align">align(...)</a> </li>
+                         
+                              
+                             <li> <a href="#alignRad">alignRad(...)</a> </li>
+                         
+                              
+                             <li> <a href="#angle">angle(...)</a> </li>
+                         
+                              
+                             <li> <a href="#angleRad">angleRad(...)</a> </li>
+                         
+                              
+                             <li> <a href="#average">average(...)</a> </li>
+                         
+                              
+                             <li> <a href="#distance">distance(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#dot">dot(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getInterpolated">getInterpolated(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getLimited">getLimited(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#getMiddle">getMiddle(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getNormalized">getNormalized()</a> </li>
+                         
+                              
+                             <li> <a href="#getPerpendicular">getPerpendicular()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#getRotated">getRotated(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#getRotatedRad">getRotatedRad(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#getScaled">getScaled(...)</a> </li>
+                         
+                              
+                             <li> <a href="#interpolate">interpolate(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#isAligned">isAligned(...)</a> </li>
+                         
+                              
+                             <li> <a href="#isAlignedRad">isAlignedRad(...)</a> </li>
+                         
+                              
+                             <li> <a href="#length">length()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#limit">limit(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#map">map(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#match">match(...)</a> </li>
+                         
+                              
+                             <li> <a href="#middle">middle(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#normalize">normalize()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#one">one()</a> </li>
+                         
+                              
+                             <li> <a href="#operator!=">operator!=(...)</a> </li>
+                         
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#operator+">operator+(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator+=">operator+=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator-">operator-(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#operator-=">operator-=(...)</a> </li>
+                         
+                         
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#operator==">operator==(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#perpendicular">perpendicular()</a> </li>
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#rotate">rotate(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#rotateRad">rotateRad(...)</a> </li>
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#scale">scale(...)</a> </li>
+                         
+                              
+                             <li> <a href="#set">set(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#squareDistance">squareDistance(...)</a> </li>
+                         
+                              
+                             <li> <a href="#squareLength">squareLength()</a> </li>
+                         
+                              
+                             <li> <a href="#zero">zero()</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+                <p class="top_list_header"><a href="#variables">class variables</a></p>
+                <ul class="functionslist">
+                             <li> <a href="#DIM">const int DIM</a> </li>
+                             <li> <a href="#x">float x</a> </li>
+                             <li> <a href="#y">float y</a> </li>
+                 </ul>
+            
+             
+            
+             <!-- list of functions -->              
+            <p class="top_list_header"><a href="#functions">functions</a></p>
+                <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#operator*">operator*(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator+">operator+(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator-">operator-(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator/">operator/(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator<<">operator<<(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator>>">operator>>(...)</a> </li>
+                         
+                 </ul>
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofVec2f methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="align">align(...)</a></h1>
+	<h2>
+  <p>bool ofVec2f::align(const ofVec2f &amp;vec, float tolerance=0.0001)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns <code>true</code> if both vectors are aligned (pointing in the same direction). <code>tolerance</code> is an angle tolerance/threshold (specified in degrees) for deciding if the vectors are sufficiently aligned.</p>
+<pre><code class="cpp">ofVec2f v1 = ofVec2f(40, 20);
+ofVec2f v2 = ofVec2f(4, 2);
+// v1.align(v2) returns true
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="alignRad">alignRad(...)</a></h1>
+	<h2>
+  <p>bool ofVec2f::alignRad(const ofVec2f &amp;vec, float tolerance=0.0001)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Just like <a href="#align">align</a> but the angle tolerance is specified in radians rather than degrees.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="angle">angle(...)</a></h1>
+	<h2>
+  <p>float ofVec2f::angle(const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Calculate and return the angle in degrees between this vector and <code>vec</code>.</p>
+<pre><code class="cpp">ofVec2f v1(1,0);
+ofVec2f v2(0,1);
+float angle = v1.angle(v2); // angle is 90
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="angleRad">angleRad(...)</a></h1>
+	<h2>
+  <p>float ofVec2f::angleRad(const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Calculate and return the angle in radians between this vector and <code>vec</code>.</p>
+<pre><code class="cpp">ofVec2f v1(1,0);
+ofVec2f v2(0,1);
+float angle = v1.angleRad(v2); // angle is HALF_PI
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="average">average(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::average(const ofVec2f *points, int num)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets this vector to be the average (<em>centre of gravity</em> or <em>centroid</em>) of a given array of <code>ofVec2f</code>s. <code>points</code> is the array of <code>ofVec2f</code>s and <code>num</code> specifies the number of <code>ofVec2f</code>s in the array.</p>
+<pre><code class="cpp">int numPoints = 10;
+ofVec2f points[numPoints];
+for ( int i=0; i&lt;numPoints; i++ ) {
+    points[i].set( ofRandom(0,100), ofRandom(0,100) );
+}
+ofVec2f centroid;
+centroid.average( points, numPoints ); 
+// centroid now is the centre of gravity/average of all the random points
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="distance">distance(...)</a></h1>
+	<h2>
+  <p>float ofVec2f::distance(const ofVec2f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Treats both this vector and <code>pnt</code> as points in 2D space, and calculates and returns the distance between them.</p>
+<pre><code class="cpp">ofVec2f p1( 3, 4 );
+ofVec2f p2( 6, 8 );
+float distance = p1.distance( p2 ); // distance is 5
+</code></pre>
+
+<p><code>distance</code> involves a square root calculation, which is one of the slowest things you can do in programming. If you don't need an exact number but rather just a rough idea of distance (for example when finding the shortest distance of a bunch of points to a reference point, where it doesn't matter exactly what the distances are, you just want the shortest), you can use <a href="#squareDistance"><code>squareDistance</code></a> instead.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="dot">dot(...)</a></h1>
+	<h2>
+  <p>float ofVec2f::dot(const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Calculate and return the dot product of this vector with <code>vec</code>.</p>
+<p><em>Dot product</em> (less commonly known as <em>Euclidean inner product</em>) expresses the angular relationship between two vectors. In other words it is a measure of how <em>parallel</em> two vectors are. If they are completely perpendicular the dot product is 0; if they are completely parallel their dot product is either 1 if they are pointing in the same direction, or -1 if they are pointing in opposite directions.</p>
+<p><img alt="DOT" src="../math/dotproduct.png" />
+Image courtesy of Wikipedia</p>
+<pre><code class="cpp">ofvec2f a1(1, 0);
+ofVec2f b1(0, 1); // 90 degree angle to a1
+dot = a1.dot(b1); // dot is 0, ie cos(90)
+
+ofVec2f a2(1, 0); 
+ofVec2f b2(1, 1); // 45 degree angle to a2
+b2.normalize(); // vectors should to be unit vectors (normalized)
+float dot = a2.dot(b2); // dot is 0.707, ie cos(45)
+
+ofVec2f a3(1, 0);
+ofVec2f b3(-1, 0); // 180 degree angle to a3
+dot = a3.dot(b3); // dot is -1, ie cos(180)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getInterpolated">getInterpolated(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::getInterpolated(const ofVec2f &amp;pnt, float p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Perform a linear interpolation of this vector's position towards <code>pnt</code> and return the interpolated position without altering the original vector. <code>p</code> controls the amount to move towards <code>pnt</code>. <code>p</code> is normally between 0 and 1 and where 0 means stay the original position and 1 means move all the way to <code>pnt</code>, but you can also have <code>p</code> greater than 1 overshoot <code>pnt</code>, or less than 0 to move backwards away from <code>pnt</code>.</p>
+<pre><code class="cpp">ofVec2f v1( 0, 5 );
+ofVec2f v2( 10, 10 );
+ofVec3f v3 = v1.getInterpolated( p2, 0.5 ); // v3 is (5, 7.5)
+ofVec3f v4 = v1.getInterpolated( p2, 0.8 ); // v4 is (8, 9)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getLimited">getLimited(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::getLimited(float max)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a copy of this vector with its length (magnitude) restricted to a maximum of <code>max</code> units by scaling down if necessary.</p>
+<pre><code class="cpp">ofVec2f v1(5, 1); // length is about 5.1
+ofVec2f v2(2, 1); // length is about 2.2
+ofVec2f v1Limited = v1.getLimited(3); 
+// v1Limited is (2.9417, 0.58835) which has length of 3 in the same direction as v1
+ofVec2f v2Limited = v2.getLimited(3);
+// v2Limited is (2, 1) (same as v2)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMiddle">getMiddle(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::getMiddle(const ofVec2f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Calculate and return the midpoint between this vector and <code>pnt</code>.</p>
+<pre><code class="cpp">ofVec2f v1(5, 0);
+ofVec2f v2(10, 10);
+ofVec3f mid = v1.getMiddle(v2); // mid gets (7.5, 5)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getNormalized">getNormalized()</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::getNormalized()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a normalized copy of this vector. </p>
+<p><em>Normalization</em> means to scale the vector so that its length (magnitude) is exactly 1, at which stage all that is left is the direction. A normalized vector is usually called a <em>unit vector</em>, and can be used to represent a pure direction (heading).</p>
+<pre><code class="cpp">ofVec2f v1(5, 0);
+ofVec2f v1Normalized = v1.getNormalized(); // (1, 0)
+ofVec2f v2(5, 5);
+ofVec2f v2Normalized = v2.getNormalized(); // (√2, √2)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getPerpendicular">getPerpendicular()</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::getPerpendicular()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return the <strong>normalized</strong> <code>ofVec2f</code> that is perpendicular to this vector (ie rotated 90 degrees and normalized).</p>
+<p><img alt="PERPENDICULAR" src="../math/perpendicular.png" />
+Image courtesy of Wikipedia</p>
+<pre><code class="cpp">ofVec2f v(2, 5);
+ofVec2f u = v.getPerpendicular(); // u is (0.928, -0.371)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getRotated">getRotated(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::getRotated(float angle)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec2f</code> that is the result of rotating this vector by <code>angle</code> degrees around the origin.</p>
+<pre><code class="cpp">ofVec2f v1(1, 0);
+ofVec2f v2 = v1.getRotated( 45 ); // v2 is (√2, √2)
+ofVec3f v3 = v2.getRotated( 45 ); // v3 is (0, 1)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getRotated">getRotated(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::getRotated(float angle, const ofVec2f &amp;pivot)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Like <a href="#getRotated">getRotated</a> but rotates around <code>pivot</code> rather than around the origin.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getRotatedRad">getRotatedRad(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::getRotatedRad(float angle)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec2f</code> that is the result of rotating this vector by <code>angle</code> radians around the origin.</p>
+<pre><code class="cpp">ofVec2f v1(1, 0);
+ofVec2f v2 = v1.getRotatedRad( PI/4 ); // v2 is (√2, √2)
+ofVec3f v3 = v2.getRotated( PI/4 ); // v3 is (0, 1)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getRotatedRad">getRotatedRad(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::getRotatedRad(float angle, const ofVec2f &amp;pivot)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Like <a href="#getRotatedRad">getRotatedRad</a> but rotates around <code>pivot</code> rather than around the origin.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getScaled">getScaled(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::getScaled(const float length)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec2f</code> that is the result of scaling this vector up or down so that it has the requested length.</p>
+<pre><code class="cpp">ofVec2f v1( 3, 4 ); // length is 5
+ofVec2f v2 = v1.getScaled( 15 ); // ( 9, 12 ), length is now 15
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="interpolate">interpolate(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::interpolate(const ofVec2f &amp;pnt, float p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Perform a linear interpolation of this vector's position towards <code>pnt</code>. <code>p</code> controls the amount to move towards <code>pnt</code>. <code>p</code> is normally between 0 and 1 and where 0 means stay the original position and 1 means move all the way to <code>pnt</code>, but you can also have <code>p</code> greater than 1 overshoot <code>pnt</code>, or less than 0 to move backwards away from <code>pnt</code>.</p>
+<pre><code class="cpp">ofVec2f v1( 0, 5 );
+ofVec2f v2( 10, 10 );
+// go go gadget zeno
+v1.interpolate( v2, 0.5 ); // v1 is now (5, 7.5)
+v1.interpolate( v2, 0.5 ); // v1 is now (7.5, 8.75)
+v1.interpolate( v2, 0.5 ); // v1 is now (8.75, 9.375)
+v1.interpolate( v2, 0.5 ); // v1 is now (9.375, 9.6875)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isAligned">isAligned(...)</a></h1>
+	<h2>
+  <p>bool ofVec2f::isAligned(const ofVec2f &amp;vec, float tolerance=0.0001)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isAlignedRad">isAlignedRad(...)</a></h1>
+	<h2>
+  <p>bool ofVec2f::isAlignedRad(const ofVec2f &amp;vec, float tolerance=0.0001)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="length">length()</a></h1>
+	<h2>
+  <p>float ofVec2f::length()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return the length (magnitude) of this vector.</p>
+<pre><code class="cpp">ofVec2f v(3, 4);
+float len = v.length(); // len is 5 (3,4,5 triangle)
+</code></pre>
+
+<p><code>length</code> involves a square root calculation, which is one of the slowest things you can do in programming. If you don't need an exact number but rather just a rough idea of a length (for example when finding the shortest distance of a bunch of points to a reference point, where it doesn't matter exactly what the lengths are, you just want the shortest), you can use <a href="#squareLength"><code>squareLength</code></a> instead.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="limit">limit(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::limit(float max)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Restrict the length (magnitude) of this vector to a maximum of <code>max</code> units by scaling down if necessary.</p>
+<pre><code class="cpp">ofVec2f v1(5, 1); // length is about 5.1
+ofVec2f v2(2, 1); // length is about 2.2
+v1.limit(3); 
+// v1 is now (2.9417, 0.58835) which has length of 3 in the same direction as at initialization
+v2.limit(3);
+// v2 is unchanged
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="map">map(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::map(const ofVec2f &amp;origin, const ofVec2f &amp;vx, const ofVec2f &amp;vy)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Maps this vector from its default coordinate system -- origin (0,0), X direction (1,0), Y direction (0,1) -- to a new coordinate system defined with origin at <code>origin</code>, X direction <code>vx</code>, and Y direction <code>vy</code>. </p>
+<p><em>In most case you want <code>vx</code> and <code>vy</code> to be perpendicular and of unit length; if they are not perpendicular you will have shearing as part of the mapping, and if they are not of unit length you will have scaling as part of the mapping.</em></p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="match">match(...)</a></h1>
+	<h2>
+  <p>bool ofVec2f::match(const ofVec2f &amp;vec, float tolerance=0.0001)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns <code>true</code> if each component is <em>close enough</em> to its corresponding component in <code>vec</code>, where what is <em>close enough</em> is determined by the value of <code>tolerance</code>: </p>
+<pre><code class="cpp">ofVec2f v1 = ofVec2f(40, 20);
+ofVec2f v2 = ofVec2f(40.01, 19.999);
+// v1.match(v2, 0.1) returns true
+// v1.match(v2, 0.001) returns false
+</code></pre>
+
+<p>This is handy if, for example, you want to find out when a point becomes <em>close enough</em> to another point to trigger an event.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="middle">middle(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::middle(const ofVec2f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set this vector to the midpoint between itself and <code>pnt</code>.</p>
+<pre><code class="cpp">ofVec2f v1( 0, 5 );
+ofVec2f v2( 10, 10 );
+// go go gadget zeno
+v1.middle( v2 ); // v1 is now (5, 7.5)
+v1.middle( v2 ); // v1 is now (7.5, 8.75)
+v1.middle( v2 ); // v1 is now (8.75, 9.375)
+v1.middle( v2 ); // v1 is now (9.375, 9.6875)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="normalize">normalize()</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::normalize()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Normalize the vector.</p>
+<p><em>Normalizing</em> means to scale the vector so that its length (magnitude) is exactly 1, at which stage all that is left is the direction. A normalized vector is usually called a <em>unit vector</em>, and can be used to represent a pure direction (heading).</p>
+<pre><code class="cpp">ofVec2f v1(5, 0);
+v1.normalize(); // v2 is now (1, 0)
+ofVec2f v2(5, 5);
+v2.normalize(); // v2 is now (√2, √2)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="one">one()</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::one()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator!=">operator!=(...)</a></h1>
+	<h2>
+  <p>bool ofVec2f::operator!=(const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns <code>true</code> if any component is different to its corresponding component in <code>vec</code>, ie if <code>x != vec.x</code> or <code>y != vec.y</code>; otherwise returns <code>false</code>.</p>
+<pre><code class="cpp">ofVec2f v1(40, 20); 
+ofVec2f v2(50, 30); 
+ofVec2f v3(40, 20); 
+// ( v1 != v2 ) is true
+// ( v1 != v3 ) is false
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*">operator*(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::operator*(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec2f</code> that is this vector scaled by multiplying both <code>x</code> and <code>y</code> members by <code>f</code>.</p>
+<pre><code class="cpp">ofVec2f v1(2, 5);
+ofVec2f v2 = v1 * 4; // (8, 20)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*=">operator*=(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::operator*=(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Scale this vector by multiplying both <code>x</code> and <code>y</code> members by <code>f</code>.</p>
+<pre><code class="cpp">ofVec2f v1(2, 5);
+v1 *= 4; // (8, 20)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::operator+(const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Super easy vector addition. Returns a new vector (<code>x</code>+<code>vec.x</code>,<code>y</code>+<code>vec.y</code>).</p>
+<pre><code class="cpp">ofVec2f v1 = ofVec2f(40, 20); 
+ofVec2f v2 = ofVec2f(25, 50);
+ofVec3f v3 = v1 + v2; // v3 is (65, 70)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::operator+(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns a new vector with a float value <code>f</code> added to both <code>x</code> and <code>y</code> members.</p>
+<pre><code class="cpp">ofVec2f v1(2, 5);
+ofVec2f v2 = v1 + 10; // (12, 15)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+=">operator+=(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::operator+=(const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Super easy addition assignment. Adds <code>vec.x</code> to <code>x</code>, and adds <code>vec.y</code> to <code>y</code>.</p>
+<pre><code class="cpp">ofVec2f v1 = ofVec2f(40, 20); 
+ofVec2f v2 = ofVec2f(25, 50);
+v1 += v2; // v1 is (65, 70)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+=">operator+=(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::operator+=(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds a float value <code>f</code> to both <code>x</code> and <code>y</code> members.</p>
+<pre><code class="cpp">ofVec2f v1(2, 5);
+v1 += 10; // (12, 15)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::operator-(const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Super easy vector subtraction. Returns a new vector (<code>x</code>-<code>vec.x</code>,<code>y</code>-<code>vec.y</code>).</p>
+<pre><code class="cpp">ofVec2f v1 = ofVec2f(40, 20); 
+ofVec2f v2 = ofVec2f(25, 50);
+ofVec3f v3 = v1 - v2; // v3 is (15, -30)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::operator-(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns a new vector with a float value <code>f</code> subtracted from both <code>x</code> and <code>y</code> members.</p>
+<pre><code class="cpp">ofVec2f v1(2, 5);
+ofVec2f v2 = v1 - 10; // (-8, -5)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-()</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::operator-()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns a new <code>ofVec2f</code> that is the inverted version (mirrored in X and Y) of this vector.</p>
+<pre><code class="cpp">ofVec2f v1(2, 5);
+ofVec2f v2 = -v1; // (-2, -5)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-=">operator-=(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::operator-=(const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Super easy subtraction assignment. Subtracts <code>vec.x</code> from <code>x</code>, and subtracts <code>vec.y</code> from <code>y</code>.</p>
+<pre><code class="cpp">ofVec2f v1 = ofVec2f(40, 20); 
+ofVec2f v2 = ofVec2f(25, 50);
+v1 -= v2; // v1 is (15, -30)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-=">operator-=(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::operator-=(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Subtract a float value <code>f</code> from both <code>x</code> and <code>y</code> members.</p>
+<pre><code class="cpp">ofVec2f v1(2, 5);
+v1 -= 10; // (-8, -5)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/">operator/(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::operator/(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a new <code>ofVec2f</code> that is this vector scaled by dividing both <code>x</code> and <code>y</code> members by <code>f</code>.</p>
+<pre><code class="cpp">ofVec2f v1(2, 5);
+ofVec2f v2 = v1 / 4; // (0.5, 1.25)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/=">operator/=(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::operator/=(const float f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Scale this vector by dividing both <code>x</code> and <code>y</code> members by <code>f</code>.</p>
+<pre><code class="cpp">ofVec2f v1(2, 5);
+v1 /= 4; // (0.5, 1.25)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator==">operator==(...)</a></h1>
+	<h2>
+  <p>bool ofVec2f::operator==(const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns <code>true</code> if each component is the same as the corresponding component in <code>vec</code>, ie if <code>x == vec.x</code> and <code>y == vec.y</code>; otherwise returns <code>false</code>.</p>
+<pre><code class="cpp">ofVec2f v1(40, 20); 
+ofVec2f v2(50, 30); 
+ofVec2f v3(40, 20); 
+// ( v1 == v2 ) is false
+// ( v1 == v3 ) is true
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="perpendicular">perpendicular()</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::perpendicular()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set this vector to its own <strong>normalized</strong> perpendicular (by rotating 90 degrees and normalizing).</p>
+<p><img alt="PERPENDICULAR" src="../math/perpendicular.png" />
+Image courtesy of Wikipedia</p>
+<pre><code class="cpp">ofVec2f v(2, 5);
+v.perpendicular(); // v is (0.928, -0.371)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="rotate">rotate(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::rotate(float angle)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Rotate this vector by <code>angle</code> degrees around the origin.</p>
+<pre><code class="cpp">ofVec2f v1(1, 0);
+v1.rotate( 45 ); // (√2, √2)
+v1.rotate( 45 ); // (0, 1)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="rotate">rotate(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::rotate(float angle, const ofVec2f &amp;pivot)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Like <a href="#rotate">rotate</a> but rotates around <code>pivot</code> rather than around the origin.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="rotateRad">rotateRad(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::rotateRad(float angle)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Rotate this vector by <code>angle</code> radians around the origin.</p>
+<pre><code class="cpp">ofVec2f v1(1, 0);
+v1.rotate( PI/4 ); // (√2, √2)
+v1.rotate( PI/4 ); // (0, 1)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="rotateRad">rotateRad(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::rotateRad(float angle, const ofVec2f &amp;pivot)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Like <a href="#rotateRad">rotateRad</a> but rotates around <code>pivot</code> rather than around the origin.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scale">scale(...)</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::scale(const float length)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Scales this vector up or down so that it has the requested length.</p>
+<pre><code class="cpp">ofVec2f v1( 3, 4 ); // length is 5
+v1.scale( 15 ); // v1 is now (9, 12), with length 15
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofVec2f::set(float _x, float _y)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set <code>x</code> and <code>y</code> components of this vector with just one function call.</p>
+<pre><code class="cpp">ofVec2f v1;
+v1.set(40, 20);
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofVec2f::set(const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set the <code>x</code> and <code>y</code> components of this vector by copying the corresponding values from <code>vec</code>.</p>
+<pre><code class="cpp">ofVec2f v1(40, 20);
+ofVec2f v2;
+v2.set(v1); // v2.x is 40, v2.y is 20
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofVec2f::set(float _scalar)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="squareDistance">squareDistance(...)</a></h1>
+	<h2>
+  <p>float ofVec2f::squareDistance(const ofVec2f &amp;pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Treats both this vector and <code>pnt</code> as points in 2D space, and calculates and returns the squared distance between them.</p>
+<pre><code class="cpp">ofVec2f p1( 3, 4 );
+ofVec2f p2( 6, 8 );
+float distance = p1.distance( p2 ); // distance is 5
+</code></pre>
+
+<p>Use as a much faster alternative to <a href="#distance"><code>distance</code></a> if you don't need to know an exact number but rather just a rough idea of distance (for example when finding the shortest distance of a bunch of points to a reference point, where it doesn't matter exactly what the distances are, you just want the shortest). It avoids the square root calculation that is ordinarily required to calculate a length.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="squareLength">squareLength()</a></h1>
+	<h2>
+  <p>float ofVec2f::squareLength()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return the squared length (squared magnitude) of this vector.</p>
+<pre><code class="cpp">ofVec2f v(3, 4);
+float len = v.length(); // len is 5 (3,4,5 triangle)
+</code></pre>
+
+<p>Use as a much faster alternative to <a href="#length"><code>length</code></a> if you don't need to know an accurate length but rather just a rough idea of a length (for example when finding the shortest distance of a bunch of points to a reference point, where it doesn't matter exactly what the lengths are, you just want the shortest). It avoids the square root calculation that is ordinarily required to calculate a length.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="zero">zero()</a></h1>
+	<h2>
+  <p>ofVec2f ofVec2f::zero()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+                  <h2><a name="variables"></a>ofVec2f variables</h2>
+                            
+<div class="documentation_detail">
+	<h1>const int <a name="DIM">DIM</a></h1>
+	<h2>
+  <p>const int ofVec2f::DIM</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="x">x</a></h1>
+	<h2>
+  <p>float ofVec2f::x</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Stores the X component of this vector.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="y">y</a></h1>
+	<h2>
+  <p>float ofVec2f::y</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Stores the Y component of this vector.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- functions detail -->
+                  <h2><a name="functions"></a>ofVec2f functions</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*">operator*(...)</a></h1>
+	<h2>
+  <p>ofVec2f operator*(float f, const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofVec2f operator+(float f, const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-(...)</a></h1>
+	<h2>
+  <p>ofVec2f operator-(float f, const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/">operator/(...)</a></h1>
+	<h2>
+  <p>ofVec2f operator/(float f, const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator<<">operator<<(...)</a></h1>
+	<h2>
+  <p>ostream &amp; operator&lt;&lt;(ostream &amp;os, const ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator>>">operator>>(...)</a></h1>
+	<h2>
+  <p>istream &amp; operator&gt;&gt;(istream &amp;is, ofVec2f &amp;vec)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:34 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

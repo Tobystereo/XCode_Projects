@@ -1,0 +1,1151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofxXmlSettings</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p>ofxXmlSettings addon allows for reading and writing of xml files in openFrameworks. Most commonly xml settings are used for storing settings between closing and launching apps. XML has the advantage of being easy for people to read and edit but still convenient for manipulating with code.</p>
+<p>An xml document is composed of tags with values and other tags inside of them. A tag has a name, attributes, values. If a tag contains other tags they are called its children. If a tag is inside of another, the enclosing tag is called its parent. The tags next to one another are siblings.<br />
+</p>
+<pre><code class="xml">&lt;parentTagName&gt;
+    &lt;tagName attributeName=&quot;attributeValue&quot;&gt;TagValue&lt;/tagName&gt;
+    &lt;siblingTag /&gt;
+&lt;/parentName&gt; 
+</code></pre>
+
+<p>A very simple example for saving and loading values using ofxXmlSettings variable would look like this:</p>
+<pre><code class="cpp">//put some some settings into a file
+ofxXmlSettings settings;
+settings.setValue(&quot;settings:blinkRate&quot;, 10);
+settings.setValue(&quot;settings:gravity&quot;, 9.8);
+settings.setValue(&quot;settings:sceneName&quot;, &quot;field&quot;);
+settings.saveFile(&quot;settings.xml&quot;); //puts settings.xml file in the bin/data folder
+</code></pre>
+
+<p>The file this generates would look like this</p>
+<pre><code class="xml">&lt;settings&gt;
+    &lt;blinkRate&gt;10&lt;/blinkRate&gt;
+    &lt;gravity&gt;9.8&lt;/gravity&gt;
+    &lt;sceneName&gt;field&lt;/sceneName&gt;
+&lt;/settings&gt;
+</code></pre>
+
+<p>To load the file again, use a snippet like the following</p>
+<pre><code class="cpp">//now load that same file and get the values out
+ofxXmlSettings settings;
+settings.loadFile(&quot;settings.xml&quot;);
+int blinkRate = settings.getValue(&quot;settings:blinkRate&quot;, 0.0);
+float gravity = settings.getValue(&quot;settings:gravity&quot;, 0);
+string sceneName = settings.getValue(&quot;settings:sceneName&quot;, &quot;defaultScene&quot;);
+</code></pre>
+
+<p>A more complex example involving saving an array.</p>
+<pre><code class="cpp">ofxXmlSettings positions;
+positions.addTag(&quot;positions&quot;);
+positions.pushTag(&quot;positions&quot;);
+//points is a vector&lt;ofPoint&gt; that we want to save to a file
+for(int i = 0; i &lt; points.size(); i++){
+    //each position tag represents one point
+    positions.addTag(&quot;position&quot;);
+    positions.pushTag(&quot;position&quot;,i);
+    //so set the three values in the file
+    positions.addValue(&quot;X&quot;, points[i].x);
+    positions.addValue(&quot;Y&quot;, points[i].y);
+    positions.addValue(&quot;Z&quot;, points[i].z);
+    positions.popTag();//pop position
+}
+positions.popTag(); //pop position
+positions.saveFile(&quot;positions.xml&quot;);
+
+//This is how you would load that very same file    
+ofxXmlSettings settings;
+if(settings.loadFile(&quot;positions.xml&quot;)){
+    settings.pushTag(&quot;positions&quot;);
+    int numberOfSavedPoints = settings.getNumTags(&quot;position&quot;);
+    for(int i = 0; i &lt; numberOfSavedPoints; i++){
+        settings.pushTag(&quot;position&quot;, i);
+
+        ofPoint p;
+        p.x = settings.getValue(&quot;X&quot;, 0);
+        p.y = settings.getValue(&quot;Y&quot;, 0);
+        p.z = settings.getValue(&quot;Z&quot;, 0);
+
+        points.push_back(p);
+        settings.popTag();
+    }
+
+    settings.popTag(); //pop position
+}
+else{
+    ofLogError(&quot;Position file did not load!&quot;);
+}
+</code></pre>
+
+<p>What is this "which" argument I see everywhere used for?</p>
+<p>Most of the time you can ignore this and treat it as if it weren't there. But if specified it selects the nth tag with the same tag name at the current root of the document Normally this just means the top level tags in the document - but if you use the pushTag and popTag you can temporarily set the root of the document to be that specified tag. The main idea is to allow you to have multiple tags with the same name.</p>
+<p>Here is an example:</p>
+<pre><code class="xml">&lt;time&gt;102229&lt;/time&gt;  &lt;-- which = 0
+&lt;time&gt;298292&lt;/time&gt;  &lt;-- which = 1
+&lt;time&gt;393393&lt;/time&gt;  &lt;-- which = 2
+&lt;time&gt;447373&lt;/time&gt;  &lt;-- which = 3
+</code></pre>
+
+<p>But if we wanted to group these into multiple <recording> tags and have multiple time values inside
+we can use push and pop to move into the recording tags as if they were the document root</p>
+<pre><code class="xml">&lt;recording&gt; &lt;-- we temporarily push into here with pushTag(&quot;recording&quot;, 0);
+    &lt;time&gt;19222&lt;/time&gt;  &lt;-- to set this we call setValue(&quot;time&quot;, 19222, 0);   ( which = 0 )
+    &lt;time&gt;23232&lt;/time&gt;  &lt;-- to set this we call setValue(&quot;time&quot;, 23232, 1);   ( which = 1 )
+&lt;/recording&gt; &lt;-- we pop back out here with popTag();
+</code></pre>
+
+<pre><code class="xml">&lt;recording&gt;  &lt;-- we temporarily push into here with pushTag(&quot;recording&quot;, 1); &lt;-- now we use 1 to select the 2nd recording tag
+    &lt;time&gt;33342&lt;/time&gt;  &lt;-- setValue(&quot;time&quot;, 33342, 0);   ( which = 0 )
+    &lt;time&gt;22722&lt;/time&gt;  &lt;-- setValue(&quot;time&quot;, 22722, 0);   ( which = 1 )
+&lt;/recording&gt;
+</code></pre>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#addAttribute">addAttribute(...)</a> </li>
+                         
+                         
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#addTag">addTag(...)</a> </li>
+                         
+                              
+                             <li> <a href="#addValue">addValue(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#attributeExists">attributeExists(...)</a> </li>
+                         
+                              
+                             <li> <a href="#clear">clear()</a> </li>
+                         
+                              
+                             <li> <a href="#clearTagAttributes">clearTagAttributes(...)</a> </li>
+                         
+                              
+                             <li> <a href="#clearTagContents">clearTagContents(...)</a> </li>
+                         
+                              
+                             <li> <a href="#copyXmlToString">copyXmlToString(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getAttribute">getAttribute(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#getAttributeNames">getAttributeNames(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#getNumAttributes">getNumAttributes(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getNumTags">getNumTags(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getPushLevel">getPushLevel()</a> </li>
+                         
+                              
+                             <li> <a href="#getValue">getValue(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#loadFile">loadFile(...)</a> </li>
+                         
+                              
+                             <li> <a href="#loadFromBuffer">loadFromBuffer(...)</a> </li>
+                         
+                              
+                             <li> <a href="#popTag">popTag()</a> </li>
+                         
+                              
+                             <li> <a href="#pushTag">pushTag(...)</a> </li>
+                         
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#removeAttribute">removeAttribute(...)</a> </li>
+                         
+                              
+                             <li> <a href="#removeTag">removeTag(...)</a> </li>
+                         
+                              
+                             <li> <a href="#saveFile">saveFile(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#setAttribute">setAttribute(...)</a> </li>
+                         
+                         
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#setValue">setValue(...)</a> </li>
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#tagExists">tagExists(...)</a> </li>
+                         
+                         
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+                <p class="top_list_header"><a href="#variables">class variables</a></p>
+                <ul class="functionslist">
+                             <li> <a href="#bDocLoaded">bool bDocLoaded</a> </li>
+                             <li> <a href="#doc">TiXmlDocument doc</a> </li>
+                 </ul>
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofxXmlSettings methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="addAttribute">addAttribute(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::addAttribute(const string &amp;tag, const string &amp;attribute, int value, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds a new attribute to the tag with with the given int value. If the tag doesn't exist it is created. If an attribute at index 'which' already exists its value replaced by the provided value</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="addAttribute">addAttribute(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::addAttribute(const string &amp;tag, const string &amp;attribute, double value, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds a new attribute to the tag with the given double value. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="addAttribute">addAttribute(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::addAttribute(const string &amp;tag, const string &amp;attribute, const string &amp;value, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds a new attribute to the tag with the given string value. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="addAttribute">addAttribute(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::addAttribute(const string &amp;tag, const string &amp;attribute, int value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds a new attribute to the tag with with the given int value.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="addAttribute">addAttribute(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::addAttribute(const string &amp;tag, const string &amp;attribute, double value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds a new attribute to the tag with with the given double value.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="addAttribute">addAttribute(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::addAttribute(const string &amp;tag, const string &amp;attribute, const string &amp;value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds a new attribute to the tag with with the given string value.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="addTag">addTag(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::addTag(const string &amp;tag)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds an empty tag at the current document level. If you want to add children tags, call pushTag afterwords to begin editing the document with the new tag as root.</p>
+<p>Return the number of tags with the same name at the current level.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="addValue">addValue(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::addValue(const string &amp;tag, int value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds a tag with tag name and integer value to the document, returning the number of tags with the same name.</p>
+<p>addValue and setValue are very similar, both add new tags to the current document with the given name and value.  The distinction is that if tags exist with the same name at the current document level, addValue will create additional tags, while setValue will replace contents of the tags based on the 'which' parameter.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="addValue">addValue(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::addValue(const string &amp;tag, double value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds a tag with tag name and double value to the document, returning the number of tags with the same name.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="addValue">addValue(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::addValue(const string &amp;tag, const string &amp;value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Adds a tag with tag name and string value to the document, returning the number of tags with the same name.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="attributeExists">attributeExists(...)</a></h1>
+	<h2>
+  <p>bool ofxXmlSettings::attributeExists(const string &amp;tag, const string &amp;attribute, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if a tag has any attributes.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="clear">clear()</a></h1>
+	<h2>
+  <p>void ofxXmlSettings::clear()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Removes all tags at the current document level.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="clearTagAttributes">clearTagAttributes(...)</a></h1>
+	<h2>
+  <p>void ofxXmlSettings::clearTagAttributes(const string &amp;tag, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Clears all attributes from the given tag name and tag index which.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="clearTagContents">clearTagContents(...)</a></h1>
+	<h2>
+  <p>void ofxXmlSettings::clearTagContents(const string &amp;tag, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>If the given tag exists at the current pushTag level set its contents to empty.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="copyXmlToString">copyXmlToString(...)</a></h1>
+	<h2>
+  <p>void ofxXmlSettings::copyXmlToString(string &amp;str)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Copies the contents of the ofxXmlSettings into the string str.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getAttribute">getAttribute(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::getAttribute(const string &amp;tag, const string &amp;attribute, int defaultValue, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the value of the attribute on tag at index which as an int.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getAttribute">getAttribute(...)</a></h1>
+	<h2>
+  <p>double ofxXmlSettings::getAttribute(const string &amp;tag, const string &amp;attribute, double defaultValue, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the value of the attribute on tag at index which as a double.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getAttribute">getAttribute(...)</a></h1>
+	<h2>
+  <p>string ofxXmlSettings::getAttribute(const string &amp;tag, const string &amp;attribute, const string &amp;defaultValue, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the value of the attribute on tag at index which as a string.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getAttributeNames">getAttributeNames(...)</a></h1>
+	<h2>
+  <p>bool ofxXmlSettings::getAttributeNames(const string &amp;tag, vector&lt; string &gt; &amp;outNames, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns an array of strings containing all attribute names on the tag.  This is useful in conjunction with a loop to get all values of the tags one by one with calls to getAttribute.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getNumAttributes">getNumAttributes(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::getNumAttributes(const string &amp;tag, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the number of attributes on a tag at index which.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getNumTags">getNumTags(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::getNumTags(const string &amp;tag)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the number of tags with the given name at the current document level. Useful for iterating through a list of sibling tags with the same name.<br />
+</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getPushLevel">getPushLevel()</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::getPushLevel()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>getPushLevel returns the number of tags that have been pushed. Starting at 0 when the file is first populated (eg a call to loadFile). Each time pushTag is called push level increases by one. Each time popTag is called it decreases.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getValue">getValue(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::getValue(const string &amp;tag, int defaultValue, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the value stored by the requested tag. The data type returned depends on the type provided as the defaultArgument. For example, if the tag is:</p>
+<pre><code class="xml">&lt;myTag&gt;9.8&lt;/myTag&gt;   
+</code></pre>
+
+<p>The value can be interpreted in three different ways, as a float, int, or string by changing the default type provided to the call.</p>
+<pre><code class="cpp">//returns &quot;9.8&quot;
+string myString = settings.getValue(&quot;myTag&quot;, &quot;&quot;);
+//returns the integer value 9
+int myInt = settings.getValue(&quot;myTag&quot;, 0);
+//returns the double value 9.8
+double myDouble = settings.getValue(&quot;myTag&quot;, 0.0);
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getValue">getValue(...)</a></h1>
+	<h2>
+  <p>double ofxXmlSettings::getValue(const string &amp;tag, double defaultValue, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the value stored by the requested tag as a double. Refer above for description of how this method works.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getValue">getValue(...)</a></h1>
+	<h2>
+  <p>string ofxXmlSettings::getValue(const string &amp;tag, const string &amp;defaultValue, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the value stored by the requested tag as a string. Refer above for description of how this method works.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="loadFile">loadFile(...)</a></h1>
+	<h2>
+  <p>bool ofxXmlSettings::loadFile(const string &amp;xmlFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Loads and parses the xml file at the given path.  Returns true if the file is found and is correctly formatted xml.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="loadFromBuffer">loadFromBuffer(...)</a></h1>
+	<h2>
+  <p>bool ofxXmlSettings::loadFromBuffer(string buffer)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Populates the ofxXmlSettings object from a string of containing xml.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="popTag">popTag()</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::popTag()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>popTag restores the current document root after a call to pushTag.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="pushTag">pushTag(...)</a></h1>
+	<h2>
+  <p>bool ofxXmlSettings::pushTag(const string &amp;tag, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Pushing and Popping operations are used to set the current document level. Most of the methods in ofxXmlSettings are done in relationship to just the top level tags, so pushing tags is necessary to go deeper into documents. Every pushTag should be matched with a popTag after operations at that level are finished.<br />
+</p>
+<p>pushingTag pushes the given tag which is then treated as the tag as as the document root.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="removeAttribute">removeAttribute(...)</a></h1>
+	<h2>
+  <p>void ofxXmlSettings::removeAttribute(const string &amp;tag, const string &amp;attribute, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Removes the attribute from tag name at index specified by 'which'.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="removeTag">removeTag(...)</a></h1>
+	<h2>
+  <p>void ofxXmlSettings::removeTag(const string &amp;tag, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Removes a tag from the current level. This differs from clearing it in that the entire tag is removed, rather than just its contents being set to empty.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="saveFile">saveFile(...)</a></h1>
+	<h2>
+  <p>bool ofxXmlSettings::saveFile(const string &amp;xmlFile)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Saves the current state of the xml settings object to file at xmlFile path.<br />
+</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="saveFile">saveFile()</a></h1>
+	<h2>
+  <p>bool ofxXmlSettings::saveFile()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Saves the current state of the xml file to its current path. The current path is defined by whatever path was specified when loadFile(xmlFile) or saveFile(xmlFile) was last called.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setAttribute">setAttribute(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::setAttribute(const string &amp;tag, const string &amp;attribute, int value, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the value of the attribute on tag as a double.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setAttribute">setAttribute(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::setAttribute(const string &amp;tag, const string &amp;attribute, double value, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Refer to addAttribute</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setAttribute">setAttribute(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::setAttribute(const string &amp;tag, const string &amp;attribute, const string &amp;value, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Refer to addAttribute</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setAttribute">setAttribute(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::setAttribute(const string &amp;tag, const string &amp;attribute, int value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Refer to addAttribute</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setAttribute">setAttribute(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::setAttribute(const string &amp;tag, const string &amp;attribute, double value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Refer to addAttribute</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setAttribute">setAttribute(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::setAttribute(const string &amp;tag, const string &amp;attribute, const string &amp;value)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Refer to addAttribute</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setValue">setValue(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::setValue(const string &amp;tag, int value, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets the value of a tag to an integer value.  If the tag already exists, the current value is replaced with value. Otherwise a new tag is created.</p>
+<p>The number of tags with the same name at the current document level is returned.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setValue">setValue(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::setValue(const string &amp;tag, double value, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets the value of a tag to an integer value.  If the tag already exists, the current value is replaced with value otherwise a new tag is created.</p>
+<p>The number of tags with the same name at the current document level is returned.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setValue">setValue(...)</a></h1>
+	<h2>
+  <p>int ofxXmlSettings::setValue(const string &amp;tag, const string &amp;value, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sets the value of a tag to a string value.  If the tag already exists, the current value is replaced with value otherwise a new tag is created.</p>
+<p>The number of tags with the same name at the current document level is returned.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="tagExists">tagExists(...)</a></h1>
+	<h2>
+  <p>bool ofxXmlSettings::tagExists(const string &amp;tag, int which=0)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns true if the given tag exists at the current pushTag level.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+                  <h2><a name="variables"></a>ofxXmlSettings variables</h2>
+                            
+<div class="documentation_detail">
+	<h1>bool <a name="bDocLoaded">bDocLoaded</a></h1>
+	<h2>
+  <p>bool ofxXmlSettings::bDocLoaded</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>TiXmlDocument <a name="doc">doc</a></h1>
+	<h2>
+  <p>TiXmlDocument ofxXmlSettings::doc</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:38 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

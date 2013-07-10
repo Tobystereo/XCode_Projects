@@ -1,0 +1,791 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofPoint</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p>This class contains all the information and functionality of a geometrical point. It can be a 2D or 3D point. ofPoint allow users perform graphical operations, set positions and more with a better organization and control.</p>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#operator!=">operator!=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator*">operator*(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator*=">operator*=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator+">operator+(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator+=">operator+=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator-">operator-()</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#operator-=">operator-=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator/">operator/(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator/=">operator/=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator=">operator=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator==">operator==(...)</a> </li>
+                         
+                              
+                             <li> <a href="#set">set(...)</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+                <p class="top_list_header"><a href="#variables">class variables</a></p>
+                <ul class="functionslist">
+                             <li> <a href="#v">float v</a> </li>
+                             <li> <a href="#x">float x</a> </li>
+                             <li> <a href="#y">float y</a> </li>
+                             <li> <a href="#z">float z</a> </li>
+                 </ul>
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofPoint methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator!=">operator!=(...)</a></h1>
+	<h2>
+  <p>bool ofPoint::operator!=(const ofPoint &amp; pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>!= operator allow users know if two points are different.
+e.g:</p>
+<pre><code class="cpp">
+ofPoint p1,p2;
+bool dif;
+p1.set(10,3);
+p2.set(5,5);
+dif=p1!=(p2);
+
+</code></pre>
+
+<p>After this dif=true;</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*">operator*(...)</a></h1>
+	<h2>
+  <p>ofPoint ofPoint::operator*(const ofPoint &amp; pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering two points p1=(p1x,p1y,p1z) and p2=(p2x,p2y,p2z) the operator * performs the arithmetic multiplication for each point component:
+p1<em>p2=(p1x</em>p2x,p1y<em>p2y,p1z</em>p2z)</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*">operator*(...)</a></h1>
+	<h2>
+  <p>ofPoint ofPoint::operator*(const float &amp; val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering two points p1=(p1x,p1y,p1z) and a value val the operator * performs the arithmetic multiplication between each point coordinate and the value:
+p1<em>val=(p1x</em>val,p1y<em>val,p1z</em>val)</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*=">operator*=(...)</a></h1>
+	<h2>
+  <p>ofPoint &amp; ofPoint::operator*=(const ofPoint &amp; pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering two points p1=(p1x,p1y,p1z) and p2=(p2x,p2y,p2z) the operator *= performs the following operation:</p>
+<pre><code class="cpp">
+ofPoint p1,p2;
+...
+p1*=p2;
+
+</code></pre>
+
+<p>Now p1=(p1x<em>p2x,p1y</em>p2y,p1z*p2z);</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*=">operator*=(...)</a></h1>
+	<h2>
+  <p>ofPoint &amp; ofPoint::operator*=(const float &amp; val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering a point p1=(p1x,p1y,p1z) and a value val. The operator *= performs the following operation:</p>
+<pre><code class="cpp">
+ofPoint p1;
+float val;
+...
+p1*=val;
+
+</code></pre>
+
+<p>Now p1=(p1x<em>val,p1y</em>val,p1z*val)</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofPoint ofPoint::operator+(const ofPoint &amp; pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <ul>
+<li>operator perform the addition between two points. 
+(x1,y1,z1)+(x2,y2,z2)=(x1+x2,y1+y2,z1+z2)
+e.g:</li>
+</ul>
+<pre><code class="cpp">
+ofPoint p1,p2,result;
+p1.set(1,2,3);
+p2.set(2,1,0);
+result = p1 + p2;
+
+</code></pre>
+
+<p>After this result=(3,3,3)</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofPoint ofPoint::operator+(const float &amp; val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <ul>
+<li>Operator performs the arithmetic addition of val and point components.
+Considering p1=(p1x,p1y,p1z);</li>
+</ul>
+<pre><code class="cpp">
+ofPoint p1;
+...
+p1=p1+5;
+
+</code></pre>
+
+<p>Now p1=(p1x+5,p1y+5,p1z+5)</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+=">operator+=(...)</a></h1>
+	<h2>
+  <p>ofPoint &amp; ofPoint::operator+=(const ofPoint &amp; pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering two points p1=(p1x,p1y,p1z) and p2=(p2x,p2y,p2z) the operator += performs the following operation:</p>
+<pre><code class="cpp">
+ofPoint p1,p2;
+...
+p1+=p2;
+
+</code></pre>
+
+<p>Now p1=(p1x+p2x,p1y+p2y,p1z+p2z);</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+=">operator+=(...)</a></h1>
+	<h2>
+  <p>ofPoint &amp; ofPoint::operator+=(const float &amp; val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering a point p1=(p1x,p1y,p1z) and a value val. The operator += performs the following operation:</p>
+<pre><code class="cpp">
+ofPoint p1;
+float val;
+...
+p1+=val;
+
+</code></pre>
+
+<p>Now p1=(p1x+val,p1y+val,p1z+val);</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-()</a></h1>
+	<h2>
+  <p>ofPoint ofPoint::operator-()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Calling - operator we turn x,y,z values of a point object into values of  opposite sign.
+e.g:</p>
+<pre><code class="cpp">
+ofPoint p;
+p.set(10,5,-3);
+p = -(p);
+
+</code></pre>
+
+<p>Now p=(-10,-5,3)</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-(...)</a></h1>
+	<h2>
+  <p>ofPoint ofPoint::operator-(const ofPoint &amp; pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering two points p1=(p1x,p1y,p1z) and p2=(p2x,p2y,p2z) the operator - performs the arithmetic substraction between two points:
+p1-p2=(p1x-p2x,p1y-p2y,p1z-p2z)</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-(...)</a></h1>
+	<h2>
+  <p>ofPoint ofPoint::operator-(const float &amp; val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering two points p1=(p1x,p1y,p1z) and a value val the operator - performs the arithmetic substraction between each point coordinate and the value:
+p1-val=(p1x-val,p1y-val,p1z-val)</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-=">operator-=(...)</a></h1>
+	<h2>
+  <p>ofPoint &amp; ofPoint::operator-=(const ofPoint &amp; pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering two points p1=(p1x,p1y,p1z) and p2=(p2x,p2y,p2z) the operator -= performs the following operation:</p>
+<pre><code class="cpp">
+ofPoint p1,p2;
+...
+p1-=p2;
+
+</code></pre>
+
+<p>Now p1=(p1x-p2x,p1y-p2y,p1z-p2z);</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-=">operator-=(...)</a></h1>
+	<h2>
+  <p>ofPoint &amp; ofPoint::operator-=(const float &amp; val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering a point p1=(p1x,p1y,p1z) and a value val. The operator -= performs the following operation:</p>
+<pre><code class="cpp">
+ofPoint p1;
+float val;
+...
+p1-=val;
+
+</code></pre>
+
+<p>Now p1=(p1x-val,p1y-val,p1z-val);</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/">operator/(...)</a></h1>
+	<h2>
+  <p>ofPoint ofPoint::operator/(const ofPoint &amp; pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering two points p1=(p1x,p1y,p1z) and p2=(p2x,p2y,p2z) the operator / performs the arithmetic division for each point component:
+p1/p2=(p1x/p2x,p1y/p2y,p1z/p2z)</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/">operator/(...)</a></h1>
+	<h2>
+  <p>ofPoint ofPoint::operator/(const float &amp; val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering two points p1=(p1x,p1y,p1z) and a value val the operator / performs the arithmetic division between each point coordinate and the value:
+p1/val=(p1x/val,p1y/val,p1z/val)</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/=">operator/=(...)</a></h1>
+	<h2>
+  <p>ofPoint &amp; ofPoint::operator/=(const ofPoint &amp; pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering two points p1=(p1x,p1y,p1z) and p2=(p2x,p2y,p2z) the operator /= performs the following operation:</p>
+<pre><code class="cpp">
+ofPoint p1,p2;
+...
+p1/=p2;
+
+</code></pre>
+
+<p>Now p1=(p1x/p2x,p1y/p2y,p1z/p2z);</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/=">operator/=(...)</a></h1>
+	<h2>
+  <p>ofPoint &amp; ofPoint::operator/=(const float &amp; val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Considering a point p1=(p1x,p1y,p1z) and a value val. The operator /= performs the following operation:</p>
+<pre><code class="cpp">
+ofPoint p1;
+float val;
+...
+p1/=val;
+
+</code></pre>
+
+<p>Now p1=(p1x/val,p1y/val,p1z/val)</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator=">operator=(...)</a></h1>
+	<h2>
+  <p>ofPoint &amp; ofPoint::operator=(const ofPoint &amp; pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>= operator makes the current ofPoint a copy of another ofPoint.
+e.g:</p>
+<pre><code class="cpp">
+ofPoint p1,p2;
+p1.set(10,10,10);
+p2= p1;
+
+</code></pre>
+
+<p>p1 and p2 are now identical. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator=">operator=(...)</a></h1>
+	<h2>
+  <p>ofPoint &amp; ofPoint::operator=(const float &amp; val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>= operator sets x, y and z variables of an ofPoint object to val.
+e.g:</p>
+<pre><code class="cpp">
+ofPoint p1;
+p1.set(1,2,3);
+p1 = 5.3;
+
+</code></pre>
+
+<p>After this p1=(5.3,5.3,5.3);</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator==">operator==(...)</a></h1>
+	<h2>
+  <p>bool ofPoint::operator==(const ofPoint &amp; pnt)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>== operator allow users know if two points are equal.
+e.g:</p>
+<pre><code class="cpp">
+ofPoint p1,p2;
+bool equal;
+p1.set(10,3);
+p2.set(5,5);
+equal=p1==(p2);
+
+</code></pre>
+
+<p>After this equal=false;</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofPoint::set(float _x, float _y, float _z)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set function allow users to set the position of a point object by giving it a specific value for _x, _y and _z.
+For example:</p>
+<pre><code class="cpp">
+ofPoint firstpoint;
+firstpoint.set(100,230,50);
+
+</code></pre>
+
+<p>now firstpoint = (100,230,50)</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+                  <h2><a name="variables"></a>ofPoint variables</h2>
+                            
+<div class="documentation_detail">
+	<h1>float <a name="v">v</a></h1>
+	<h2>
+  <p>float ofPoint::v</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="x">x</a></h1>
+	<h2>
+  <p>float ofPoint::x</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Variable x contains the x coordinate of our ofPoint object.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="y">y</a></h1>
+	<h2>
+  <p>float ofPoint::y</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Variable y contains the y coordinate of our ofPoint object.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="z">z</a></h1>
+	<h2>
+  <p>float ofPoint::z</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Variable z contains the z coordinate of our ofPoint object.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:29 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

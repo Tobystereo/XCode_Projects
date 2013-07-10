@@ -1,0 +1,5 @@
+<% _.each(displayModes, function( mode ) { %>
+  <option data-width="<%= mode.width %>" data-height="<%= mode.height %>">
+    <%= mode.device %> - <%= mode.orientation %> (<%= mode.width %>x<%= mode.height %>)
+  </option>
+<% }); %>

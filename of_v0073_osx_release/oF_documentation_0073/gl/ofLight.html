@@ -1,0 +1,885 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofLight</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#customDraw">customDraw()</a> </li>
+                         
+                              
+                             <li> <a href="#destroy">destroy()</a> </li>
+                         
+                              
+                             <li> <a href="#disable">disable()</a> </li>
+                         
+                              
+                             <li> <a href="#enable">enable()</a> </li>
+                         
+                              
+                             <li> <a href="#getAmbientColor">getAmbientColor()</a> </li>
+                         
+                              
+                             <li> <a href="#getAttenuationConstant">getAttenuationConstant()</a> </li>
+                         
+                              
+                             <li> <a href="#getAttenuationLinear">getAttenuationLinear()</a> </li>
+                         
+                              
+                             <li> <a href="#getAttenuationQuadratic">getAttenuationQuadratic()</a> </li>
+                         
+                              
+                             <li> <a href="#getDiffuseColor">getDiffuseColor()</a> </li>
+                         
+                              
+                             <li> <a href="#getIsDirectional">getIsDirectional()</a> </li>
+                         
+                              
+                             <li> <a href="#getIsEnabled">getIsEnabled()</a> </li>
+                         
+                              
+                             <li> <a href="#getIsPointLight">getIsPointLight()</a> </li>
+                         
+                              
+                             <li> <a href="#getIsSpotlight">getIsSpotlight()</a> </li>
+                         
+                              
+                             <li> <a href="#getLightID">getLightID()</a> </li>
+                         
+                              
+                             <li> <a href="#getSpecularColor">getSpecularColor()</a> </li>
+                         
+                              
+                             <li> <a href="#getSpotConcentration">getSpotConcentration()</a> </li>
+                         
+                              
+                             <li> <a href="#getSpotlightCutOff">getSpotlightCutOff()</a> </li>
+                         
+                              
+                             <li> <a href="#getType">getType()</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#operator=">operator=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setAmbientColor">setAmbientColor(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setAttenuation">setAttenuation(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setDiffuseColor">setDiffuseColor(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setDirectional">setDirectional()</a> </li>
+                         
+                              
+                             <li> <a href="#setPointLight">setPointLight()</a> </li>
+                         
+                              
+                             <li> <a href="#setSpecularColor">setSpecularColor(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setSpotConcentration">setSpotConcentration(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setSpotlight">setSpotlight(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setSpotlightCutOff">setSpotlightCutOff(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setup">setup()</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+            
+             
+            
+             <!-- list of functions -->              
+            <p class="top_list_header"><a href="#functions">functions</a></p>
+                <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#ofDisableLighting">ofDisableLighting()</a> </li>
+                         
+                              
+                             <li> <a href="#ofDisableSeparateSpecularLight">ofDisableSeparateSpecularLight()</a> </li>
+                         
+                              
+                             <li> <a href="#ofEnableLighting">ofEnableLighting()</a> </li>
+                         
+                              
+                             <li> <a href="#ofEnableSeparateSpecularLight">ofEnableSeparateSpecularLight()</a> </li>
+                         
+                              
+                             <li> <a href="#ofGetLightingEnabled">ofGetLightingEnabled()</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetGlobalAmbientColor">ofSetGlobalAmbientColor(...)</a> </li>
+                         
+                              
+                             <li> <a href="#ofSetSmoothLighting">ofSetSmoothLighting(...)</a> </li>
+                         
+                 </ul>
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofLight methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="customDraw">customDraw()</a></h1>
+	<h2>
+  <p>void ofLight::customDraw()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="destroy">destroy()</a></h1>
+	<h2>
+  <p>void ofLight::destroy()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="disable">disable()</a></h1>
+	<h2>
+  <p>void ofLight::disable()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="enable">enable()</a></h1>
+	<h2>
+  <p>void ofLight::enable()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getAmbientColor">getAmbientColor()</a></h1>
+	<h2>
+  <p>ofFloatColor ofLight::getAmbientColor()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getAttenuationConstant">getAttenuationConstant()</a></h1>
+	<h2>
+  <p>float ofLight::getAttenuationConstant()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getAttenuationLinear">getAttenuationLinear()</a></h1>
+	<h2>
+  <p>float ofLight::getAttenuationLinear()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getAttenuationQuadratic">getAttenuationQuadratic()</a></h1>
+	<h2>
+  <p>float ofLight::getAttenuationQuadratic()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getDiffuseColor">getDiffuseColor()</a></h1>
+	<h2>
+  <p>ofFloatColor ofLight::getDiffuseColor()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getIsDirectional">getIsDirectional()</a></h1>
+	<h2>
+  <p>bool ofLight::getIsDirectional()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getIsEnabled">getIsEnabled()</a></h1>
+	<h2>
+  <p>bool ofLight::getIsEnabled()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getIsPointLight">getIsPointLight()</a></h1>
+	<h2>
+  <p>bool ofLight::getIsPointLight()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getIsSpotlight">getIsSpotlight()</a></h1>
+	<h2>
+  <p>bool ofLight::getIsSpotlight()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getLightID">getLightID()</a></h1>
+	<h2>
+  <p>int ofLight::getLightID()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getSpecularColor">getSpecularColor()</a></h1>
+	<h2>
+  <p>ofFloatColor ofLight::getSpecularColor()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getSpotConcentration">getSpotConcentration()</a></h1>
+	<h2>
+  <p>float ofLight::getSpotConcentration()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getSpotlightCutOff">getSpotlightCutOff()</a></h1>
+	<h2>
+  <p>float ofLight::getSpotlightCutOff()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getType">getType()</a></h1>
+	<h2>
+  <p>int ofLight::getType()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator=">operator=(...)</a></h1>
+	<h2>
+  <p>ofLight ofLight::operator=(const ofLight &amp;mom)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setAmbientColor">setAmbientColor(...)</a></h1>
+	<h2>
+  <p>void ofLight::setAmbientColor(const ofFloatColor &amp;c)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setAttenuation">setAttenuation(...)</a></h1>
+	<h2>
+  <p>void ofLight::setAttenuation(float constant=1.f, float linear=0.f, float quadratic=0.f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setDiffuseColor">setDiffuseColor(...)</a></h1>
+	<h2>
+  <p>void ofLight::setDiffuseColor(const ofFloatColor &amp;c)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setDirectional">setDirectional()</a></h1>
+	<h2>
+  <p>void ofLight::setDirectional()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setPointLight">setPointLight()</a></h1>
+	<h2>
+  <p>void ofLight::setPointLight()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setSpecularColor">setSpecularColor(...)</a></h1>
+	<h2>
+  <p>void ofLight::setSpecularColor(const ofFloatColor &amp;c)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setSpotConcentration">setSpotConcentration(...)</a></h1>
+	<h2>
+  <p>void ofLight::setSpotConcentration(float exponent)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setSpotlight">setSpotlight(...)</a></h1>
+	<h2>
+  <p>void ofLight::setSpotlight(float spotCutOff=45.f, float exponent=0.f)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setSpotlightCutOff">setSpotlightCutOff(...)</a></h1>
+	<h2>
+  <p>void ofLight::setSpotlightCutOff(float spotCutOff)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setup">setup()</a></h1>
+	<h2>
+  <p>void ofLight::setup()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+              
+              <!-- functions detail -->
+                  <h2><a name="functions"></a>ofLight functions</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofDisableLighting">ofDisableLighting()</a></h1>
+	<h2>
+  <p>void ofDisableLighting()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofDisableSeparateSpecularLight">ofDisableSeparateSpecularLight()</a></h1>
+	<h2>
+  <p>void ofDisableSeparateSpecularLight()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofEnableLighting">ofEnableLighting()</a></h1>
+	<h2>
+  <p>void ofEnableLighting()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofEnableSeparateSpecularLight">ofEnableSeparateSpecularLight()</a></h1>
+	<h2>
+  <p>void ofEnableSeparateSpecularLight()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofGetLightingEnabled">ofGetLightingEnabled()</a></h1>
+	<h2>
+  <p>bool ofGetLightingEnabled()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetGlobalAmbientColor">ofSetGlobalAmbientColor(...)</a></h1>
+	<h2>
+  <p>void ofSetGlobalAmbientColor(const ofColor &amp;c)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="ofSetSmoothLighting">ofSetSmoothLighting(...)</a></h1>
+	<h2>
+  <p>void ofSetSmoothLighting(bool b)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:25 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

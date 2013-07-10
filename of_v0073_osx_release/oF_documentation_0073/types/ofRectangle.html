@@ -1,0 +1,1883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofRectangle</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p>ofRectangle class contains information about how a rectangle is in openFrameworks. Basically the class contains the position and the size of a rectangle. </p>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#alignTo">alignTo(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#alignToHorz">alignToHorz(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#alignToVert">alignToVert(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#getArea">getArea()</a> </li>
+                         
+                              
+                             <li> <a href="#getAspectRatio">getAspectRatio()</a> </li>
+                         
+                              
+                             <li> <a href="#getBottom">getBottom()</a> </li>
+                         
+                              
+                             <li> <a href="#getBottomLeft">getBottomLeft()</a> </li>
+                         
+                              
+                             <li> <a href="#getBottomRight">getBottomRight()</a> </li>
+                         
+                              
+                             <li> <a href="#getCenter">getCenter()</a> </li>
+                         
+                              
+                             <li> <a href="#getHeight">getHeight()</a> </li>
+                         
+                              
+                             <li> <a href="#getHorzAnchor">getHorzAnchor(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getIntersection">getIntersection(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getLeft">getLeft()</a> </li>
+                         
+                              
+                             <li> <a href="#getMax">getMax()</a> </li>
+                         
+                              
+                             <li> <a href="#getMaxX">getMaxX()</a> </li>
+                         
+                              
+                             <li> <a href="#getMaxY">getMaxY()</a> </li>
+                         
+                              
+                             <li> <a href="#getMin">getMin()</a> </li>
+                         
+                              
+                             <li> <a href="#getMinX">getMinX()</a> </li>
+                         
+                              
+                             <li> <a href="#getMinY">getMinY()</a> </li>
+                         
+                              
+                             <li> <a href="#getPerimeter">getPerimeter()</a> </li>
+                         
+                              
+                             <li> <a href="#getPosition">getPosition()</a> </li>
+                         
+                              
+                             <li> <a href="#getPositionRef">getPositionRef()</a> </li>
+                         
+                              
+                             <li> <a href="#getRight">getRight()</a> </li>
+                         
+                              
+                             <li> <a href="#getStandardized">getStandardized()</a> </li>
+                         
+                              
+                             <li> <a href="#getTop">getTop()</a> </li>
+                         
+                              
+                             <li> <a href="#getTopLeft">getTopLeft()</a> </li>
+                         
+                              
+                             <li> <a href="#getTopRight">getTopRight()</a> </li>
+                         
+                              
+                             <li> <a href="#getUnion">getUnion(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getVertAnchor">getVertAnchor(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getWidth">getWidth()</a> </li>
+                         
+                              
+                             <li> <a href="#getX">getX()</a> </li>
+                         
+                              
+                             <li> <a href="#getY">getY()</a> </li>
+                         
+                              
+                             <li> <a href="#growToInclude">growToInclude(...)</a> </li>
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#inside">inside(...)</a> </li>
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#intersects">intersects(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#isEmpty">isEmpty()</a> </li>
+                         
+                              
+                             <li> <a href="#isStandardized">isStandardized()</a> </li>
+                         
+                              
+                             <li> <a href="#operator!=">operator!=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator+">operator+(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator=">operator=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator==">operator==(...)</a> </li>
+                         
+                              
+                             <li> <a href="#scale">scale(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#scaleFromCenter">scaleFromCenter(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#scaleHeight">scaleHeight(...)</a> </li>
+                         
+                              
+                             <li> <a href="#scaleTo">scaleTo(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#scaleWidth">scaleWidth(...)</a> </li>
+                         
+                              
+                             <li> <a href="#set">set(...)</a> </li>
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#setFromCenter">setFromCenter(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#setHeight">setHeight(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setPosition">setPosition(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#setWidth">setWidth(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setX">setX(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setY">setY(...)</a> </li>
+                         
+                              
+                             <li> <a href="#standardize">standardize()</a> </li>
+                         
+                              
+                             <li> <a href="#translate">translate(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#translateX">translateX(...)</a> </li>
+                         
+                              
+                             <li> <a href="#translateY">translateY(...)</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+                <p class="top_list_header"><a href="#variables">class variables</a></p>
+                <ul class="functionslist">
+                             <li> <a href="#height">float height</a> </li>
+                             <li> <a href="#position">ofPoint position</a> </li>
+                             <li> <a href="#width">float width</a> </li>
+                             <li> <a href="#x">float x</a> </li>
+                             <li> <a href="#y">float y</a> </li>
+                 </ul>
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofRectangle methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="alignTo">alignTo(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::alignTo(const ofPoint &amp;targetPoint, ofAlignHorz thisHorzAnchor=OF_ALIGN_HORZ_CENTER, ofAlignVert thisVertAnchor=OF_ALIGN_VERT_CENTER)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="alignTo">alignTo(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::alignTo(const ofRectangle &amp;targetRect, ofAlignHorz sharedHorzAnchor=OF_ALIGN_HORZ_CENTER, ofAlignVert sharedVertAnchor=OF_ALIGN_VERT_CENTER)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="alignTo">alignTo(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::alignTo(const ofRectangle &amp;targetRect, ofAlignHorz targetHorzAnchor, ofAlignVert targetVertAnchor, ofAlignHorz thisHorzAnchor, ofAlignVert thisVertAnchor)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="alignToHorz">alignToHorz(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::alignToHorz(const float &amp;targetX, ofAlignHorz thisHorzAnchor=OF_ALIGN_HORZ_CENTER)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="alignToHorz">alignToHorz(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::alignToHorz(const ofRectangle &amp;targetRect, ofAlignHorz sharedAnchor=OF_ALIGN_HORZ_CENTER)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="alignToHorz">alignToHorz(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::alignToHorz(const ofRectangle &amp;targetRect, ofAlignHorz targetHorzAnchor, ofAlignHorz thisHorzAnchor)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="alignToVert">alignToVert(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::alignToVert(const float &amp;targetY, ofAlignVert sharedAnchor=OF_ALIGN_VERT_CENTER)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="alignToVert">alignToVert(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::alignToVert(const ofRectangle &amp;targetRect, ofAlignVert sharedAnchor=OF_ALIGN_VERT_CENTER)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="alignToVert">alignToVert(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::alignToVert(const ofRectangle &amp;targetRect, ofAlignVert targetVertAnchor, ofAlignVert thisVertAnchor)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getArea">getArea()</a></h1>
+	<h2>
+  <p>float ofRectangle::getArea()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getAspectRatio">getAspectRatio()</a></h1>
+	<h2>
+  <p>float ofRectangle::getAspectRatio()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getBottom">getBottom()</a></h1>
+	<h2>
+  <p>float ofRectangle::getBottom()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getBottomLeft">getBottomLeft()</a></h1>
+	<h2>
+  <p>ofPoint ofRectangle::getBottomLeft()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getBottomRight">getBottomRight()</a></h1>
+	<h2>
+  <p>ofPoint ofRectangle::getBottomRight()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getCenter">getCenter()</a></h1>
+	<h2>
+  <p>ofPoint ofRectangle::getCenter()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getHeight">getHeight()</a></h1>
+	<h2>
+  <p>float ofRectangle::getHeight()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getHorzAnchor">getHorzAnchor(...)</a></h1>
+	<h2>
+  <p>float ofRectangle::getHorzAnchor(ofAlignHorz anchor)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getIntersection">getIntersection(...)</a></h1>
+	<h2>
+  <p>ofRectangle ofRectangle::getIntersection(const ofRectangle &amp;rect)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getLeft">getLeft()</a></h1>
+	<h2>
+  <p>float ofRectangle::getLeft()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMax">getMax()</a></h1>
+	<h2>
+  <p>ofPoint ofRectangle::getMax()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMaxX">getMaxX()</a></h1>
+	<h2>
+  <p>float ofRectangle::getMaxX()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMaxY">getMaxY()</a></h1>
+	<h2>
+  <p>float ofRectangle::getMaxY()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMin">getMin()</a></h1>
+	<h2>
+  <p>ofPoint ofRectangle::getMin()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMinX">getMinX()</a></h1>
+	<h2>
+  <p>float ofRectangle::getMinX()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getMinY">getMinY()</a></h1>
+	<h2>
+  <p>float ofRectangle::getMinY()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getPerimeter">getPerimeter()</a></h1>
+	<h2>
+  <p>float ofRectangle::getPerimeter()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getPosition">getPosition()</a></h1>
+	<h2>
+  <p>ofPoint ofRectangle::getPosition()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getPositionRef">getPositionRef()</a></h1>
+	<h2>
+  <p>ofPoint ofRectangle::getPositionRef()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getRight">getRight()</a></h1>
+	<h2>
+  <p>float ofRectangle::getRight()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getStandardized">getStandardized()</a></h1>
+	<h2>
+  <p>ofRectangle ofRectangle::getStandardized()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getTop">getTop()</a></h1>
+	<h2>
+  <p>float ofRectangle::getTop()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getTopLeft">getTopLeft()</a></h1>
+	<h2>
+  <p>ofPoint ofRectangle::getTopLeft()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getTopRight">getTopRight()</a></h1>
+	<h2>
+  <p>ofPoint ofRectangle::getTopRight()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getUnion">getUnion(...)</a></h1>
+	<h2>
+  <p>ofRectangle ofRectangle::getUnion(const ofRectangle &amp;rect)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getVertAnchor">getVertAnchor(...)</a></h1>
+	<h2>
+  <p>float ofRectangle::getVertAnchor(ofAlignVert anchor)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getWidth">getWidth()</a></h1>
+	<h2>
+  <p>float ofRectangle::getWidth()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getX">getX()</a></h1>
+	<h2>
+  <p>float ofRectangle::getX()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getY">getY()</a></h1>
+	<h2>
+  <p>float ofRectangle::getY()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="growToInclude">growToInclude(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::growToInclude(float px, float py)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="growToInclude">growToInclude(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::growToInclude(const ofPoint &amp;p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="growToInclude">growToInclude(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::growToInclude(const ofRectangle &amp;rect)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="growToInclude">growToInclude(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::growToInclude(const ofPoint &amp;p0, const ofPoint &amp;p1)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="inside">inside(...)</a></h1>
+	<h2>
+  <p>bool ofRectangle::inside(const ofPoint &amp;p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="inside">inside(...)</a></h1>
+	<h2>
+  <p>bool ofRectangle::inside(float px, float py)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="inside">inside(...)</a></h1>
+	<h2>
+  <p>bool ofRectangle::inside(const ofRectangle &amp;rect)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="inside">inside(...)</a></h1>
+	<h2>
+  <p>bool ofRectangle::inside(const ofPoint &amp;p0, const ofPoint &amp;p1)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="intersects">intersects(...)</a></h1>
+	<h2>
+  <p>bool ofRectangle::intersects(const ofRectangle &amp;rect)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="intersects">intersects(...)</a></h1>
+	<h2>
+  <p>bool ofRectangle::intersects(const ofPoint &amp;p0, const ofPoint &amp;p1)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isEmpty">isEmpty()</a></h1>
+	<h2>
+  <p>bool ofRectangle::isEmpty()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isStandardized">isStandardized()</a></h1>
+	<h2>
+  <p>bool ofRectangle::isStandardized()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator!=">operator!=(...)</a></h1>
+	<h2>
+  <p>bool ofRectangle::operator!=(const ofRectangle &amp;rect)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofRectangle ofRectangle::operator+(const ofPoint &amp;p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator=">operator=(...)</a></h1>
+	<h2>
+  <p>ofRectangle ofRectangle::operator=(const ofRectangle &amp;rect)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator==">operator==(...)</a></h1>
+	<h2>
+  <p>bool ofRectangle::operator==(const ofRectangle &amp;rect)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scale">scale(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::scale(float s)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scale">scale(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::scale(float sX, float sY)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scale">scale(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::scale(const ofPoint &amp;s)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scaleFromCenter">scaleFromCenter(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::scaleFromCenter(float s)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scaleFromCenter">scaleFromCenter(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::scaleFromCenter(float sX, float sY)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scaleFromCenter">scaleFromCenter(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::scaleFromCenter(const ofPoint &amp;s)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scaleHeight">scaleHeight(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::scaleHeight(float sY)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scaleTo">scaleTo(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::scaleTo(const ofRectangle &amp;targetRect, ofScaleMode scaleMode=OF_SCALEMODE_FIT)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scaleTo">scaleTo(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::scaleTo(const ofRectangle &amp;targetRect, ofAspectRatioMode subjectAspectRatioMode, ofAlignHorz sharedHorzAnchor=OF_ALIGN_HORZ_CENTER, ofAlignVert sharedVertAnchor=OF_ALIGN_VERT_CENTER)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scaleTo">scaleTo(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::scaleTo(const ofRectangle &amp;targetRect, ofAspectRatioMode subjectAspectRatioMode, ofAlignHorz modelHorzAnchor, ofAlignVert modelVertAnchor, ofAlignHorz subjectHorzAnchor, ofAlignVert subjectVertAnchor)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="scaleWidth">scaleWidth(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::scaleWidth(float sX)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::set(float px, float py, float w, float h)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::set(const ofPoint &amp;p, float w, float h)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::set(const ofRectangle &amp;rect)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::set(const ofPoint &amp;p0, const ofPoint &amp;p1)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setFromCenter">setFromCenter(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::setFromCenter(float px, float py, float w, float h)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setFromCenter">setFromCenter(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::setFromCenter(const ofPoint &amp;p, float w, float h)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setHeight">setHeight(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::setHeight(float h)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setPosition">setPosition(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::setPosition(float px, float py)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setPosition">setPosition(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::setPosition(const ofPoint &amp;p)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setWidth">setWidth(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::setWidth(float w)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setX">setX(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::setX(float px)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setY">setY(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::setY(float py)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="standardize">standardize()</a></h1>
+	<h2>
+  <p>void ofRectangle::standardize()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="translate">translate(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::translate(float dx, float dy)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="translate">translate(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::translate(const ofPoint &amp;dp)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="translateX">translateX(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::translateX(float dx)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="translateY">translateY(...)</a></h1>
+	<h2>
+  <p>void ofRectangle::translateY(float dy)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+                  <h2><a name="variables"></a>ofRectangle variables</h2>
+                            
+<div class="documentation_detail">
+	<h1>float <a name="height">height</a></h1>
+	<h2>
+  <p>float ofRectangle::height</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>height variable contains the height of our ofRectangle.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>ofPoint <a name="position">position</a></h1>
+	<h2>
+  <p>ofPoint ofRectangle::position</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="width">width</a></h1>
+	<h2>
+  <p>float ofRectangle::width</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>width variable contains the width of our ofRectangle.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="x">x</a></h1>
+	<h2>
+  <p>float ofRectangle::x</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>x variable contains the x coordinate of our ofRectangle.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>float <a name="y">y</a></h1>
+	<h2>
+  <p>float ofRectangle::y</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>y variable contains the y coordinate of our ofRectangle.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:29 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

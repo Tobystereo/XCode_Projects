@@ -1,0 +1,287 @@
+/*
+
+Licence:
+==============================================================================
+
+(c) 2011, Kaldor Holdings Ltd. All rights reserved.
+
+Use in source and binary forms for commercially licensed Pugpig customers is governed by the Pugpig Software Licence Agreement at http://pugpig.com/download/licences/pugpig_licence_agreement.txt
+
+For all other parties, use in source and binary forms is governed by the Pugpig Software Evaluation Agreement at http://pugpig.com/download/licences/pugpig_evaluation_agreement.txt
+
+By downloading, reading and/or using this source, you agree to become a licensee of the Pugpig Software Suite and you are bound by the terms of the the licence agreement.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
+
+@import "bootstrap";
+@import "colorbox";
+@import "mixins";
+@import "placeholders";
+
+body, html {
+  height: 100%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+::selection, ::-moz-selection {
+    background: #D891B8;
+    color: white;
+    text-shadow: none;
+}
+
+.brand {
+  &:hover {
+    color: #999 !important; 
+  }
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+body {
+  @include respond-to(smallscreen) { padding-bottom: 60px; }
+  position: relative;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+body:-webkit-full-screen {
+  width:100%;
+  height:100%;
+  background-color: #f2f2f2;
+}
+
+.disable-navbars {
+  .navbar {
+    display: none;
+  }
+  .reader {
+    padding-top: 0 !important;
+  }
+  .next-page, .prev-page {
+    margin-top: -61px;
+  }
+}
+
+.navbar .navbar-inner {
+  padding: 0 20px;
+}
+
+.navbar .icon-white {
+  opacity: 0.6;
+}
+
+.secondary-reader-bar {
+  top: 41px;
+  label {
+    margin-top: 4px;
+    margin-bottom: 0;
+    height: 30px;
+    line-height: 30px;
+  }
+  select {
+    margin-top: -2px;
+    margin-right: 20px;
+  }
+  input {
+    margin-top: -1px;
+    margin-left: 5px;
+  }
+}
+
+.is-ios {
+  .display-mode-picker {
+    display: none; 
+  }
+}
+
+.disable-fullscreen {
+  .toggle-fullscreen{
+    display: none;
+  }
+}
+
+li {
+  &:hover {
+    .icon-white {
+      opacity: 1;
+    }
+  }
+}
+
+.preload {
+  .reader-frame,
+  .sidebar,
+  .next-page,
+  .prev-page,
+  .currently-viewing {
+    @include transition( none !important );
+    display: none;
+  }
+}
+
+.brand {
+  padding-left: 53px !important;
+  background: url(../images/micro-puggers.png) 20px 5px no-repeat;
+}
+
+.reader {
+  padding-top: 84px;
+}
+
+.navbar, .reader {
+  @extend %ha;
+  @include transition( margin 0.5s ease-in-out );
+}
+
+.reader-frame iframe, .reader-frame {
+  @extend %ha;
+  @include transition( all 0.5s ease-in-out );
+}
+
+.reader-frame {
+  @include box-shadow( 0 0 20px rgba(black,0.2) );
+  @include respond-to(smallscreen) {margin-top: -2px; }
+  position: relative;
+  overflow:hidden;
+  margin: 30px auto;
+  padding: 0;
+  background: white;
+}
+
+.reader-frame iframe {
+  position: absolute;
+  top: 0;
+  margin:0;
+  padding:0;
+  border:none;
+}
+
+.table-of-contents, .edition-selector {
+  @extend %sidebar;
+}
+
+.table-of-contents {
+  a {
+    color: #D891B8;
+    font-weight: bold;
+  }
+  .is-active a {
+    color: #513D33;
+  }
+}
+
+.article-icon {
+  margin-top: -15px;
+  width: 235px;
+  height: 235px;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.edition-selector {
+  h2 {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  img {
+    margin-bottom: 5px;
+    border-top: 10px solid #D891B8;
+  }
+  .chosen {
+    border-top: 10px solid #513D33 !important;
+  }
+  li {
+    margin-bottom: 20px;
+    p:nth-of-type(2) {
+      font-style: italic;
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
+}
+
+.close-sidebar {
+  margin-top: 22px;
+}
+
+.sidebar-is-expanded {
+  .reader-bar, .reader, .secondary-reader-bar {
+    margin-left: 300px;  
+  }
+  .next-page, .prev-page {
+    opacity: 0;
+  }
+}
+
+.toc-is-expanded .table-of-contents,
+.edition-selector-is-expanded .edition-selector {
+  left: 0px;
+}
+
+.next-page, .prev-page {
+  @extend %nav-control;
+}
+
+.prev-page {
+  left: 20px;
+}
+
+.next-page {
+  right: 20px;
+  background-position: -62px 0;
+}
+
+.currently-viewing {
+  margin: 30px auto;
+  padding: 10px 20px;
+  width: 50%;
+  background: white;
+  h1 {
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 23px;
+  }
+  li {
+    display: inline-block;
+    margin-right: 3px;
+    font-size: 13px;
+    strong {
+      text-transform: capitalize;
+    }
+  }
+}
+
+#feed_url {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -17px;
+  margin-left: -410px;
+  width: 800px;
+  height: 35px;
+  font-size: 22px;
+  line-height: 35px;
+}
+
+.addthis_toolbox {
+  @include respond-to(smallscreen) { position: absolute; }
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: none;
+}

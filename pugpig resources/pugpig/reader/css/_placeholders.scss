@@ -1,0 +1,60 @@
+%ha {
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    display: table;
+    content: "";
+    line-height: 0; 
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+%ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+%sidebar {
+  @extend %ha;
+  @include transition( left 0.5s ease-in-out );
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -300px;
+  overflow-y: scroll;
+  background: white;
+  width: 260px;
+  padding: 20px;
+  z-index: 11;
+}
+
+%nav-control {
+  @extend %ir;
+  @include transition( opacity 0.3s linear );
+  background-image: url(../images/arrow-sprite.png);
+  width: 62px;
+  height: 118px;
+  position: fixed;
+  top: 50%;
+  margin-top: -31px;
+  cursor: pointer;
+  opacity: 0.3;
+  z-index: 10;
+  &:hover:not(.hidden) {
+    opacity: 1;
+  }
+  &.hidden {
+    opacity: 0;
+    cursor: default;
+  }
+}

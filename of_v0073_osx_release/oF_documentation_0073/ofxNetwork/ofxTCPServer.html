@@ -1,0 +1,601 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofxTCPServer</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#close">close()</a> </li>
+                         
+                              
+                             <li> <a href="#disconnectClient">disconnectClient(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getClientIP">getClientIP(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getClientPort">getClientPort(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getLastID">getLastID()</a> </li>
+                         
+                              
+                             <li> <a href="#getNumClients">getNumClients()</a> </li>
+                         
+                              
+                             <li> <a href="#getNumReceivedBytes">getNumReceivedBytes(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getPort">getPort()</a> </li>
+                         
+                              
+                             <li> <a href="#isClientConnected">isClientConnected(...)</a> </li>
+                         
+                              
+                             <li> <a href="#isClientSetup">isClientSetup(...)</a> </li>
+                         
+                              
+                             <li> <a href="#isConnected">isConnected()</a> </li>
+                         
+                              
+                             <li> <a href="#receive">receive(...)</a> </li>
+                         
+                              
+                             <li> <a href="#receiveRawBytes">receiveRawBytes(...)</a> </li>
+                         
+                              
+                             <li> <a href="#send">send(...)</a> </li>
+                         
+                              
+                             <li> <a href="#sendRawBytes">sendRawBytes(...)</a> </li>
+                         
+                              
+                             <li> <a href="#sendRawBytesToAll">sendRawBytesToAll(...)</a> </li>
+                         
+                              
+                             <li> <a href="#sendToAll">sendToAll(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setMessageDelimiter">setMessageDelimiter(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setVerbose">setVerbose(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setup">setup(...)</a> </li>
+                         
+                              
+                             <li> <a href="#threadedFunction">threadedFunction()</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+                <p class="top_list_header"><a href="#variables">class variables</a></p>
+                <ul class="functionslist">
+                             <li> <a href="#TCPConnections">ofxTCPClient TCPConnections</a> </li>
+                             <li> <a href="#TCPServer">ofxTCPManager TCPServer</a> </li>
+                 </ul>
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofxTCPServer methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="close">close()</a></h1>
+	<h2>
+  <p>bool ofxTCPServer::close()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="disconnectClient">disconnectClient(...)</a></h1>
+	<h2>
+  <p>bool ofxTCPServer::disconnectClient(int clientID)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getClientIP">getClientIP(...)</a></h1>
+	<h2>
+  <p>string ofxTCPServer::getClientIP(int clientID)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getClientPort">getClientPort(...)</a></h1>
+	<h2>
+  <p>int ofxTCPServer::getClientPort(int clientID)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getLastID">getLastID()</a></h1>
+	<h2>
+  <p>int ofxTCPServer::getLastID()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getNumClients">getNumClients()</a></h1>
+	<h2>
+  <p>int ofxTCPServer::getNumClients()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getNumReceivedBytes">getNumReceivedBytes(...)</a></h1>
+	<h2>
+  <p>int ofxTCPServer::getNumReceivedBytes(int clientID)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getPort">getPort()</a></h1>
+	<h2>
+  <p>int ofxTCPServer::getPort()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isClientConnected">isClientConnected(...)</a></h1>
+	<h2>
+  <p>bool ofxTCPServer::isClientConnected(int clientID)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isClientSetup">isClientSetup(...)</a></h1>
+	<h2>
+  <p>bool ofxTCPServer::isClientSetup(int clientID)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="isConnected">isConnected()</a></h1>
+	<h2>
+  <p>bool ofxTCPServer::isConnected()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="receive">receive(...)</a></h1>
+	<h2>
+  <p>string ofxTCPServer::receive(int clientID)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="receiveRawBytes">receiveRawBytes(...)</a></h1>
+	<h2>
+  <p>int ofxTCPServer::receiveRawBytes(int clientID, char *receiveBytes, int numBytes)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="send">send(...)</a></h1>
+	<h2>
+  <p>bool ofxTCPServer::send(int clientID, string message)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="sendRawBytes">sendRawBytes(...)</a></h1>
+	<h2>
+  <p>bool ofxTCPServer::sendRawBytes(int clientID, const char *rawBytes, const int numBytes)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="sendRawBytesToAll">sendRawBytesToAll(...)</a></h1>
+	<h2>
+  <p>bool ofxTCPServer::sendRawBytesToAll(const char *rawBytes, const int numBytes)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="sendToAll">sendToAll(...)</a></h1>
+	<h2>
+  <p>bool ofxTCPServer::sendToAll(string message)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setMessageDelimiter">setMessageDelimiter(...)</a></h1>
+	<h2>
+  <p>void ofxTCPServer::setMessageDelimiter(string delim)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setVerbose">setVerbose(...)</a></h1>
+	<h2>
+  <p>void ofxTCPServer::setVerbose(bool _verbose)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setup">setup(...)</a></h1>
+	<h2>
+  <p>bool ofxTCPServer::setup(int _port, bool blocking=false)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="threadedFunction">threadedFunction()</a></h1>
+	<h2>
+  <p>void ofxTCPServer::threadedFunction()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+                  <h2><a name="variables"></a>ofxTCPServer variables</h2>
+                            
+<div class="documentation_detail">
+	<h1>ofxTCPClient <a name="TCPConnections">TCPConnections</a></h1>
+	<h2>
+  <p>ofxTCPClient ofxTCPServer::TCPConnections</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>ofxTCPManager <a name="TCPServer">TCPServer</a></h1>
+	<h2>
+  <p>ofxTCPManager ofxTCPServer::TCPServer</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:38 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

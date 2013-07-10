@@ -1,0 +1,21 @@
+@mixin transition( $arguments... ) {
+  -ms-transition: $arguments;
+  -o-transition: $arguments;
+  -webkit-transition: $arguments;
+  -moz-transition: $arguments;
+  transition: $arguments;
+}
+
+@mixin box-shadow( $arguments ) {
+  -o-box-shadow: $arguments;
+  -ms-box-shadow: $arguments;
+  -webkit-box-shadow: $arguments;
+  -moz-box-shadow: $arguments;
+  box-shadow: $arguments;
+}
+
+@mixin respond-to($media) {
+  @if $media == smallscreen {
+    @media only screen and (min-device-width : 320px) and (max-device-width : 1024px) { @content; }
+  }
+}

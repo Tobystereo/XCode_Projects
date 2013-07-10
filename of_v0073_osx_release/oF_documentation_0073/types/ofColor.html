@@ -1,0 +1,1456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofColor</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p><code>ofColor</code> represents a color in openFrameworks. Colors are usually defined by specifying a red, green, and blue component (RGB), and a transparency (alpha) component. You can also specify colors using hue, saturation and brightness (HSB).</p>
+<p>For example: </p>
+<pre><code class="cpp">// set red, component by component
+ofColor red;
+red.r=255;
+red.g=0;
+red.b=0;
+ofSetColor(red); 
+// draw color is now red
+
+// shorter notation is also possible
+ofColor green(0, 255, 0);
+ofSetColor(green); 
+// draw color is now green
+
+// or even shorter 
+ofSetColor( ofColor(0, 0, ofRandom( 128, 255 ) ); 
+// draw color is now a random blue
+</code></pre>
+
+<p><code>ofColor</code> also enables a lot of extra functionality like using HSB instead of color spectrums, lerping or linearly interpolating between colors, and inverting colors, among other things. </p>
+<p><code>ofColor</code> is templated, which means that it has several different ways it can be created. These are probably best to leave as they are because there's already a few kinds <code>typedef</code>ed for you. The default <code>ofColor</code> uses <code>unsigned char</code> values (0 to 255), but you can make an <code>ofFloatColor</code> if you want to work with floating point numbers between 0 and 1, or <code>ofShortColor</code> if you want to work with integers between 0 and 65,535.</p>
+<h3 id="hsb">HSB</h3>
+<p>You're probably familiar with RGB colors already, but HSB is a big part of <code>ofColor</code>. It uses a <em>hue</em> value (for the standard <code>ofColor</code> the range for this value is between 0 and 255) to determine what the hue (the 'color' in the sense of a color in the rainbow) will be:</p>
+<p><img alt="HSB" src="../types/hsb.png" /></p>
+<p>Approximate hues for some common colors:</p>
+<ul>
+<li>Red: 0 (wrapped round from 255)</li>
+<li>Orange: 25</li>
+<li>Yellow: 42</li>
+<li>Green: 85</li>
+<li>Blue: 170</li>
+<li>Purple: 205</li>
+<li>Red: 255 (wraps round to 0)</li>
+</ul>
+<p>Once you've selected a hue, you can use the <em>saturation</em> and <em>brightness</em> values to further refine the color. The saturation determines how much of the hue versus white is present and brightness determines how much hue versus black is present:</p>
+<p><img alt="SB" src="../types/hsb-cone.jpg" /></p>
+<p>In other words, saturation refers to the intensity of the color: high saturation means intense color, low saturation means washed out or black and white. Brightness refers to how light or dark the color is: high brightness means a bright color, low brightness means a dark color. If the brightness is 0 the resulting color will be black, regardless of the values of hue or saturation.</p>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+               
+ 			
+			<p class="top_list_header"><a href="#methods">class methods</a></p>
+			
+                 <ul class="functionslist">
+                     
+                              
+                             <li> <a href="#clamp">clamp()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#fromHex">fromHex(...)</a> </li>
+                         
+                              
+                             <li> <a href="#fromHsb">fromHsb(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getBrightness">getBrightness()</a> </li>
+                         
+                              
+                             <li> <a href="#getClamped">getClamped()</a> </li>
+                         
+                              
+                             <li> <a href="#getHex">getHex()</a> </li>
+                         
+                              
+                             <li> <a href="#getHsb">getHsb(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getHue">getHue()</a> </li>
+                         
+                              
+                             <li> <a href="#getInverted">getInverted()</a> </li>
+                         
+                              
+                             <li> <a href="#getLerped">getLerped(...)</a> </li>
+                         
+                              
+                             <li> <a href="#getLightness">getLightness()</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#getSaturation">getSaturation()</a> </li>
+                         
+                              
+                             <li> <a href="#invert">invert()</a> </li>
+                         
+                              
+                             <li> <a href="#lerp">lerp(...)</a> </li>
+                         
+                              
+                             <li> <a href="#limit">limit()</a> </li>
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                              
+                             <li> <a href="#operator!=">operator!=(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator*">operator*(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator*=">operator*=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator+">operator+(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator+=">operator+=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator-">operator-(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator-=">operator-=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator/">operator/(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator/=">operator/=(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#operator=">operator=(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#operator==">operator==(...)</a> </li>
+                         
+                              
+                             <li> <a href="#operator[]">operator[](...)</a> </li>
+                         
+                              
+                             <li> <a href="#set">set(...)</a> </li>
+                         
+                         
+                         
+                              
+                             <li> <a href="#setBrightness">setBrightness(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setHex">setHex(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setHsb">setHsb(...)</a> </li>
+                         
+                         
+                              
+                             <li> <a href="#setHue">setHue(...)</a> </li>
+                         
+                              
+                             <li> <a href="#setSaturation">setSaturation(...)</a> </li>
+                         
+                 </ul>
+            
+             
+             
+             <!-- list of variables -->              
+                <p class="top_list_header"><a href="#variables">class variables</a></p>
+                <ul class="functionslist">
+                             <li> <a href="#a">PixelType a</a> </li>
+                             <li> <a href="#b">PixelType b</a> </li>
+                             <li> <a href="#black">ofColor black</a> </li>
+                             <li> <a href="#blue">ofColor blue</a> </li>
+                             <li> <a href="#cyan">ofColor cyan</a> </li>
+                             <li> <a href="#g">PixelType g</a> </li>
+                             <li> <a href="#gray">ofColor gray</a> </li>
+                             <li> <a href="#green">ofColor green</a> </li>
+                             <li> <a href="#magenta">ofColor magenta</a> </li>
+                             <li> <a href="#r">PixelType r</a> </li>
+                             <li> <a href="#red">ofColor red</a> </li>
+                             <li> <a href="#white">ofColor white</a> </li>
+                             <li> <a href="#yellow">ofColor yellow</a> </li>
+                 </ul>
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+                  <h2><a name="methods"></a>ofColor methods</h2>
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="clamp">clamp()</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::clamp()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>This clamps the values of your color in case they're too high or low for their types, in case you go negative or too use values that are too high, like anything &gt;1.0 in the case of <code>ofFloatColor</code>.</p>
+<pre><code class="cpp">ofFloatColor c( 1, 0, 0 );
+c.g = 2; // g now has 2: this is usually invalid!
+c.clamp(); // c.g has now been clamped so its value is 1.
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="fromHex">fromHex(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::fromHex(int hexColor, float alpha=limit())</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Convenience method to construct an ofColor from a 24 bit hex value.</p>
+<pre><code class="cpp">ofColor c = ofColor::fromHex(0xFFFF00); // c is yellow
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="fromHsb">fromHsb(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::fromHsb(float hue, float saturation, float brightness, float alpha=limit())</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Convenience method to construct an ofColor from Hsb values.</p>
+<pre><code class="cpp">ofColor c = ofColor::fromHsb(128, 255, 255); // c is bright saturated cyan
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getBrightness">getBrightness()</a></h1>
+	<h2>
+  <p>float ofColor_::getBrightness()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return the brightness component of the HSB representation of this color. Refer the <a href="#HSB">discussion of HSB</a> above.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getClamped">getClamped()</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::getClamped()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns a clamped version of this color, without modifying the original. See <a href="#clamp">clamp</a> for more info.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getHex">getHex()</a></h1>
+	<h2>
+  <p>int ofColor_::getHex()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return a 24 bit hexidecimal number representing this color.</p>
+<pre><code class="cpp">ofColor c( 255, 255, 0 ); // yellow
+int hex = c.getHex(); // hex is 0xffff00 (or 16776960 in decimal)
+</code></pre>
+
+<p>Usually when we look at these colors in print they're hex, so don't be surprised if they don't look familiar when you print them as decimal. </p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getHsb">getHsb(...)</a></h1>
+	<h2>
+  <p>void ofColor_::getHsb(float &amp;hue, float &amp;saturation, float &amp;brightness)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return all three components of the HSB representation of this color at the same time.</p>
+<pre><code class="cpp">ofColor red(255,0,0);
+float hue, saturation, brightness;
+red.getHsb( hue, saturation, brightness );
+// hue is now 0 (for red), saturation is 255, brightness is 255
+</code></pre>
+
+<p>Refer the <a href="#HSB">discussion of HSB</a> above.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getHue">getHue()</a></h1>
+	<h2>
+  <p>float ofColor_::getHue()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return the hue component of the HSB representation of this color. Refer the <a href="#HSB">discussion of HSB</a> above.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getInverted">getInverted()</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::getInverted()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the color that is the inverted version (complement) to this color, without modifying the original. See <a href="#invert">invert</a> for more info.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getLerped">getLerped(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::getLerped(const ofColor_&lt; PixelType &gt; &amp;target, float amount)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns this color lerped towards <code>target</code> by <code>amount</code>, without modifying the original. See <a href="#lerp">lerp</a> for more info.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getLightness">getLightness()</a></h1>
+	<h2>
+  <p>float ofColor_::getLightness()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return the average of the three color components. This is used by the Lab and HSL color spaces.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="getSaturation">getSaturation()</a></h1>
+	<h2>
+  <p>float ofColor_::getSaturation()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Return the saturation component of the HSB representation of this color. Refer the <a href="#HSB">discussion of HSB</a> above.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="invert">invert()</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::invert()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Invert the color, which turns it into its complement.</p>
+<pre><code class="cpp">ofColor c(0, 0, 255); // blue
+c.invert(); // c is now (255,255,0), or yellow, which is blue's complement
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="lerp">lerp(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::lerp(const ofColor_&lt; PixelType &gt; &amp;target, float amount)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Perform a linear interpolation (lerp) between this color and the target. Amount is a percentage represented by a float from 0 to 1. </p>
+<p>This function allows to blend between colors. For instance, if you have red and you want halfway between red and blue, you can do this:</p>
+<pre><code class="cpp">ofColor r = ofColor::red;
+ofColor b = ofColor::blue;
+b.lerp(r, 0.5); // now purple!
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="limit">limit()</a></h1>
+	<h2>
+  <p>float ofColor_::limit()</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns the maximum value for a component for this color. For standard <code>ofColor</code> returns 255, for <code>ofFloatColor</code> returns 1.0, for <code>ofShortColor</code> returns 65,536.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator!=">operator!=(...)</a></h1>
+	<h2>
+  <p>bool ofColor_::operator!=(ofColor_&lt; PixelType &gt; const &amp;color)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Non-equivalence operator. Returns <code>true</code> if any RGB component is different from its equivalent in <code>color</code>, otherwise returns <code>false</code>.</p>
+<pre><code class="cpp">ofColor c1(255, 0, 0); // red
+ofColor c2(0, 255, 0); // green
+ofColor c3(255, 0, 0); // red
+// ( c1 != c2 ) is true
+// ( c1 != c3 ) is false
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*">operator*(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator*(ofColor_&lt; PixelType &gt; const &amp;color)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns a new color where each channel has been multiplied by its parallel in <code>color</code>, with 100% alpha. Behaves like a multiply blend in a photo editing app: if the red channel in <code>color</code> is 50%, the output red channel will be 50% of the input red channel.</p>
+<pre><code class="cpp">ofColor c1(128, 0, 0); // 50% red
+ofColor c2(255, 255, 255); // white
+ofColor c3 = c2*c1; // c3 is (128, 0, 0)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*">operator*(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator*(float const &amp;val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Returns a new color where each channel has been multiplied by <code>val</code>, with alpha 100% alpha. Before multiplying, <code>val</code> is clamped to a range of 0 to 1.</p>
+<pre><code class="cpp">ofColor c1(255, 128, 0);
+ofColor c2 = c1*0.5; // c2 is (127, 64, 0)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*=">operator*=(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator*=(ofColor_&lt; PixelType &gt; const &amp;color)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Multiplication assignment operator. Multiplies each channel by its parallel in <code>color</code>, without touching alpha. Behaves like a multiply blend in a photo editing app: if the red channel in <code>color</code> is 50%, the red channel in this color will be reduced to 50% of its input value.</p>
+<pre><code class="cpp">ofColor c1(128, 0, 0); // 50% red
+ofColor c2(255, 255, 255); // white
+ofColor c2 *= c1; // c2 is now (128, 0, 0)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator*=">operator*=(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator*=(float const &amp;val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Multiplication assignment operator. Multiplies each channel by <code>val</code>, without touching alpha. Before multiplying, <code>val</code> is clamped to a range of 0 to 1.</p>
+<pre><code class="cpp">ofColor c1(255, 128, 0);
+ofColor c1*=0.5; // c2 is (127, 64, 0)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator+(ofColor_&lt; PixelType &gt; const &amp;color)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Sum red, green and blue components separately, ignoring alpha. In the case of integer types, like <code>ofColor</code> and <code>ofShortColor</code> this operation wraps. In the case of <code>ofFloatColor</code>, it automatically clamps the result by calling <a href="#clamp">clamp</a>.</p>
+<pre><code class="cpp">ofColor c1(64, 64, 0, 128);
+ofColor c2(0, 64, 64, 64 );
+ofColor c3 = c1 + c2; // c3 is (64, 128, 64) with alpha 128
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+">operator+(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator+(float const &amp;val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Add <code>val</code> to all components except alpha. In the case of integer types, like <code>ofColor</code> and <code>ofShortColor</code> this operation wraps. In the case of <code>ofFloatColor</code>, it automatically clamps the result by calling <a href="#clamp">clamp</a>.</p>
+<pre><code class="cpp">ofColor c1(128, 64, 0, 128);
+ofColor c2 = c1 + 64; // c3 is (192, 128, 64) with alpha 128
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+=">operator+=(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator+=(ofColor_&lt; PixelType &gt; const &amp;color)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Addition assignment operator. Adds the contents of <code>color</code> (except alpha) to this color. In the case of integer types, like <code>ofColor</code> and <code>ofShortColor</code> this operation wraps. In the case of <code>ofFloatColor</code>, it automatically clamps the result by calling <a href="#clamp">clamp</a>.</p>
+<pre><code class="cpp">ofColor c1(0, 64, 0);
+ofColor c2(64, 64, 0);
+c1 += c2; // c1 is now (64, 128, 0);
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator+=">operator+=(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator+=(float const &amp;val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Addition assignment operator. Adds <code>val</code> to all components (except alpha) to this color. In the case of integer types, like <code>ofColor</code> and <code>ofShortColor</code> this operation wraps. In the case of <code>ofFloatColor</code>, it automatically clamps the result by calling <a href="#clamp">clamp</a>.</p>
+<pre><code class="cpp">ofColor c1(128, 64, 0);
+c1 += 128; // c1 is now (255, 192, 128)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator-(ofColor_&lt; PixelType &gt; const &amp;color)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Subtraction operator. Works like <a href="#operator+">the addition operator</a>.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-">operator-(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator-(float const &amp;val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Subtraction operator. Works like <a href="#operator+">the addition operator</a>.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-=">operator-=(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator-=(ofColor_&lt; PixelType &gt; const &amp;color)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Subtraction assignment operator. Works like <a href="#operator+=">the addition assignment operator</a>.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator-=">operator-=(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator-=(float const &amp;val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Subtraction assignment operator. Works like <a href="#operator+=">the addition assignment operator</a>.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/">operator/(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator/(ofColor_&lt; PixelType &gt; const &amp;color)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Division operator. Works similar to <a href="#operator*">the * operator</a> but divides instead of multiplies.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/">operator/(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator/(float const &amp;val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Division operator. Works similar to <a href="#operator*">the * operator</a> but divides instead of multiplies.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/=">operator/=(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator/=(ofColor_&lt; PixelType &gt; const &amp;color)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Division assignment operator. Works similar to <a href="#operator*=">the *= operator</a> but divides instead of multiplies.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator/=">operator/=(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator/=(float const &amp;val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Division assignment operator. Works similar to <a href="#operator*=">the *= operator</a> but divides instead of multiplies.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator=">operator=(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator=(ofColor_&lt; PixelType &gt; const &amp;color)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Assignment operator.</p>
+<pre><code class="cpp">ofColor c1(255, 0, 0); // red
+ofColor c2; // default white
+c2 = c1; // c2 is now red
+</code></pre>
+
+<p>The color types can be different: you can assign an <code>ofFloatColor</code> to an <code>ofColor</code>:</p>
+<pre><code class="cpp">ofFloatColor c1(1.0, 0.0, 0.0); // red
+ofColor c2; // default white
+c2 = c1; // c2 is now red (255, 0, 0)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator=">operator=(...)</a></h1>
+	<h2>
+  <p>ofColor_ ofColor_::operator=(float const &amp;val)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Assigns <code>val</code> to all components, including alpha. Has the same effect as calling <a href="#set"><code>set(val,val)</code></a>.</p>
+<pre><code class="cpp">ofColor c;
+c.set( 128 ); // c is RGB (128, 128, 128) with alpha of 128
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator==">operator==(...)</a></h1>
+	<h2>
+  <p>bool ofColor_::operator==(ofColor_&lt; PixelType &gt; const &amp;color)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Equivalence operator. Returns <code>true</code> if every RGB component is the same as its equivalent in <code>color</code>, otherwise returns <code>false</code>. </p>
+<pre><code class="cpp">ofColor c1(255, 0, 0); // red
+ofColor c2(0, 255, 0); // green
+ofColor c3(255, 0, 0); // red
+// ( c1 == c2 ) is false
+// ( c1 == c3 ) is true
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="operator[]">operator[](...)</a></h1>
+	<h2>
+  <p>PixelType &amp; ofColor_::operator<a href="int n"></a></p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Array subscript operator. If <code>n</code> is 0 returns .r, if 1 returns .g, if 2 returns .b, if 3 returns alpha.</p>
+<pre><code class="cpp">ofColor c(128, 64, 255);
+float red = c[0]; // red is 128
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofColor_::set(float _r, float _g, float _b, float _a=limit())</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Creates a color using RGB values and optional alpha value. The default alpha value makes a completely opaque color.</p>
+<pre><code class="cpp">ofColor c(255, 0, 0); // red
+c.set(0, 255, 0); // and now green
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofColor_::set(float _gray, float _a=limit())</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Creates a gray color from the value of <code>gray</code>. <code>_a</code> defaults to completely opaque.</p>
+<pre><code class="cpp">ofColor c(255, 0, 0); // red
+c.set( 128, 128 ); // now 50% gray with 50% alpha
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="set">set(...)</a></h1>
+	<h2>
+  <p>void ofColor_::set(ofColor_&lt; PixelType &gt; const &amp;color)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set this color to be the same as <code>color</code>.</p>
+<pre><code class="cpp">ofColor c1(255, 0, 0); // red
+ofColor c2(0, 255, 0); // green
+c2.set(c1); // c2 is now red
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setBrightness">setBrightness(...)</a></h1>
+	<h2>
+  <p>void ofColor_::setBrightness(float brightness)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Change the current brightness, leaving hue and saturation intact.</p>
+<pre><code class="cpp">ofColor c( 0, 0, 255 ); // bright blue
+c.setBrightness( 128 ); // dark blue
+</code></pre>
+
+<p>Refer the <a href="#HSB">discussion of HSB</a> above.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setHex">setHex(...)</a></h1>
+	<h2>
+  <p>void ofColor_::setHex(int hexColor, float alpha=limit())</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set this color to <code>hexColor</code> using a 24 bit hex-style color as normally used in web development.  <code>alpha</code> defaults to completely opaque.</p>
+<pre><code class="cpp">ofColor c;
+c.setHex( 0xFFFFFF ); // white
+c.setHex( 0x00FF00 ); // green
+c.setHex( 0xFF8000, 128 ); // orange, 50% alpha
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setHsb">setHsb(...)</a></h1>
+	<h2>
+  <p>void ofColor_::setHsb(float hue, float saturation, float brightness, float alpha=limit())</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Set this color using a HSB representation. Refer the <a href="#HSB">discussion of HSB</a> above. <strong>Note</strong> that the <code>hue</code> value has a range that matches the base data type (ie <strong>0 to 255</strong> for the standard <code>ofColor</code>), rather than 0 to 360, 0 to 100 or float 0 to 1, as may be expected.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setHsb">setHsb(...)</a></h1>
+	<h2>
+  <p>void ofColor_::setHsb(float hue, float saturation, float brightness)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setHue">setHue(...)</a></h1>
+	<h2>
+  <p>void ofColor_::setHue(float hue)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Change the current hue, leaving saturation and brightness intact. </p>
+<pre><code class="cpp">ofColor c = ofColor::fromHsb( 0, 255, 255 ); // bright red
+c.setHue( 128 ); // now bright cyan
+</code></pre>
+
+<p>Refer the <a href="#HSB">discussion of HSB</a> above.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+  	 
+	<h1><a name="setSaturation">setSaturation(...)</a></h1>
+	<h2>
+  <p>void ofColor_::setSaturation(float saturation)</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+		
+  <p>Change the current saturation, leaving hue and brightness intact.</p>
+<pre><code class="cpp">ofColor c( 0, 0, 255 ); // vibrant blue
+c.setSaturation( 128 ); // pale blue
+</code></pre>
+
+<p>Refer the <a href="#HSB">discussion of HSB</a> above.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- vars detail -->
+                  <h2><a name="variables"></a>ofColor variables</h2>
+                            
+<div class="documentation_detail">
+	<h1>PixelType <a name="a">a</a></h1>
+	<h2>
+  <p>PixelType ofColor_::a</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>The alpha value (transparency) of a color. 0 is completely transparent, 255 is completely opaque.</p>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>PixelType <a name="b">b</a></h1>
+	<h2>
+  <p>PixelType ofColor_::b</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>The blue component of this color.</p>
+<pre><code class="cpp">ofColor c = ofColor::cyan;
+float blue = c.b; // 255
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>ofColor <a name="black">black</a></h1>
+	<h2>
+  <p>ofColor ofColor_::black</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Pre-iniatilized black color.</p>
+<pre><code class="cpp">ofColor c = ofColor::black; // (0, 0, 0)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>ofColor <a name="blue">blue</a></h1>
+	<h2>
+  <p>ofColor ofColor_::blue</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Pre-iniatilized blue color.</p>
+<pre><code class="cpp">ofColor c = ofColor::blue; // (0, 0, 255)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>ofColor <a name="cyan">cyan</a></h1>
+	<h2>
+  <p>ofColor ofColor_::cyan</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Pre-iniatilized cyan color.</p>
+<pre><code class="cpp">ofColor c = ofColor::cyan; // (0, 255, 255)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>PixelType <a name="g">g</a></h1>
+	<h2>
+  <p>PixelType ofColor_::g</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>The green component of this color.</p>
+<pre><code class="cpp">ofColor c = ofColor::yellow;
+float green = c.g; // 255
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>ofColor <a name="gray">gray</a></h1>
+	<h2>
+  <p>ofColor ofColor_::gray</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Pre-iniatilized gray color.</p>
+<pre><code class="cpp">ofColor c = ofColor::gray;
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>ofColor <a name="green">green</a></h1>
+	<h2>
+  <p>ofColor ofColor_::green</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Pre-iniatilized green color.</p>
+<pre><code class="cpp">ofColor c = ofColor::green; // (0, 255, 0)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>ofColor <a name="magenta">magenta</a></h1>
+	<h2>
+  <p>ofColor ofColor_::magenta</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Pre-iniatilized magenta color.</p>
+<pre><code class="cpp">ofColor c = ofColor::magenta; // (255, 0, 255)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>PixelType <a name="r">r</a></h1>
+	<h2>
+  <p>PixelType ofColor_::r</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>The red component of this color.</p>
+<pre><code class="cpp">ofColor c = ofColor::red;
+float red = c.r; // 255
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>ofColor <a name="red">red</a></h1>
+	<h2>
+  <p>ofColor ofColor_::red</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Pre-iniatilized red color.</p>
+<pre><code class="cpp">ofColor c = ofColor::red; // (255, 0, 0)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>ofColor <a name="white">white</a></h1>
+	<h2>
+  <p>ofColor ofColor_::white</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Pre-iniatilized white color.</p>
+<pre><code class="cpp">ofColor c = ofColor::white;
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+                            
+<div class="documentation_detail">
+	<h1>ofColor <a name="yellow">yellow</a></h1>
+	<h2>
+  <p>ofColor ofColor_::yellow</p>
+</h2>
+	<div class="documentation_detail_description">
+		
+  <p>Pre-iniatilized yellow color.</p>
+<pre><code class="cpp">ofColor c = ofColor::yellow; // (255, 255, 0)
+</code></pre>
+
+	</div>
+	<div class="documentation_detail_wide_col_nav"><a href="#top">&uarr;</a></div>
+</div>
+
+
+    
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:28 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

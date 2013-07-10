@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+  <title>openFrameworks</title>
+<!-- syntax highlighting for the documentation -->
+<link rel="stylesheet" type="text/css" href="../css/style.css?44443" media="all" />
+  </head>
+  <body>
+    <div id="content">
+      <a href="http://openframeworks.cc" target= "_blank"><img src="../images/ofw-logo.png" border="0" alt="openFrameworks" /></a>
+      <div id="body-wrap">
+          <div class="page-wide">
+          
+              <div id="docstitle"><h1>ofPtr</h1></div>
+              <div id="editdocs">
+
+              </div>
+              
+          </div>
+          
+          <div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">
+              <p>
+              
+  <p>ofPtr is a shared pointer implementation that allows you to dynamically allocate objects, much like a pointer, without needing to worry about when and who will free that pointers memory because the shared pointer implementation is able to sort out when a resource is no longer being used free that resource as soon as nobody is interested in it anymore. This means it's much less likely that you'll end up with dangling pointers and memory leaks in your application. Last one to leave turns out the lights. This is like garbage collection but actually better and more powerful because resources are freed immediately and not at some undetermined future time when the VM decides to do a sweep.</p>
+<p>To create an ofPtr instance, do the following:</p>
+<pre><code class="cpp">ofPtr&lt;Foo&gt; ptr(new Foo());
+</code></pre>
+
+<p>So it looks like you're creating a pointer to a Foo, which you are, but then the ofPtr is going to take care of it from then on out. This means that you can return it from a function, pass it to another class, generally be reckless with it, and not have to worry about when it'll be deleted.</p>
+<p>You access the methods and properties of an ofPtr just the same as a regular pointer:</p>
+<pre><code class="cpp">fooPtr-&gt;bar();
+fooPtr-&gt;fizz = PI;
+</code></pre>
+
+<p>You'll see this in the OF core code in places like ofVideoPlayer:</p>
+<pre><code class="cpp">setPlayer(ofPtr&lt;ofBaseVideoPlayer&gt; newPlayer);
+</code></pre>
+
+<p>When you should use ofPtr: </p>
+<ul>
+<li>When you have a resource that you need to dynamic allocate and delete and share among multiple objects and processes. </li>
+<li>When your code is not heavily multi-threaded. </li>
+<li>When you don't need blazing speed for pointer access because a shared pointer is <em>not</em> a pointer, it's more complex and slower.</li>
+<li>When you don't to have multiple processes handle deleting a resource.</li>
+</ul>
+<p>For more info on shared pointers this is an excellent reference:  http://ootips.org/yonat/4dev/smart-pointers.html</p>
+<p>or you can look at the Poco implementation of shared pointers: http://pocoproject.org/slides/030-MemoryManagement.pdf (linking into their documenation isn't possible, frame fail)</p>
+
+              </p>
+        	</div><!-- End Prose Block -->
+         </div><!-- End Main Block -->
+	</div>
+		<div class="page-wide">
+      	<div id="top_list">
+             
+             <!-- list of methods -->
+            
+             
+             
+             <!-- list of variables -->              
+            
+             
+            
+             <!-- list of functions -->              
+            
+		</div>
+
+	</div>
+		<div class="page-left-wide">
+          <div id="main_block">
+            <div id="prose_block">	
+              
+              <!-- methods detail -->
+              
+              <!-- vars detail -->
+              
+              <!-- functions detail -->
+            </div><!-- End Prose Block -->
+          </div><!-- End Main Block -->
+        </div>
+      </div>
+      
+      <div id="footer">
+        
+  <p id="credits">
+
+Last updated 
+  
+Thursday, 17 January 2013 05:14:33 UTC
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/openframeworks/ofSite/commit/
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+">
+
+bb9a3174291cb0971a5d51babc9f9bc360090b5e
+</a>
+
+<!--br/>RSS feeds for <a href="/blog/feed">Entries</a-->
+
+<br/>
+
+</p>
+
+
+
+
+<!--tracking -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9614675-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+
